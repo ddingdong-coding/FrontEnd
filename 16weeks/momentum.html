@@ -84,8 +84,6 @@
         }
     </style>
     <script>
-        let name = ""
-        let temp_html = ""
         $(document).ready(function () {
             renderGalleryItem()
             renderCurrentWeather()
@@ -114,7 +112,7 @@
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let time = data['datetime'].substr(11, 5)
-                    temp_html = `${time}`
+                    let temp_html = `${time}`
                     $('#currentTime').append(temp_html);
                 })
         }
@@ -123,7 +121,7 @@
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let advice = data['slip']['advice']
-                    temp_html = `${advice}`
+                    let temp_html = `${advice}`
                     $('#advice').append(temp_html);
                 })
 
