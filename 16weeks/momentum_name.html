@@ -87,11 +87,10 @@
 
     </style>
     <script>
-        let name = ""
-        let temp_html = ""
         $(document).ready(function () {
             renderGalleryItem()
         });
+        //배경 사진 함수
         function renderGalleryItem() {
             let url = `https://source.unsplash.com/collection/928423/`
             fetch(url)
