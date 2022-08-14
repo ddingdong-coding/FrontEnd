@@ -130,6 +130,15 @@
             cursor: pointer; 
             color:black;
         }
+        .form-control {
+            width:280px;
+            height:30px;
+
+            border-right:0px; 
+            border-top:0px; 
+            border-left:0px;
+            background: transparent;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -213,10 +222,10 @@
                 To do lists
             </h3>
             <div class="todoLists">
-                <input class="form-control" type="text" placeholder="" aria-label="Username">
+                <input class="form-control" type="text">
                 <i class="bi bi-chevron-double-right"></i>
             </div>
-            <div class="modalContent"> 
+            <div class="modalContent" id ="contents"> 
                 <ul>
                     <li> baking cup cakes </li>
                 </ul>
