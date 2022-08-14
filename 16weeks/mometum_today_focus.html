@@ -71,7 +71,7 @@
             font-weight: 700;
         }
 
-        .todo {
+        .focusTodo {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -80,7 +80,7 @@
             font-size: 30px;
         }
 
-        .todo>i {
+        .focusTodo > i {
             cursor: pointer;
         }
 
@@ -120,6 +120,7 @@
             renderCurrentTime()
             renderAdvice()
         });
+        //배경화면
         function renderGalleryItem() {
             let url = `https://source.unsplash.com/collection/928423/`
             fetch(url)
@@ -127,6 +128,7 @@
                     $('#background').css('background-image', `url('${response.url}')`)
                 })
         }
+        //현재 날씨
         function renderCurrentWeather() {
             let url = `https://goweather.herokuapp.com/weather/{seoul}`
             fetch(url)
@@ -137,6 +139,7 @@
                 })
 
         }
+        //현재 시간
         function renderCurrentTime() {
             let url = `http://worldtimeapi.org/api/timezone/Asia/Seoul`
             fetch(url)
@@ -146,6 +149,7 @@
                     $('#currentTime').append(temp_html);
                 })
         }
+        //실시간 조언
         function renderAdvice() {
             let url = `https://api.adviceslip.com/advice`
             fetch(url)
@@ -160,23 +164,28 @@
 </head>
 
 <body id='background'>
+    <!-- 날씨 -->
     <div id="currentWeather" class="currentWeather">
     </div>
     <div class="main">
+        <!-- 시간 -->
         <div id="currentTime" class="currentTime">
         </div>
+        <!-- 인사 -->
         <div class="greeting">
             Hello, Jessy.
         </div>
+        <!-- 오늘 중요 일정 입력-->
         <div class="focusTitle">
             What is your main focus for today?
         </div>
-        <div class="todo">
-            <input type="text" class="form-control" placeholder="">
+        <div class="focusTodo">
+            <input type="text" class="form-control">
             <i class="bi bi-chevron-double-right"></i>
         </div>
 
     </div>
+    <!-- 실시간 조언 -->
     <div id="advice" class="footer">
     </div>
 
