@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>모멘텀앱 - 따라만들기</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        div,
+        a {
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            font-weight: normal;
+
+            background-size: cover;
+            color: white;
+        }
+
+
+        .currentWeather {
+            margin-left: auto;
+
+            font-size: 28px;
+            width: 120px;
+            height: 50px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 80vh;
+
+        }
+
+        .currentTime {
+            font-size: 160px;
+            font-weight: 600;
+        }
+
+        .greeting {
+            padding-top: 0px;
+            font-size: 60px;
+        }
+
+        .focusTitle {
+            margin-top: 30px;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .form-control {
+            width: 500px;
+            height:80px;
+            font-size: 60px;
+
+            /* border:2px white; */
+            border-right:0px; 
+            border-top:0px; 
+            border-left:0px;
+            background: transparent;
+        
+        }
+        .form-control:focus {
+            background: transparent;
+
+        }
+
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            height: 58px;
+            width: auto;
+
+
+        }
+    </style>
+    <script>
+        let name = ""
+        let temp_html = ""
+        $(document).ready(function () {
+            renderGalleryItem()
+            renderCurrentWeather()
+            renderCurrentTime()
+            renderAdvice()
+        });
+        function renderGalleryItem() {
+            let url = `https://source.unsplash.com/collection/928423/`
+            fetch(url)
+                .then((response) => {
+                    $('#background').css('background-image', `url('${response.url}')`)
+                })
+        }
+        function renderCurrentWeather() {
+            let url = `https://goweather.herokuapp.com/weather/{seoul}`
+            fetch(url)
+                .then(res => res.json()).then((data) => {
+                    let temperature = data['temperature']
+                    temp_html = `${temperature}`
+                    $('#currentWeather').append(temp_html);
+                })
+
+        }
+        function renderCurrentTime() {
+            let url = `http://worldtimeapi.org/api/timezone/Asia/Seoul`
+            fetch(url)
+                .then(res => res.json()).then((data) => {
+                    let time = data['datetime'].substr(11, 5)
+                    temp_html = `${time}`
+                    $('#currentTime').append(temp_html);
+                })
+        }
+        function renderAdvice() {
+            let url = `https://api.adviceslip.com/advice`
+            fetch(url)
+                .then(res => res.json()).then((data) => {
+                    let advice = data['slip']['advice']
+                    temp_html = `${advice}`
+                    $('#advice').append(temp_html);
+                })
+
+        }
+    </script>
+</head>
+
+<body id='background'>
+    <div id="currentWeather" class="currentWeather">
+    </div>
+    <div class="main">
+        <div id="currentTime" class="currentTime">
+        </div>
+        <div class="greeting">
+            Hello, Jessy.
+        </div>
+        <div class="focusTitle">
+            What is your main focus for today?
+        </div>
+        <input type="text" class="form-control" placeholder="" aria-label="todayFocus">
+    </div>
+    <div id="advice" class="footer">
+    </div>
+
+</body>
+
+</html>
