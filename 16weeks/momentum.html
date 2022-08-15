@@ -77,6 +77,18 @@
         .todayFocus > input[type="checkbox"]{
             width: 23px;
             height: 23px;
+            display:none;
+        }
+        .todayFocus > i {
+            display:none;
+        }
+        .todayFocus:hover > i {
+            display:inline-block;
+
+        }
+        .todayFocus:hover > input[type="checkbox"] {
+            display:inline-block;
+            border-style: none;
         }
 
         .footer {
@@ -169,7 +181,7 @@
         }
         //현재 날씨
         function renderCurrentWeather() {
-            let url = `https://goweather.herokuapp.com/weather/{seoul}`
+            let url = `https://goweather.herokuapp.com/weather/{newyork}`
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let temperature = data['temperature']
@@ -204,7 +216,7 @@
             $("#todoIcon").click(function () {
                 $("#modal").fadeIn();
             })
-            $("#main,#currentWeather,#advice").click(function () {
+            $("#main,#advice,#currentWeather").click(function () {
                 $("#modal").fadeOut();
             })
         })
@@ -238,6 +250,7 @@
         <div class="todayFocus">
             <input type='checkbox'/>
             Publish Blog Post
+            <i class="bi bi-trash"></i>
         </div>
     </div>
     <!-- 실시간 조언 -->
@@ -260,7 +273,7 @@
         <!-- 입력한 해야할 일들 -->
         <div class="content">
             <ul id="lists">
-                    <li> <input type='checkbox'/> &nbsp baking cup cakes </li>
+                    <li> <input type='checkbox'/> &nbsp baking cup cakes &nbsp <i class="bi bi-trash"></i></li>
             </ul>
         </div>
     </div>
