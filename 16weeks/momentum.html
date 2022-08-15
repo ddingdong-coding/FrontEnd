@@ -74,6 +74,10 @@
             font-weight: 600;
 
         }
+        .todayFocus > input[type="checkbox"]{
+            width: 23px;
+            height: 23px;
+        }
 
         .footer {
             display: flex;
@@ -94,7 +98,7 @@
             height: 100px;
         }
 
-        .todoIcon > i {
+        .todoIcon>i {
             cursor: pointer;
         }
 
@@ -111,7 +115,7 @@
             background: rgba(255, 255, 255, 0.8);
         }
 
-        .modal > div,
+        .modal>div,
         h3,
         li {
             margin: 10px;
@@ -128,7 +132,7 @@
             color: black;
         }
 
-        .todoInput > i {
+        .todoInput>i {
             cursor: pointer;
             color: black;
         }
@@ -141,7 +145,12 @@
             border-top: 0px;
             border-left: 0px;
             background: transparent;
+
         }
+        ul {
+            list-style: none;
+        }
+    
     </style>
     <script>
         $(document).ready(function () {
@@ -192,17 +201,17 @@
         }
         //모달창
         $(function () {
-            $(".todoIcon").click(function () {
-                $(".modal").fadeIn();
+            $("#todoIcon").click(function () {
+                $("#modal").fadeIn();
             })
-            $(".content").click(function () {
-                $(".modal").fadeOut();
+            $("#main,#currentWeather,#advice").click(function () {
+                $("#modal").fadeOut();
             })
         })
         //모달창 - 해야할 일 입력 
         function doList() {
             let todo = $('#todoInput').val();
-            let temp_html = `<li>${todo}</li>`;
+            let temp_html = `<li><input type='checkbox'/> &nbsp ${todo}</li>`;
             $('#lists').append(temp_html);
 
         }
@@ -214,7 +223,7 @@
     <!-- 날씨 -->
     <div id="currentWeather" class="currentWeather">
     </div>
-    <div class="main">
+    <div class="main" id="main">
         <!-- 시간 -->
         <div id="currentTime" class="currentTime">
         </div>
@@ -227,6 +236,7 @@
             Today
         </div>
         <div class="todayFocus">
+            <input type='checkbox'/>
             Publish Blog Post
         </div>
     </div>
@@ -234,11 +244,11 @@
     <div id="advice" class="footer">
     </div>
     <!-- todo 아이콘 -->
-    <div class="todoIcon">
+    <div class="todoIcon" id="todoIcon">
         <i class="bi bi-plus-circle"></i>
     </div>
     <!-- 모달창 -->
-    <div class="modal">
+    <div class="modal" id="modal">
         <h3>
             To do lists
         </h3>
@@ -250,7 +260,7 @@
         <!-- 입력한 해야할 일들 -->
         <div class="content">
             <ul id="lists">
-                <li> baking cup cakes </li>
+                    <li> <input type='checkbox'/> &nbsp baking cup cakes </li>
             </ul>
         </div>
     </div>
