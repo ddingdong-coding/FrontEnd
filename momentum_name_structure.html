@@ -37,34 +37,6 @@
             color: white;
         }
 
-        .main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            min-height: 100vh;
-
-        }
-
-        .greeting {
-            padding-top: 0px;
-            font-size: 60px;
-        }
-
-        .name {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 30px;
-        }
-
-        .name > i {
-            cursor: pointer;
-        }
-
 
     </style>
     <script>
@@ -73,11 +45,7 @@
         });
         //배경 사진 함수
         function renderGalleryItem() {
-            let url = `https://source.unsplash.com/collection/928423/`
-            fetch(url)
-                .then((response) => {
-                    $('#background').css('background-image', `url('${response.url}')`)
-                })
+ 
         }
 
     </script>
@@ -87,12 +55,9 @@
     <div class="main">
         <!-- 인사 -->
         <div class="greeting">
-            Hello, what's your name?
         </div>
         <!-- 이름 입력창 -->
         <div class="name">
-            <input class="form-control" type="text">
-            <i class="bi bi-chevron-double-right"></i>
         </div>
     </div>
 
