@@ -141,7 +141,7 @@
         }
         //현재 시간
         function renderCurrentTime() {
-            let url = `http://worldtimeapi.org/api/timezone/Asia/Seoul`
+            let url = `http://worldtimeapi.org/api/timezone/Asia/seoul`
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let time = data['datetime'].substr(11, 5)
