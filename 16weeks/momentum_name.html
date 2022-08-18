@@ -61,7 +61,7 @@
             font-size: 30px;
         }
 
-        .name > i {
+        .name>i {
             cursor: pointer;
         }
 
@@ -71,10 +71,13 @@
             margin-right: 20px;
             font-size: 25px;
 
+            border: 3px solid white;
             border-right: 0px;
             border-top: 0px;
             border-left: 0px;
             background: transparent;
+
+            color: white;
         }
 
         .form-control:focus {
@@ -88,12 +91,13 @@
         });
         //배경 사진 함수
         function renderGalleryItem() {
-            let url = `https://source.unsplash.com/collection/928423/`
+            let url = 'http://www.splashbase.co/api/v1/images/random'
             fetch(url)
-                .then((response) => {
-                    $('#background').css('background-image', `url('${response.url}')`)
+                .then(res => res.json()).then((data) => {
+                    $('#background').css('background-image', `url('${data['url']}')`);
                 })
         }
+
 
     </script>
 </head>
@@ -107,7 +111,7 @@
         <!-- 이름 입력창 -->
         <div class="name">
             <input class="form-control" type="text">
-            <i class="bi bi-chevron-double-right"></i>
+            <a href="momentum_today_focus.html"> <i class="bi bi-chevron-double-right"></i> </a>
         </div>
     </div>
 

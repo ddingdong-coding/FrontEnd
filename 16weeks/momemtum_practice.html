@@ -36,6 +36,7 @@
             color: white;
         }
 
+
         .currentWeather {
             margin-left: auto;
 
@@ -50,7 +51,7 @@
             justify-content: center;
             align-items: center;
 
-            min-height: 75vh;
+            min-height: 80vh;
 
         }
 
@@ -60,35 +61,45 @@
         }
 
         .greeting {
+            padding-top: 0px;
             font-size: 60px;
         }
 
         .focusTitle {
             margin-top: 30px;
-            font-size: 20px;
+            font-size: 30px;
             font-weight: 700;
         }
 
-        .todayFocus {
+        .focusTodo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
             font-size: 30px;
-            font-weight: 600;
+        }
 
+        .focusTodo > i {
+            cursor: pointer;
         }
-        .todayFocus > input[type="checkbox"]{
-            width: 23px;
-            height: 23px;
-            display:none;
-        }
-        .todayFocus > i {
-            display:none;
-        }
-        .todayFocus:hover > i {
-            display:inline-block;
 
+        .form-control {
+            width: 800px;
+            height: 80px;
+            margin-right: 20px;
+            font-size: 25px;
+
+            border-right: 0px;
+            border-top: 0px;
+            border-left: 0px;
+			border-width: 3px;
+            background: transparent;
         }
-        .todayFocus:hover > input[type="checkbox"] {
-            display:inline-block;
-            border-style: none;
+
+        .form-control:focus {
+            background: transparent;
+
         }
 
         .footer {
@@ -99,59 +110,9 @@
 
             height: 58px;
             width: auto;
+
+
         }
-
-        .todoIcon {
-            margin-left: auto;
-            margin-right: 30px;
-
-            font-size: 35px;
-            width: 50px;
-            height: 100px;
-        }
-
-        .todoIcon>i {
-            cursor: pointer;
-        }
-
-        .modal {
-            position: absolute;
-            display: none;
-
-            width: 300px;
-            height: 300px;
-            top: 55vh;
-            left: 150vh;
-
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.8);
-        }
-
-        .modal>div,
-        h3,
-        li {
-            margin: 10px;
-            color: black;
-        }
-
-        .todoInput {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 20px;
-            color: black;
-        }
-
-        .todoInput > i {
-            cursor: pointer;
-            color: black;
-        }
-        ul {
-            list-style: none;
-        }
-    
     </style>
     <script>
         $(document).ready(function () {
@@ -170,18 +131,18 @@
         }
         //현재 날씨
         function renderCurrentWeather() {
-            let url = `https://goweather.herokuapp.com/weather/{busan}`
+            let url = `https://goweather.herokuapp.com/weather/{seoul}`
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let temperature = data['temperature']
-                    temp_html = `${temperature}`
+                    let temp_html = `${temperature}`
                     $('#currentWeather').append(temp_html);
                 })
 
         }
         //현재 시간
         function renderCurrentTime() {
-            let url = `http://worldtimeapi.org/api/timezone/Asia/Seoul`
+            let url = `http://worldtimeapi.org/api/timezone/Asia/seoul`
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let time = data['datetime'].substr(11, 5)
@@ -200,23 +161,6 @@
                 })
 
         }
-        //모달창
-        $(function () {
-            $("#todoIcon").click(function () {
-                $("#modal").fadeIn();
-            })
-            $("#main,#advice,#currentWeather").click(function () {
-                $("#modal").fadeOut();
-            })
-        })
-        //모달창 - 해야할 일 입력 
-        function doList() {
-            let todo = $('#todoInput').val();
-            let temp_html = `<li><input type='checkbox'/> &nbsp ${todo}</li>`;
-            $('#lists').append(temp_html);
-
-        }
-
     </script>
 </head>
 
@@ -224,7 +168,7 @@
     <!-- 날씨 -->
     <div id="currentWeather" class="currentWeather">
     </div>
-    <div class="main" id="main">
+    <div class="main">
         <!-- 시간 -->
         <div id="currentTime" class="currentTime">
         </div>
@@ -232,39 +176,17 @@
         <div class="greeting">
             Hello, Jessy.
         </div>
-        <!-- 오늘 중요 일정 -->
+        <!-- 오늘 중요 일정 입력-->
         <div class="focusTitle">
-            Today
+            What is your main focus for today?
         </div>
-        <div class="todayFocus">
-            <input type='checkbox'/>
-            Publish Blog Post
-            <i class="bi bi-trash"></i>
+        <div class="focusTodo">
+            <input type="text" class="form-control">
+            <i class="bi bi-chevron-double-right"></i>
         </div>
     </div>
     <!-- 실시간 조언 -->
     <div id="advice" class="footer">
-    </div>
-    <!-- todo 아이콘 -->
-    <div class="todoIcon" id="todoIcon">
-        <i class="bi bi-plus-circle"></i>
-    </div>
-    <!-- 모달창 -->
-    <div class="modal" id="modal">
-        <h3>
-            To do lists
-        </h3>
-        <!-- 모달 입력창 -->
-        <div class="todoInput">
-            <input class="form-control" type="text" id="todoInput">
-            <i onclick="doList()" class="bi bi-chevron-double-right"></i>
-        </div>
-        <!-- 입력한 해야할 일들 -->
-        <div class="content">
-            <ul id="lists">
-                    <li> <input type='checkbox'/> &nbsp baking cup cakes &nbsp <i class="bi bi-trash"></i></li>
-            </ul>
-        </div>
     </div>
 
 </body>
