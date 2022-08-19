@@ -32,16 +32,6 @@
             text-decoration: none;
         }
 
-        .name {
-            font-size: 12px;
-            color: gray;
-            margin-bottom: 5px;
-        }
-
-        .title {
-            font-size: 14px;
-        }
-
         .wrap {
             width: 600px;
             margin: 20px auto;
@@ -50,6 +40,37 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+        }
+
+        .story {
+            width: 400px;
+            height: 100px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 스토리안 이미지 중앙정렬 필요 함 */
+        .story div img {
+
+            background-image: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 5px;
+            margin-bottom: 5px;
+
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            margin-right: 10px;
+
+            border: 3px solid transparent;
+            background-image: linear-gradient(#fff, #fff), linear-gradient(to right, rgb(255, 0, 225) 0%, rgb(225, 19, 0) 50%, rgb(170, 0, 255) 100%);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+
         }
 
         .card-text {
@@ -67,6 +88,38 @@
             margin-top: 10px;
         }
 
+        .card {
+            width: 500px;
+            border: 0px;
+        }
+
+        .feed {
+            width: 500px;
+            height: 500px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+
+            /* background-size: 100% auto;
+            background-position: center top;
+            background-repeat: no-repeat; */
+
+            background-size: cover;
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        .bi-chevron-double-right {
+            font-size: 30px;
+            color:white;
+
+            margin-left: auto;
+            margin-right: 15px;
+        }
+
         .icons {
             display: flex;
             flex-direction: row;
@@ -78,26 +131,29 @@
         }
 
         .icons>.bi-suit-heart {
-            margin-right: 10px;
+            margin-right: 12px;
             color: crimson;
         }
-        .icons>.bi-suit-heart-fill{
-            margin-right: 10px;
-            color:crimson;
+
+        .icons>.bi-suit-heart-fill {
+            margin-right: 12px;
+            color: crimson;
 
         }
 
         .icons>.bi-chat {
-            margin-right: 10px;
+            margin-right: 12px;
         }
 
         .icons>.bi-send {
             margin-right: auto;
         }
-        .icons > .bi-bookmark{
+
+        .icons>.bi-bookmark {
             color: black;
         }
-        .icons > .bi-bookmark-fill{
+
+        .icons>.bi-bookmark-fill {
             color: black;
         }
 
@@ -108,7 +164,7 @@
         }
 
         .me {
-            width: 400px;
+            width: 500px;
 
             display: flex;
             flex-direction: row;
@@ -131,39 +187,79 @@
             font-size: 14px;
             font-weight: 500;
         }
-        .card {
-            width: 400px;
-        }
     </style>
-    <script>
-        var i = 0;
-        $('.bi-heart').on('click', function () {
-            if (i == 0) {
-                $(this).removeClass('bi-heart');
-                $(this).addClass('bi-heart-fill');
-                i++;
-            } else if (i == 1) {
-                $(this).removeClass('bi-heart-fill');
-                $(this).addClass('bi-heart');
-                i--;
-            }
-
-        });
-    </script>
 </head>
 
 <body>
     <div class="wrap">
-        <h1 class="name">SKUUKZKY</h1>
-        <p class="title">게시물</p>
+        <div class="story">
+            <div>
+                <img src="https://assets.repress.co.kr/photos/2009ea104d2c842fed5461308d9f92d7/original.jpg">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9vhh4jOhRRpmfX3VLp9BX4X9twRTglNzWEA&usqp=CAU">
+                <img
+                    src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/triple-chocolate-peanut-butter-layer-cake-2-06eee24.jpg">
+                <img src="https://m.upinews.kr/data/upi/image/20190801/p1065587135389886_992_thum.PNG">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynn6G3hTh67SzM-lBXO2h5AwkWAkJO5spJA&usqp=CAU">
+            </div>
+        </div>
         <div class="me">
             <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
             <span>SKUUKZKY</span>
             <i class="bi bi-three-dots"></i>
         </div>
         <div class="card">
-            <img src="http://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2021/10/18/a706569b-e8db-4c05-bbd1-2c48a53a0f2f.jpg"
+            <img id="fristFeed"
+                src="http://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2021/10/18/a706569b-e8db-4c05-bbd1-2c48a53a0f2f.jpg"
                 class="card-img-top" alt="...">
+            <div class="card-body">
+                <div class="icons">
+                    <i class="bi bi-suit-heart "></i>
+                    <i class="bi bi-chat"></i>
+                    <i class="bi bi-send"></i>
+                    <i class="bi bi-bookmark"></i>
+                </div>
+                <p class="card-text">1500명이 좋아합니다</p>
+                <p class="user">SKUUKZKY</p>
+                <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
+                    aria-label=".form-control-sm example">
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="me">
+            <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
+            <span>SKUUKZKY</span>
+            <i class="bi bi-three-dots"></i>
+        </div>
+        <div class="card">
+            <div id="firstFeed">
+            </div>
+            <div class="card-body">
+                <div class="icons">
+                    <i class="bi bi-suit-heart "></i>
+                    <i class="bi bi-chat"></i>
+                    <i class="bi bi-send"></i>
+                    <i class="bi bi-bookmark"></i>
+                </div>
+                <p class="card-text">1500명이 좋아합니다</p>
+                <p class="user">SKUUKZKY</p>
+                <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
+                    aria-label=".form-control-sm example">
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="me">
+            <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
+            <span>SKUUKZKY</span>
+            <i class="bi bi-three-dots"></i>
+        </div>
+        <div class="card">
+            <div class="feed" id="secondFeed">
+                <i class="bi bi-chevron-double-right"></i>
+            </div>
             <div class="card-body">
                 <div class="icons">
                     <i class="bi bi-suit-heart "></i>
@@ -181,31 +277,66 @@
 </body>
 <script>
     var i = 0;
-    $('.bi-suit-heart').on('click',function(){
-        if(i==0){
+    $('.bi-suit-heart').on('click', function () {
+        if (i == 0) {
             $(this).removeClass('bi-suit-heart');
             $(this).addClass('bi-suit-heart-fill');
             i++;
-        }else if(i==1){
+        } else if (i == 1) {
             $(this).removeClass('bi-suit-heart-fill');
             $(this).addClass(' bi-suit-heart');
             i--;
         }
-        
+
     });
-    $('.bi-bookmark').on('click',function(){
-        if(i==0){
+    $('.bi-bookmark').on('click', function () {
+        if (i == 0) {
             $(this).removeClass('bi-bookmark');
             $(this).addClass('bi-bookmark-fill');
             i++;
-        }else if(i==1){
+        } else if (i == 1) {
             $(this).removeClass('bi-bookmark-fill');
             $(this).addClass('bi-bookmark');
             i--;
         }
-        
-    });
 
+    });
+    $(document).ready(function () {
+        fistFeed()
+        secondFeed()
+    });
+    //first feed
+    function fistFeed() {
+        let url = 'https://picsum.photos/v2/list'
+        fetch(url)
+            .then(res => res.json()).then((data) => {
+                let img = data[10]['download_url']
+                let temp_html = `<img width="500" height ="500" src="${img}">`
+                $('#firstFeed').append(temp_html)
+            })
+    }
+    function secondFeed() {
+        let url = 'https://picsum.photos/v2/list'
+        let j = 2;
+        fetch(url)
+            .then(res => res.json()).then((data) => {
+                let img = data[j]['download_url']
+                $('#secondFeed').css('background-image', `url('${img}')`);
+                $('.bi-chevron-double-right').on('click', function () {
+                    console.log(1)
+                    j++
+                    for (let i = 3; i < 8; i++) {
+                        console.log(2)
+                        if (i == j) {
+                            let img = data[j]['download_url']
+                            $('#secondFeed').css('background-image', `url('${img}')`);
+
+                        }
+                    }
+                });
+
+            })
+    }
 </script>
 
 </html>
