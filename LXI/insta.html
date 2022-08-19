@@ -32,6 +32,16 @@
             text-decoration: none;
         }
 
+        .contents {
+            width: 600px;
+            margin: 20px auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         .wrap {
             width: 600px;
             margin: 20px auto;
@@ -43,13 +53,16 @@
         }
 
         .story {
-            width: 400px;
-            height: 100px;
+            width: 500px;
+            /* height: 70px; */
 
             display: flex;
             flex-direction: row;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+
+            position: relative;
+            overflow: hidden;
         }
 
         /* 스토리안 이미지 중앙정렬 필요 함 */
@@ -61,8 +74,8 @@
             margin-top: 5px;
             margin-bottom: 5px;
 
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 100%;
             margin-right: 10px;
 
@@ -99,26 +112,24 @@
 
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-
-
-            /* background-size: 100% auto;
-            background-position: center top;
-            background-repeat: no-repeat; */
+            flex-direction: row-reverse;
 
             background-size: cover;
             max-height: 100%;
             max-width: 100%;
         }
 
-        .bi-chevron-double-right {
+        .bi-chevron-double-right,
+        .bi-chevron-double-left {
             font-size: 30px;
-            color:white;
+            color: white;
 
-            margin-left: auto;
             margin-right: 15px;
+            margin-left: 15px;
         }
+
 
         .icons {
             display: flex;
@@ -191,7 +202,7 @@
 </head>
 
 <body>
-    <div class="wrap">
+    <div class="contents">
         <div class="story">
             <div>
                 <img src="https://assets.repress.co.kr/photos/2009ea104d2c842fed5461308d9f92d7/original.jpg">
@@ -202,78 +213,86 @@
                 <img src="https://m.upinews.kr/data/upi/image/20190801/p1065587135389886_992_thum.PNG">
                 <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynn6G3hTh67SzM-lBXO2h5AwkWAkJO5spJA&usqp=CAU">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynn6G3hTh67SzM-lBXO2h5AwkWAkJO5spJA&usqp=CAU">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynn6G3hTh67SzM-lBXO2h5AwkWAkJO5spJA&usqp=CAU">
             </div>
         </div>
-        <div class="me">
-            <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
-            <span>SKUUKZKY</span>
-            <i class="bi bi-three-dots"></i>
-        </div>
-        <div class="card">
-            <img id="fristFeed"
-                src="http://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2021/10/18/a706569b-e8db-4c05-bbd1-2c48a53a0f2f.jpg"
-                class="card-img-top" alt="...">
-            <div class="card-body">
-                <div class="icons">
-                    <i class="bi bi-suit-heart "></i>
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-send"></i>
-                    <i class="bi bi-bookmark"></i>
+        <div class="wrap">
+            <div class="me">
+                <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
+                <span>SKUUKZKY</span>
+                <i class="bi bi-three-dots"></i>
+            </div>
+            <div class="card">
+                <img id="fristFeed"
+                    src="http://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2021/10/18/a706569b-e8db-4c05-bbd1-2c48a53a0f2f.jpg"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="icons">
+                        <i class="bi bi-suit-heart "></i>
+                        <i class="bi bi-chat"></i>
+                        <i class="bi bi-send"></i>
+                        <i class="bi bi-bookmark"></i>
+                    </div>
+                    <p class="card-text">1500명이 좋아합니다</p>
+                    <p class="user">SKUUKZKY</p>
+                    <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
+                        aria-label=".form-control-sm example">
                 </div>
-                <p class="card-text">1500명이 좋아합니다</p>
-                <p class="user">SKUUKZKY</p>
-                <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
-                    aria-label=".form-control-sm example">
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="me">
+                <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
+                <span>SKUUKZKY</span>
+                <i class="bi bi-three-dots"></i>
+            </div>
+            <div class="card">
+                <div id="firstFeed">
+                </div>
+                <div class="card-body">
+                    <div class="icons">
+                        <i class="bi bi-suit-heart "></i>
+                        <i class="bi bi-chat"></i>
+                        <i class="bi bi-send"></i>
+                        <i class="bi bi-bookmark"></i>
+                    </div>
+                    <p class="card-text">1500명이 좋아합니다</p>
+                    <p class="user">SKUUKZKY</p>
+                    <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
+                        aria-label=".form-control-sm example">
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="me">
+                <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
+                <span>SKUUKZKY</span>
+                <i class="bi bi-three-dots"></i>
+            </div>
+            <div class="card">
+                <div class="feed" id="secondFeed">
+                    <i class="bi bi-chevron-double-right"></i>
+                    <i class="bi bi-chevron-double-left"></i>
+                </div>
+                <div class="card-body">
+                    <div class="icons">
+                        <i class="bi bi-suit-heart "></i>
+                        <i class="bi bi-chat"></i>
+                        <i class="bi bi-send"></i>
+                        <i class="bi bi-bookmark"></i>
+                    </div>
+                    <p class="card-text">1500명이 좋아합니다</p>
+                    <p class="user">SKUUKZKY</p>
+                    <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
+                        aria-label=".form-control-sm example">
+                </div>
             </div>
         </div>
     </div>
-    <div class="wrap">
-        <div class="me">
-            <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
-            <span>SKUUKZKY</span>
-            <i class="bi bi-three-dots"></i>
-        </div>
-        <div class="card">
-            <div id="firstFeed">
-            </div>
-            <div class="card-body">
-                <div class="icons">
-                    <i class="bi bi-suit-heart "></i>
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-send"></i>
-                    <i class="bi bi-bookmark"></i>
-                </div>
-                <p class="card-text">1500명이 좋아합니다</p>
-                <p class="user">SKUUKZKY</p>
-                <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
-                    aria-label=".form-control-sm example">
-            </div>
-        </div>
-    </div>
-    <div class="wrap">
-        <div class="me">
-            <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
-            <span>SKUUKZKY</span>
-            <i class="bi bi-three-dots"></i>
-        </div>
-        <div class="card">
-            <div class="feed" id="secondFeed">
-                <i class="bi bi-chevron-double-right"></i>
-            </div>
-            <div class="card-body">
-                <div class="icons">
-                    <i class="bi bi-suit-heart "></i>
-                    <i class="bi bi-chat"></i>
-                    <i class="bi bi-send"></i>
-                    <i class="bi bi-bookmark"></i>
-                </div>
-                <p class="card-text">1500명이 좋아합니다</p>
-                <p class="user">SKUUKZKY</p>
-                <input class="form-control form-control-sm" type="text" placeholder="...댓글달기"
-                    aria-label=".form-control-sm example">
-            </div>
-        </div>
-    </div>
+
 </body>
 <script>
     var i = 0;
@@ -322,11 +341,10 @@
             .then(res => res.json()).then((data) => {
                 let img = data[j]['download_url']
                 $('#secondFeed').css('background-image', `url('${img}')`);
+
                 $('.bi-chevron-double-right').on('click', function () {
-                    console.log(1)
                     j++
                     for (let i = 3; i < 8; i++) {
-                        console.log(2)
                         if (i == j) {
                             let img = data[j]['download_url']
                             $('#secondFeed').css('background-image', `url('${img}')`);
@@ -334,7 +352,17 @@
                         }
                     }
                 });
+                $('.bi-chevron-double-left').on('click', function () {
+                    j--
+                    console.log("j", j)
+                    for (let i = j; i > 4; i--) {
+                        if (i == j) {
+                            let img = data[j]['download_url']
+                            $('#secondFeed').css('background-image', `url('${img}')`);
 
+                        }
+                    }
+                });
             })
     }
 </script>
