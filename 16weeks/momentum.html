@@ -65,6 +65,7 @@
 
         .focusTitle {
             margin-top: 30px;
+
             font-size: 20px;
             font-weight: 700;
         }
@@ -74,20 +75,24 @@
             font-weight: 600;
 
         }
-        .todayFocus > input[type="checkbox"]{
+
+        .todayFocus>input[type="checkbox"] {
             width: 23px;
             height: 23px;
-            display:none;
+            display: none;
         }
-        .todayFocus > i {
-            display:none;
+
+        .todayFocus>i {
+            display: none;
         }
-        .todayFocus:hover > i {
-            display:inline-block;
+
+        .todayFocus:hover>i {
+            display: inline-block;
 
         }
-        .todayFocus:hover > input[type="checkbox"] {
-            display:inline-block;
+
+        .todayFocus:hover>input[type="checkbox"] {
+            display: inline-block;
             border-style: none;
         }
 
@@ -127,9 +132,7 @@
             background: rgba(255, 255, 255, 0.8);
         }
 
-        .modal>div,
-        h3,
-        li {
+        .modal>div,h3,li {
             margin: 10px;
             color: black;
         }
@@ -144,14 +147,31 @@
             color: black;
         }
 
-        .todoInput > i {
+        .todoInput>i {
+            margin-left: 5px;
             cursor: pointer;
             color: black;
         }
+
         ul {
             list-style: none;
         }
-    
+
+        li > input[type="checkbox"] {
+            display: none;
+        }
+
+        li > i {
+            display: none;
+        }
+
+        li:hover > i {
+            display: inline-block;
+        }
+
+        li:hover > input[type="checkbox"] {
+            display: inline-block;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -162,10 +182,10 @@
         });
         //배경화면
         function renderGalleryItem() {
-            let url = `https://source.unsplash.com/collection/928423/`
+            let url = 'http://www.splashbase.co/api/v1/images/random'
             fetch(url)
-                .then((response) => {
-                    $('#background').css('background-image', `url('${response.url}')`)
+                .then(res => res.json()).then((data) => {
+                    $('#background').css('background-image', `url('${data['url']}')`);
                 })
         }
         //현재 날씨
@@ -237,7 +257,7 @@
             Today
         </div>
         <div class="todayFocus">
-            <input type='checkbox'/>
+            <input type='checkbox' />
             Publish Blog Post
             <i class="bi bi-trash"></i>
         </div>
@@ -262,7 +282,7 @@
         <!-- 입력한 해야할 일들 -->
         <div class="content">
             <ul id="lists">
-                    <li> <input type='checkbox'/> &nbsp baking cup cakes &nbsp <i class="bi bi-trash"></i></li>
+                <li> <input type='checkbox' /> &nbsp baking cup cakes &nbsp <i class="bi bi-trash"></i></li>
             </ul>
         </div>
     </div>
