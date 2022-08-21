@@ -363,7 +363,7 @@
                     <span class="caption">
                         New series but it is not that
                     </span>
-                    <a class="btn-more" onclick="openArticle()">Read more</a>
+                    <a class="btn-more">Read more</a>
                     <ul id="comment">
                     </ul>
                     <div class="comment">
@@ -397,7 +397,7 @@
                     <span class="caption">
                         actually, I am not the
                     </span>
-                    <a class="btn-more" onclick="openArticle()">Read more</a>
+                    <a class="btn-more">Read more</a>
                     <ul id="comment">
                     </ul>
                     <div class="comment">
@@ -447,7 +447,7 @@
                     <span class="caption">
                         such a nice day!
                     </span>
-                    <a class="btn-more" onclick="openArticle()">Read more</a>
+                    <a class="btn-more">Read more</a>
                     <ul id="comment">
                     </ul>
                     <div class="comment">
@@ -464,13 +464,8 @@
 </body>
 <script>
     $(document).ready(function () {
-        firstFeed()
-        secondFeed()
         renderStory()
-        openArticle()
     });
-
-//
     var i = 0;
     $('.bi-suit-heart').on('click', function () {
         if (i == 0) {
@@ -496,8 +491,6 @@
         }
 
     });
-
-
     // 입력한 댓글 보여주는 함수 
     function postComment() {
         let comment = $("#commentInput").val();
