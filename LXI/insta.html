@@ -57,7 +57,7 @@
         /* 스토리 */
         .story {
             width: 500px;
-            height: 100px;
+            height: 120px;
             margin-top: 40px;
 
             display: flex;
@@ -77,8 +77,8 @@
         .story div img {
             justify-content: space-between;
 
-            width: 55px;
-            height: 55px;
+            width: 70px;
+            height: 70px;
 
             border-radius: 100%;
             margin-right: 10px;
@@ -94,6 +94,15 @@
             background-origin: border-box;
             background-clip: content-box, border-box;
 
+        }
+
+        .story>div {
+            font-size: 8px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         /* 전체 피드 div */
@@ -250,17 +259,32 @@
         .caption {
             display: inline-block;
             width: 30px;
-            height: 20px;
+
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             vertical-align: top;
             background-color: yellow;
         }
+        .caption.more {
+            font-size: 100px;
+        }
+        /* .feedCaption .caption {
+            display: inline-block;
+            width: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: top;
+        } */
 
         .caption .caption.more {
             display: inline;
             white-space: normal;
+        }
+
+        .feedCaption a {
+            font-size: 5px;
         }
 
         /* 댓글 */
@@ -269,11 +293,15 @@
             font-weight: normal;
             margin-top: 10px;
         }
+
         ul {
             list-style: none;
             padding-left: 0px;
         }
     </style>
+    <script>
+
+    </script>
 </head>
 
 <body>
@@ -284,21 +312,7 @@
         </div>
     </div>
     <div class="wrap">
-        <div class="story">
-            <div>
-                <img src="https://assets.repress.co.kr/photos/2009ea104d2c842fed5461308d9f92d7/original.jpg">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9vhh4jOhRRpmfX3VLp9BX4X9twRTglNzWEA&usqp=CAU">
-                <img
-                    src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/triple-chocolate-peanut-butter-layer-cake-2-06eee24.jpg">
-                <img src="https://m.upinews.kr/data/upi/image/20190801/p1065587135389886_992_thum.PNG">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynn6G3hTh67SzM-lBXO2h5AwkWAkJO5spJA&usqp=CAU">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynn6G3hTh67SzM-lBXO2h5AwkWAkJO5spJA&usqp=CAU">
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTynn6G3hTh67SzM-lBXO2h5AwkWAkJO5spJA&usqp=CAU">
-            </div>
+        <div class="story" id="story">
         </div>
         <div class="content">
             <div class="feedUser">
@@ -321,11 +335,12 @@
                     <span class="caption">
                         New series but it is not that
                     </span>
+                    <!-- <a href="#" class="btn-more">더보기</a> -->
                     <ul id="comment">
 
                     </ul>
                     <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="...댓글달기"
-                        aria-label=".form-control-sm example" onkeyup="comment()">
+                        aria-label=".form-control-sm example" onkeyup=" postComment()">
                 </div>
             </div>
         </div>
@@ -354,7 +369,7 @@
 
                     </ul>
                     <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="...댓글달기"
-                        aria-label=".form-control-sm example" onkeyup="comment()">
+                        aria-label=".form-control-sm example">
                 </div>
             </div>
         </div>
@@ -386,7 +401,7 @@
 
                     </ul>
                     <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="...댓글달기"
-                        aria-label=".form-control-sm example" onkeyup="comment()">
+                        aria-label=".form-control-sm example">
                 </div>
             </div>
         </div>
@@ -394,6 +409,11 @@
 
 </body>
 <script>
+    $(document).ready(function () {
+        fistFeed()
+        secondFeed()
+        renderStory()
+    });
     var i = 0;
     $('.bi-suit-heart').on('click', function () {
         if (i == 0) {
@@ -419,10 +439,7 @@
         }
 
     });
-    $(document).ready(function () {
-        fistFeed()
-        secondFeed()
-    });
+
     //first feed
     function fistFeed() {
         let url = 'https://picsum.photos/v2/list'
@@ -464,15 +481,42 @@
                 });
             })
     }
-
-    function comment(){
-        if (window.event.keyCode == 13) {
-    	// 엔터키가 눌렸을 때
+    // 입력한 댓글 보여주는 함수 
+    function postComment() {
         let comment = $("#commentInput").val();
-        let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
-        $('#comment').append(temp_html)
-    }
+        if (window.event.keyCode == 13) {
+            let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
+            $('#comment').append(temp_html)
+        }
 
+
+    }
+    //스토리 사진 받아 오는 함수 
+    function renderStory() {
+        console.log(1)
+        fetch("https://picsum.photos/v2/list")
+            .then(res => res.json()).then((data) => {
+                for (let i = 0; i < 7; i++) {
+                    let user = data[i]['author']
+                    if (user.length > 9) {
+                        user = user.substr(0, 8) + "..."
+                    }
+                    let img = data[i]['download_url']
+                    let temp_html = `<div><img src="${img}">${user}</div>`
+                    $('#story').append(temp_html);
+
+                }
+
+            })
+
+    }
+    function caption (){
+        $('.caption')({
+            blockCSS:'display:block,width: 100px;',
+            collapsedHeight:2,
+            moreLink: '<a href="#" class="more">더보기</a>',
+
+        })
     }
 </script>
 
