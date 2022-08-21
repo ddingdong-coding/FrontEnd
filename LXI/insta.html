@@ -296,7 +296,7 @@
 
         .comment>i {
             margin-top: 9px;
-            margin-right:10px
+            margin-right: 10px
         }
 
         .card-body div>button {
@@ -327,9 +327,9 @@
             <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlpev0yAyZdqM4sjJA7yoL_r_SpHKuWoOcg&usqp=CAU">
         </div>
-        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Search"
+        <input class="form-control form-control-sm" id="searchInput" type="text" placeholder="Search"
             onfocus="this.placeholder=''" onblur="this.placeholder='Search'" name="search"
-            aria-label=".form-control-sm example">
+            aria-label=".form-control-sm example" onkeypress="search()">
         <div>
             <i class="bi bi-house-door-fill"></i>
             <i class="bi bi-cursor"></i>
@@ -341,6 +341,7 @@
     <div class="wrap">
         <div class="story" id="story">
         </div>
+        <!-- 첫번째 피드 -->
         <div class="content">
             <div class="feedUser">
                 <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
@@ -364,17 +365,18 @@
                         New series but it is not that
                     </span>
                     <a class="btn-more">Read more</a>
-                    <ul id="comment">
+                    <ul id="firstComment">
                     </ul>
                     <div class="comment">
                         <i class="bi bi-emoji-smile"></i>
-                        <input class="form-control form-control-sm" id="commentInput" type="text"
+                        <input class="form-control form-control-sm" id="commentFirstInput" type="text"
                             placeholder="Add a comment" aria-label=".form-control-sm example">
-                        <button onclick="postComment()">Post</button>
+                        <button onclick="postFirstComment()">Post</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 두번째 피드 -->
         <div class="content">
             <div class="feedUser">
                 <img
@@ -398,20 +400,22 @@
                         actually, I am not the
                     </span>
                     <a class="btn-more">Read more</a>
-                    <ul id="comment">
+                    <ul id="secondComment">
                     </ul>
                     <div class="comment">
                         <i class="bi bi-emoji-smile"></i>
-                        <input class="form-control form-control-sm" id="commentInput" type="text"
+                        <input class="form-control form-control-sm" id="commentSecondInput" type="text"
                             placeholder="Add a comment" aria-label=".form-control-sm example">
-                        <button onclick="postComment()">Post</button>
+                        <button onclick="postSecondComment()">Post</button>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 세번째 피드  -->
         <div class="content">
             <div class="feedUser">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB6b0jq_vIKDO7RKISVCkX9kqbIZukFUNEtw&usqp=CAU">
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB6b0jq_vIKDO7RKISVCkX9kqbIZukFUNEtw&usqp=CAU">
                 <span>maison.saisons</span>
                 <i class="bi bi-three-dots"></i>
             </div>
@@ -419,13 +423,11 @@
                 <div id="slideShow">
                     <div class="slides">
                         <img src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805117210.jpg"
-                                alt="">
-                        <img
-                                src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805315040.jpg"
-                                alt="">
-                        <img
-                                src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805350280.jpg"
-                                alt="">
+                            alt="">
+                        <img src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805315040.jpg"
+                            alt="">
+                        <img src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805350280.jpg"
+                            alt="">
                     </div>
                     <p class="controller">
                         <!-- &lang: 왼쪽 방향 화살표
@@ -448,13 +450,13 @@
                         such a nice day!
                     </span>
                     <a class="btn-more">Read more</a>
-                    <ul id="comment">
+                    <ul id="thirdComment">
                     </ul>
                     <div class="comment">
                         <i class="bi bi-emoji-smile"></i>
-                        <input class="form-control form-control-sm" id="commentInput" type="text"
+                        <input class="form-control form-control-sm" id="commentThirdInput" type="text"
                             placeholder="Add a comment" aria-label=".form-control-sm example">
-                        <button onclick="postComment()">Post</button>
+                        <button onclick="postThirdComment()">Post</button>
                     </div>
                 </div>
             </div>
@@ -491,11 +493,35 @@
         }
 
     });
+    //검색 기능 
+    function search() {
+        let searchWord = $("#searchInput").val();
+        let link = `https://www.instagram.com/explore/tags/${searchWord}`
+        if(window.event.keyCode==13){
+            location.href=link;
+        }
+
+    }
     // 입력한 댓글 보여주는 함수 
-    function postComment() {
-        let comment = $("#commentInput").val();
+    //첫번째 피드 
+    function postFirstComment() {
+        let comment = $("#commentFirstInput").val();
         let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
-        $('#comment').append(temp_html)
+        $('#firstComment').append(temp_html)
+
+    }
+    //두번째 피드 
+    function postSecondComment() {
+        let comment = $("#commentSecondInput").val();
+        let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
+        $('#secondComment').append(temp_html)
+
+    }
+    //세번째 피드 
+    function postThirdComment() {
+        let comment = $("#commentThirdInput").val();
+        let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
+        $('#thirdComment').append(temp_html)
 
     }
     //스토리 사진 받아 오는 함수 
@@ -516,6 +542,7 @@
             })
 
     }
+    
 
 </script>
 
