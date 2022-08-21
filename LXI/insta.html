@@ -12,6 +12,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <script src="/node_modules/readmore-js/readmore.min.js"></script>
+    <script src="readmore.min.js"></script>
     <title> LXI - INSTAGRAM </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -264,27 +266,28 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             vertical-align: top;
-            background-color: yellow;
-        }
-        .caption.more {
-            font-size: 100px;
-        }
-        /* .feedCaption .caption {
-            display: inline-block;
-            width: 5px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            vertical-align: top;
-        } */
-
-        .caption .caption.more {
-            display: inline;
-            white-space: normal;
         }
 
         .feedCaption a {
             font-size: 5px;
+        }
+
+        .btn-more {
+            display: inline;
+            cursor: pointer;
+            color: #777;
+            margin-left: 3px;
+        }
+
+        .btn-more.open {
+            display: none;
+        }
+
+        .captipn.open {
+            width: 300px;
+            text-overflow: '';
+            overflow: visible;
+            white-space: normal;
         }
 
         /* 댓글 */
@@ -335,7 +338,7 @@
                     <span class="caption">
                         New series but it is not that
                     </span>
-                    <!-- <a href="#" class="btn-more">더보기</a> -->
+                    <a class="btn-more" onclick="openArticle()">더보기</a>
                     <ul id="comment">
 
                     </ul>
@@ -365,6 +368,7 @@
                     <span class="caption">
                         아하하하하 호호호
                     </span>
+                    <a class="btn-more" onclick="openArticle()">더보기</a>
                     <ul id="comment">
 
                     </ul>
@@ -393,10 +397,10 @@
                     </div>
                     <p class="card-text">1500명이 좋아합니다</p>
                     <span class="user">SKUUKZKY</span>
-                    <span class="caption">
+                    <span class="caption open">
                         무슨 내용을 쓰면 좋을까
                     </span>
-                    <a href="#" class="btn-more">더보기</a>
+                    <a class="btn-more" onclick="openArticle()">더보기</a>
                     <ul id="comment">
 
                     </ul>
@@ -410,9 +414,10 @@
 </body>
 <script>
     $(document).ready(function () {
-        fistFeed()
+        firstFeed()
         secondFeed()
         renderStory()
+        openArticle()
     });
     var i = 0;
     $('.bi-suit-heart').on('click', function () {
@@ -441,7 +446,7 @@
     });
 
     //first feed
-    function fistFeed() {
+    function firstFeed() {
         let url = 'https://picsum.photos/v2/list'
         fetch(url)
             .then(res => res.json()).then((data) => {
@@ -510,14 +515,18 @@
             })
 
     }
-    function caption (){
-        $('.caption')({
-            blockCSS:'display:block,width: 100px;',
-            collapsedHeight:2,
-            moreLink: '<a href="#" class="more">더보기</a>',
-
-        })
+    //opening an article with more button
+    function openArticle() {
+        const article = document.getElementById('caption')
+        article.classList.add('open')
+        moreArticleBtn.classList.add('open')
     }
+
+    //more button event listener
+    moreArticleBtn.addEventListener('click', openArticle)
+
+
 </script>
+
 
 </html>
