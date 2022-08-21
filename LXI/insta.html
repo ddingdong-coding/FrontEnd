@@ -13,7 +13,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="/node_modules/readmore-js/readmore.min.js"></script>
-    <script src="readmore.min.js"></script>
+    <link rel="stylesheet" href="CSS/slides.css">
     <title> LXI - INSTAGRAM </title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -48,10 +48,11 @@
 
         .gnb div img {
             width: 120px;
-            margin-right:150px;
+            margin-right: 150px;
 
         }
-        .gnb >input {
+
+        .gnb>input {
             width: 300px;
             height: 40px;
             margin-right: 20px;
@@ -204,31 +205,6 @@
             /* background-position: center; */
         }
 
-        /* 세번째 피드 이미지 css - 수정 필요! */
-        .feed {
-            width: 500px;
-            height: 500px;
-
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            flex-direction: row-reverse;
-
-            background-size: cover;
-            max-height: 100%;
-            max-width: 100%;
-        }
-
-        .bi-chevron-double-right,
-        .bi-chevron-double-left {
-            font-size: 30px;
-            color: white;
-
-            margin-right: 15px;
-            margin-left: 15px;
-        }
-
         /* 아이콘들 css */
         .card-body>div {
             display: flex;
@@ -267,7 +243,6 @@
             color: black;
         }
 
-        /* ~~명이 좋아합니다 - 영어로 수정할 것! */
         .card-text {
             font-size: 14px;
             font-weight: 500;
@@ -313,20 +288,23 @@
         }
 
         /* 댓글 */
-        .card-body div > input {
+        .card-body div>input {
             border: none;
             font-weight: normal;
             margin-top: 10px;
         }
-        .comment > i {
-            margin-top:9px;
+
+        .comment>i {
+            margin-top: 9px;
+            margin-right:10px
         }
-        .card-body div > button {
+
+        .card-body div>button {
             font-size: 15px;
             color: rgb(136, 136, 220);
 
-            margin-top:9px;
-            padding:8px;
+            margin-top: 9px;
+            padding: 8px;
 
             background-color: transparent;
             border: 0;
@@ -349,8 +327,9 @@
             <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlpev0yAyZdqM4sjJA7yoL_r_SpHKuWoOcg&usqp=CAU">
         </div>
-        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Search" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" name="search"
-        aria-label=".form-control-sm example">
+        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Search"
+            onfocus="this.placeholder=''" onblur="this.placeholder='Search'" name="search"
+            aria-label=".form-control-sm example">
         <div>
             <i class="bi bi-house-door-fill"></i>
             <i class="bi bi-cursor"></i>
@@ -378,7 +357,7 @@
                         <i class="bi bi-send"></i>
                         <i class="bi bi-bookmark"></i>
                     </div>
-                    
+
                     <p class="card-text">544 likes</p>
                     <span class="user">AMILY_99</span>
                     <span class="caption">
@@ -389,8 +368,8 @@
                     </ul>
                     <div class="comment">
                         <i class="bi bi-emoji-smile"></i>
-                        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Add a comment"
-                        aria-label=".form-control-sm example">
+                        <input class="form-control form-control-sm" id="commentInput" type="text"
+                            placeholder="Add a comment" aria-label=".form-control-sm example">
                         <button onclick="postComment()">post</button>
                     </div>
                 </div>
@@ -398,13 +377,14 @@
         </div>
         <div class="content">
             <div class="feedUser">
-                <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
-                <span>green_teria</span>
+                <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQheTU3WJeKEHtPfoMq73mRMP6UHmxg6qdC0w&usqp=CAU">
+                <span>Messy_teria</span>
                 <i class="bi bi-three-dots"></i>
             </div>
             <div class="card">
-                <div id="firstFeed">
-                </div>
+                <img src="https://phantom-marca.unidadeditorial.es/91b17d9b58d4e32dab8f04dee6bd7cd6/resize/1320/f/jpg/assets/multimedia/imagenes/2022/02/08/16443093703854.jpg"
+                    class="card-img-top" alt="...">
                 <div class="card-body">
                     <div class="icons">
                         <i class="bi bi-suit-heart "></i>
@@ -415,15 +395,15 @@
                     <p class="card-text">67 likes</p>
                     <span class="user">green_teria</span>
                     <span class="caption">
-                        actually, I am not the 
+                        actually, I am not the
                     </span>
                     <a class="btn-more" onclick="openArticle()">Read more</a>
                     <ul id="comment">
                     </ul>
                     <div class="comment">
                         <i class="bi bi-emoji-smile"></i>
-                        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Add a comment"
-                        aria-label=".form-control-sm example">
+                        <input class="form-control form-control-sm" id="commentInput" type="text"
+                            placeholder="Add a comment" aria-label=".form-control-sm example">
                         <button onclick="postComment()">post</button>
                     </div>
                 </div>
@@ -436,10 +416,25 @@
                 <i class="bi bi-three-dots"></i>
             </div>
             <div class="card">
-                <div class="feed" id="secondFeed">
-                    <i class="bi bi-chevron-double-right"></i>
-                    <i class="bi bi-chevron-double-left"></i>
+                <div id="slideShow">
+                    <div class="slides">
+                        <img src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805117210.jpg"
+                                alt="">
+                        <img
+                                src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805315040.jpg"
+                                alt="">
+                        <img
+                                src="http://tnnews.co.kr/wp-content/uploads/2020/06/KakaoTalk_20200626_1805350280.jpg"
+                                alt="">
+                    </div>
+                    <p class="controller">
+                        <!-- &lang: 왼쪽 방향 화살표
+                      &rang: 오른쪽 방향 화살표 -->
+                        <span class="prev">&lang;</span>
+                        <span class="next">&rang;</span>
+                    </p>
                 </div>
+                <script src="JS/slideShow.js"></script>
                 <div class="card-body">
                     <div>
                         <i class="bi bi-suit-heart "></i>
@@ -457,8 +452,8 @@
                     </ul>
                     <div class="comment">
                         <i class="bi bi-emoji-smile"></i>
-                        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Add a comment"
-                        aria-label=".form-control-sm example">
+                        <input class="form-control form-control-sm" id="commentInput" type="text"
+                            placeholder="Add a comment" aria-label=".form-control-sm example">
                         <button onclick="postComment()">post</button>
                     </div>
                 </div>
@@ -544,8 +539,8 @@
     // 입력한 댓글 보여주는 함수 
     function postComment() {
         let comment = $("#commentInput").val();
-            let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
-            $('#comment').append(temp_html)
+        let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
+        $('#comment').append(temp_html)
 
     }
     //스토리 사진 받아 오는 함수 
@@ -569,13 +564,13 @@
     //opening an article with more button
     function openArticle() {
         const article = document.getElementById('caption')
-        const btnMore =document.getElementById('btn-more')
+        const btnMore = document.getElementById('btn-more')
         article.classList.add('open')
         btnMore.classList.add('open')
     }
 
     //more button event listener
-    btn-more.addEventListener('click', openArticle)
+    btn - more.addEventListener('click', openArticle)
 
 
 </script>
