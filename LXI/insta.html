@@ -364,7 +364,7 @@
                     <span id="captionFirst" class="caption">
                         Being with you is always..
                     </span>
-                    <a class="btn-more" id="btn-1"onclick="readMoreFirst()">Read more</a>
+                    <a class="btn-more" id="btn-1" onclick="readMoreFirst()">Read more</a>
                     <ul id="firstComment">
                     </ul>
                     <div class="comment">
@@ -396,7 +396,7 @@
                     </div>
                     <p class="card-text">67 likes</p>
                     <span class="user">green_teria</span>
-                    <span id="captionSecond"  class="caption">
+                    <span id="captionSecond" class="caption">
                         actually, I am not the
                     </span>
                     <a class="btn-more" id="btn-2" onclick="readMoreSecond()">Read more</a>
@@ -445,7 +445,7 @@
                     </div>
                     <p class="card-text">677 likes</p>
                     <span class="user">maison.saisons</span>
-                    <span id="captionThird"  class="caption">
+                    <span id="captionThird" class="caption">
                         such a nice day!
                     </span>
                     <a class="btn-more" id="btn-3" onclick="readMoreThird()">Read more</a>
@@ -525,36 +525,36 @@
 
     });
     //각 피드의 캡션값 가지고 오기
-    let first =document.getElementById('captionFirst').innerText
-    let second=document.getElementById('captionSecond').innerText
-    let third=captionContent = document.getElementById('captionThird').innerText
+    let first = document.getElementById('captionFirst').innerText
+    let second = document.getElementById('captionSecond').innerText
+    let third = captionContent = document.getElementById('captionThird').innerText
 
     //더보기 - 더 효율적인 방법은 없을까?
-    function captionFirst(){
-        if(first.length>8) {
-            $("#captionFirst").html(`${first.substring(0,8)}...`);
+    function captionFirst() {
+        if (first.length > 8) {
+            $("#captionFirst").html(`${first.substring(0, 8)}...`);
         }
     }
-    function captionSecond(){
-        if(second.length>8) {
-            $("#captionSecond").html(`${second.substring(0,8)}...`);
+    function captionSecond() {
+        if (second.length > 8) {
+            $("#captionSecond").html(`${second.substring(0, 8)}...`);
         }
     }
-    function captionThird(){
-        if(third.length>8) {
-            $("#captionThird").html(`${third.substring(0,8)}...`);
+    function captionThird() {
+        if (third.length > 8) {
+            $("#captionThird").html(`${third.substring(0, 8)}...`);
         }
     }
-    function readMoreFirst(){
+    function readMoreFirst() {
         $("#captionFirst").text(first)
         $("#btn-1").hide()
-        
+
     }
-    function readMoreSecond(){
+    function readMoreSecond() {
         $("#captionSecond").text(second)
         $("#btn-2").hide()
     }
-    function readMoreThird(){
+    function readMoreThird() {
         $("#captionThird").text(third)
         $("#btn-3").hide()
     }
@@ -562,26 +562,44 @@
     //첫번째 피드 
     function postFirstComment() {
         let comment = $("#commentFirstInput").val();
-        let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
-        $('#firstComment').append(temp_html)
+        if (!comment) {
+            alert("There are no texts to display.")
+        } else {
+            let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
+            $('#firstComment').append(temp_html)
+            //인풋창 초기화
+            document.getElementById('commentFirstInput').value = null
+        }
+
 
     }
     //두번째 피드 
     function postSecondComment() {
         let comment = $("#commentSecondInput").val();
-        let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
-        $('#secondComment').append(temp_html)
+        if (!comment) {
+            alert("There are no texts to display.")
+        } else {
+            let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
+            $('#secondComment').append(temp_html)
+            //인풋창 초기화
+            document.getElementById('commentSecondInput').value = null
+        }
 
     }
     //세번째 피드 
     function postThirdComment() {
         let comment = $("#commentThirdInput").val();
-        let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
-        $('#thirdComment').append(temp_html)
+        if (!comment) {
+            alert("There are no texts to display.")
+        } else {
+            let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
+            $('#thirdComment').append(temp_html)
+            //인풋창 초기화
+            document.getElementById('commentThirdInput').value = null
+        }
+
 
     }
-
-
 
 </script>
 
