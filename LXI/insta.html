@@ -291,10 +291,24 @@
         }
 
         /* 댓글 */
-        .card-body>input {
+        .card-body div > input {
             border: none;
             font-weight: normal;
             margin-top: 10px;
+        }
+        .comment > i {
+            margin-top:9px;
+        }
+        .card-body div > button {
+            font-size: 15px;
+            color: rgb(136, 136, 220);
+
+            margin-top:9px;
+            padding:8px;
+
+            background-color: transparent;
+            border: 0;
+            outline: 0;
         }
 
         ul {
@@ -340,10 +354,13 @@
                     </span>
                     <a class="btn-more" onclick="openArticle()">더보기</a>
                     <ul id="comment">
-
                     </ul>
-                    <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="...댓글달기"
-                        aria-label=".form-control-sm example" onkeyup=" postComment()">
+                    <div class="comment">
+                        <i class="bi bi-emoji-smile"></i>
+                        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Add a comment"
+                        aria-label=".form-control-sm example">
+                        <button onclick="postComment()">post</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -370,10 +387,13 @@
                     </span>
                     <a class="btn-more" onclick="openArticle()">더보기</a>
                     <ul id="comment">
-
                     </ul>
-                    <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="...댓글달기"
+                    <div class="comment">
+                        <i class="bi bi-emoji-smile"></i>
+                        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Add a comment"
                         aria-label=".form-control-sm example">
+                        <button onclick="postComment()">post</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -402,10 +422,13 @@
                     </span>
                     <a class="btn-more" onclick="openArticle()">더보기</a>
                     <ul id="comment">
-
                     </ul>
-                    <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="...댓글달기"
+                    <div class="comment">
+                        <i class="bi bi-emoji-smile"></i>
+                        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Add a comment"
                         aria-label=".form-control-sm example">
+                        <button onclick="postComment()">post</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -489,16 +512,12 @@
     // 입력한 댓글 보여주는 함수 
     function postComment() {
         let comment = $("#commentInput").val();
-        if (window.event.keyCode == 13) {
             let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
             $('#comment').append(temp_html)
-        }
-
 
     }
     //스토리 사진 받아 오는 함수 
     function renderStory() {
-        console.log(1)
         fetch("https://picsum.photos/v2/list")
             .then(res => res.json()).then((data) => {
                 for (let i = 0; i < 7; i++) {
