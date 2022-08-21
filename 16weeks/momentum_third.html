@@ -51,7 +51,6 @@
             align-items: center;
 
             min-height: 75vh;
-
         }
 
         .currentTime {
@@ -61,39 +60,6 @@
 
         .greeting {
             font-size: 60px;
-        }
-
-        .focusTitle {
-            margin-top: 30px;
-
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .todayFocus {
-            font-size: 30px;
-            font-weight: 600;
-
-        }
-
-        .todayFocus>input[type="checkbox"] {
-            width: 23px;
-            height: 23px;
-            display: none;
-        }
-
-        .todayFocus>i {
-            display: none;
-        }
-
-        .todayFocus:hover>i {
-            display: inline-block;
-
-        }
-
-        .todayFocus:hover>input[type="checkbox"] {
-            display: inline-block;
-            border-style: none;
         }
 
         .footer {
@@ -106,6 +72,38 @@
             width: auto;
         }
 
+        .focusTitle {
+            margin-top: 30px;
+
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .todayFocus {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .todayFocus > input[type="checkbox"] {
+            width: 23px;
+            height: 23px;
+
+            display: none;
+        }
+
+        .todayFocus > i {
+            display: none;
+        }
+
+        .todayFocus:hover > i {
+            display: inline-block;
+        }
+
+        .todayFocus:hover>input[type="checkbox"] {
+            display: inline-block;
+            border-style: none;
+        }
+
         .todoIcon {
             margin-left: auto;
             margin-right: 30px;
@@ -115,24 +113,32 @@
             height: 100px;
         }
 
-        .todoIcon>i {
+        .todoIcon > i {
             cursor: pointer;
         }
 
         .modal {
-            position: absolute;
-            display: none;
-
             width: 300px;
             height: 300px;
-            top: 55vh;
-            left: 150vh;
 
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.8);
+
+            /* 중앙정렬 */
+            left: 50%;
+            top: 50%;
+
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
         }
 
-        .modal>div,h3,li {
+        .modal>div,
+        h3,
+        li {
             margin: 10px;
             color: black;
         }
@@ -156,22 +162,6 @@
         ul {
             list-style: none;
         }
-
-        li > input[type="checkbox"] {
-            display: none;
-        }
-
-        li > i {
-            display: none;
-        }
-
-        li:hover > i {
-            display: inline-block;
-        }
-
-        li:hover > input[type="checkbox"] {
-            display: inline-block;
-        }
     </style>
     <script>
         $(document).ready(function () {
@@ -185,12 +175,13 @@
             let url = 'http://www.splashbase.co/api/v1/images/random'
             fetch(url)
                 .then(res => res.json()).then((data) => {
+
                     $('#background').css('background-image', `url('${data['url']}')`);
                 })
         }
         //현재 날씨
         function renderCurrentWeather() {
-            let url = `https://goweather.herokuapp.com/weather/{busan}`
+            let url = `https://goweather.herokuapp.com/weather/{seoul}`
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let temperature = data['temperature']
@@ -229,14 +220,12 @@
                 $("#modal").fadeOut();
             })
         })
-        //모달창 - 해야할 일 입력 
+        //모달창 - 해야할 일 입력
         function doList() {
             let todo = $('#todoInput').val();
             let temp_html = `<li><input type='checkbox'/> &nbsp ${todo}</li>`;
             $('#lists').append(temp_html);
-
         }
-
     </script>
 </head>
 
@@ -286,7 +275,6 @@
             </ul>
         </div>
     </div>
-
 </body>
 
 </html>

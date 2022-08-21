@@ -84,17 +84,18 @@
             font-weight: 600;
         }
 
-        .todayFocus>input[type="checkbox"] {
+        .todayFocus > input[type="checkbox"] {
             width: 23px;
             height: 23px;
+
             display: none;
         }
 
-        .todayFocus>i {
+        .todayFocus > i {
             display: none;
         }
 
-        .todayFocus:hover>i {
+        .todayFocus:hover > i {
             display: inline-block;
         }
 
@@ -112,19 +113,27 @@
             height: 100px;
         }
 
-        .todoIcon>i {
+        .todoIcon > i {
             cursor: pointer;
         }
 
         .modal {
-            position: absolute;
             width: 300px;
             height: 300px;
-            top: 55vh;
-            left: 150vh;
 
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.8);
+
+            /* 중앙정렬 */
+            left: 50%;
+            top: 50%;
+
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
         }
 
         .modal>div,
@@ -166,12 +175,13 @@
             let url = 'http://www.splashbase.co/api/v1/images/random'
             fetch(url)
                 .then(res => res.json()).then((data) => {
+
                     $('#background').css('background-image', `url('${data['url']}')`);
                 })
         }
         //현재 날씨
         function renderCurrentWeather() {
-            let url = `https://goweather.herokuapp.com/weather/{busan}`
+            let url = `https://goweather.herokuapp.com/weather/{seoul}`
             fetch(url)
                 .then(res => res.json()).then((data) => {
                     let temperature = data['temperature']
@@ -201,6 +211,16 @@
                 })
 
         }
+        //모달창
+        $(function () {
+            $("#todoIcon").click(function () {
+                $("#modal").fadeIn();
+            })
+            $("#main,#advice,#currentWeather").click(function () {
+                $("#modal").fadeOut();
+            })
+        })
+        //모달창 - 해야할 일 입력
         function doList() {
             let todo = $('#todoInput').val();
             let temp_html = `<li><input type='checkbox'/> &nbsp ${todo}</li>`;
@@ -240,7 +260,20 @@
     </div>
     <!-- 모달창 -->
     <div class="modal" id="modal">
-
+        <h3>
+            To do lists
+        </h3>
+        <!-- 모달 입력창 -->
+        <div class="todoInput">
+            <input class="form-control" type="text" id="todoInput">
+            <i onclick="doList()" class="bi bi-chevron-double-right"></i>
+        </div>
+        <!-- 입력한 해야할 일들 -->
+        <div class="content">
+            <ul id="lists">
+                <li> <input type='checkbox' /> &nbsp baking cup cakes &nbsp <i class="bi bi-trash"></i></li>
+            </ul>
+        </div>
     </div>
 </body>
 
