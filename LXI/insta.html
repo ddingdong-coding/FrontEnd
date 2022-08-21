@@ -46,14 +46,36 @@
             border-bottom: 2px inset rgb(239, 239, 239);
         }
 
-        .gnb>div {
-            width: 800px;
-            /* margin-top: 8px; */
-        }
-
         .gnb div img {
             width: 120px;
+            margin-right:150px;
 
+        }
+        .gnb >input {
+            width: 300px;
+            height: 40px;
+            margin-right: 20px;
+
+            /* background-image: url('https://cdn.icon-icons.com/icons2/2566/PNG/512/search_icon_153438.png');
+            background-size: 40px;
+            background-repeat: no-repeat; */
+
+
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(232, 232, 232);
+
+        }
+
+        .gnb div:last-child {
+            width: 280px;
+            font-size: 25px;
+            padding: 0 30px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
         }
 
         /* 스토리 */
@@ -327,6 +349,15 @@
             <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKlpev0yAyZdqM4sjJA7yoL_r_SpHKuWoOcg&usqp=CAU">
         </div>
+        <input class="form-control form-control-sm" id="commentInput" type="text" placeholder="Search" onfocus="this.placeholder=''" onblur="this.placeholder='Search'" name="search"
+        aria-label=".form-control-sm example">
+        <div>
+            <i class="bi bi-house-door-fill"></i>
+            <i class="bi bi-cursor"></i>
+            <i class="bi bi-plus-square"></i>
+            <i class="bi bi-compass"></i>
+            <i class="bi bi-suit-heart"></i>
+        </div>
     </div>
     <div class="wrap">
         <div class="story" id="story">
@@ -347,6 +378,7 @@
                         <i class="bi bi-send"></i>
                         <i class="bi bi-bookmark"></i>
                     </div>
+                    
                     <p class="card-text">544 likes</p>
                     <span class="user">AMILY_99</span>
                     <span class="caption">
