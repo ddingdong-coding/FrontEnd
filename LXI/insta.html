@@ -370,7 +370,7 @@
                         <i class="bi bi-emoji-smile"></i>
                         <input class="form-control form-control-sm" id="commentInput" type="text"
                             placeholder="Add a comment" aria-label=".form-control-sm example">
-                        <button onclick="postComment()">post</button>
+                        <button onclick="postComment()">Post</button>
                     </div>
                 </div>
             </div>
@@ -404,14 +404,14 @@
                         <i class="bi bi-emoji-smile"></i>
                         <input class="form-control form-control-sm" id="commentInput" type="text"
                             placeholder="Add a comment" aria-label=".form-control-sm example">
-                        <button onclick="postComment()">post</button>
+                        <button onclick="postComment()">Post</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content">
             <div class="feedUser">
-                <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB6b0jq_vIKDO7RKISVCkX9kqbIZukFUNEtw&usqp=CAU">
                 <span>maison.saisons</span>
                 <i class="bi bi-three-dots"></i>
             </div>
@@ -454,7 +454,7 @@
                         <i class="bi bi-emoji-smile"></i>
                         <input class="form-control form-control-sm" id="commentInput" type="text"
                             placeholder="Add a comment" aria-label=".form-control-sm example">
-                        <button onclick="postComment()">post</button>
+                        <button onclick="postComment()">Post</button>
                     </div>
                 </div>
             </div>
@@ -469,6 +469,8 @@
         renderStory()
         openArticle()
     });
+
+//
     var i = 0;
     $('.bi-suit-heart').on('click', function () {
         if (i == 0) {
@@ -495,47 +497,7 @@
 
     });
 
-    //first feed
-    function firstFeed() {
-        let url = 'https://picsum.photos/v2/list'
-        fetch(url)
-            .then(res => res.json()).then((data) => {
-                let img = data[10]['download_url']
-                let temp_html = `<img width="500" height ="500" src="${img}">`
-                $('#firstFeed').append(temp_html)
-            })
-    }
-    function secondFeed() {
-        let url = 'https://picsum.photos/v2/list'
-        let j = 2;
-        fetch(url)
-            .then(res => res.json()).then((data) => {
-                let img = data[j]['download_url']
-                $('#secondFeed').css('background-image', `url('${img}')`);
 
-                $('.bi-chevron-double-right').on('click', function () {
-                    j++
-                    for (let i = 3; i < 8; i++) {
-                        if (i == j) {
-                            let img = data[j]['download_url']
-                            $('#secondFeed').css('background-image', `url('${img}')`);
-
-                        }
-                    }
-                });
-                $('.bi-chevron-double-left').on('click', function () {
-                    j--
-                    console.log("j", j)
-                    for (let i = j; i > 4; i--) {
-                        if (i == j) {
-                            let img = data[j]['download_url']
-                            $('#secondFeed').css('background-image', `url('${img}')`);
-
-                        }
-                    }
-                });
-            })
-    }
     // 입력한 댓글 보여주는 함수 
     function postComment() {
         let comment = $("#commentInput").val();
@@ -561,17 +523,6 @@
             })
 
     }
-    //opening an article with more button
-    function openArticle() {
-        const article = document.getElementById('caption')
-        const btnMore = document.getElementById('btn-more')
-        article.classList.add('open')
-        btnMore.classList.add('open')
-    }
-
-    //more button event listener
-    btn - more.addEventListener('click', openArticle)
-
 
 </script>
 
