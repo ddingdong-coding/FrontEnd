@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* 글꼴 수정 */
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+a {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}

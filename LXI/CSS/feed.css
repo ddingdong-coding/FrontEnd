@@ -1,0 +1,163 @@
+        /* 전체 피드 div */
+        .wrap {
+            width: 600px;
+            margin: 20px auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 각 피드 div - 유저정보, 이미지, 아이콘들, 내용, 댓글 포함*/
+        .content {
+            width: 500px;
+            margin: 20px auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+            border: 1px solid rgb(239, 239, 239);
+
+        }
+
+        /* 유저 정보  */
+        .feedUser {
+            width: 500px;
+            height: 60px;
+
+            padding: 18px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .feedUser>img {
+            width: 30px;
+            height: 30px;
+
+            border-radius: 100%;
+            margin-right: 10px;
+
+            object-fit: cover;
+        }
+
+        .feedUser>span {
+            margin-right: auto;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .feedUser>i {
+            font-size: 18px;
+        }
+
+        /* 유저 정보 아래 컨텐츠 - 이미지, 아이콘들, 피드 texts, 댓글 */
+        .card {
+            width: 500px;
+            border-radius: 12px;
+            border: 1px solid rgb(239, 239, 239);
+        }
+
+        /* 피드 이미지  */
+        .card>img {
+            height: 500px;
+            object-fit: cover;
+
+            /* background-position: center; */
+        }
+
+        /* 아이콘들 css */
+        .card-body>div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 10px;
+            font-size: 23px;
+        }
+
+        .card-body>div>.bi-suit-heart {
+            margin-right: 12px;
+            color: crimson;
+        }
+
+        .card-body>div>.bi-suit-heart-fill {
+            margin-right: 12px;
+            color: crimson;
+
+        }
+
+        .card-body>div>.bi-chat {
+            margin-right: 12px;
+        }
+
+        .card-body>div>.bi-send {
+            margin-right: auto;
+        }
+
+        .card-body>div>.bi-bookmark {
+            color: black;
+        }
+
+        .card-body>div>.bi-bookmark-fill {
+            color: black;
+        }
+
+        .card-text {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* 유저 이름  */
+        .user {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .feedCaption a {
+            font-size: 5px;
+        }
+
+        .btn-more {
+            display: inline;
+            cursor: pointer;
+            color: #777;
+            margin-left: 3px;
+        }
+
+        /* 댓글 */
+        .card-body div>input {
+            border: none;
+            font-weight: normal;
+            margin-top: 10px;
+        }
+
+        .comment>i {
+            margin-top: 9px;
+            margin-right: 10px
+        }
+
+        .card-body div>button {
+            font-size: 15px;
+            color: rgb(136, 136, 220);
+
+            margin-top: 9px;
+            padding: 8px;
+
+            background-color: transparent;
+            border: 0;
+            outline: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0px;
+        }

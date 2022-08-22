@@ -1,0 +1,46 @@
+       /* 인스타그램 로고  */
+       .gnb {
+        height: 60px;
+        border-bottom: 2px inset rgb(239, 239, 239);
+
+    }
+    .gnb > .contents {
+        width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .contents img {
+        width: 120px;
+        margin-right:auto;
+
+    }
+
+    .contents >input {
+
+        width: 300px;
+        height: 40px;
+
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(232, 232, 232);
+
+        margin:auto;
+
+    }
+
+    .contents div:last-child {
+        width: 200px;
+        font-size: 25px;
+        padding: 0 10px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
