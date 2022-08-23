@@ -59,11 +59,7 @@ a {
         margin: 0 3px;
     };
 }
-/* 모바일 */
 @media screen and (max-width: 580px) {
-    body {
-        /* background-color: yellow; */
-    }
     .gnb > .contents {
         width: 550px;
     }
@@ -73,11 +69,7 @@ a {
     }
     
 }
-
 @media screen and (max-width: 520px) {
-    body {
-        /* background-color: green; */
-    }
     .gnb > .contents {
         width: 500px;
     }
@@ -96,6 +88,3 @@ a {
     }
     
 }
-
-
-/* 중복되는 부분 날리기 */
