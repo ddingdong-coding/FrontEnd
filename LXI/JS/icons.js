@@ -24,3 +24,10 @@
         }
 
     });
+
+//focused input
+$(document).ready(function() {
+    $('.bi-send').click(function() {
+       alert("link copied")
+    })
+});
