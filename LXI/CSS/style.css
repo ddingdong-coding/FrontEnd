@@ -1,0 +1,17 @@
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+a {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
