@@ -4,18 +4,15 @@
 const slide = document.querySelector(".story");
 let storySlideWidth = slide.clientWidth;
 
+
 // 버튼 엘리먼트 선택하기
 const prevBtn = document.querySelector(".slide_prev_button");
 const nextBtn = document.querySelector(".slide_next_button");
 
 // 슬라이드 전체를 선택해 값을 변경해주기 위해 슬라이드 전체 선택하기
-// const slideItems = document.querySelectorAll(".storyImg");
-const slideItems= tem()
-console.log("2",slideItems)
+const slideItems = document.querySelectorAll(".storyImg");
 // 현재 슬라이드 위치가 슬라이드 개수를 넘기지 않게 하기 위한 변수
-// const maxSlide = slideItems.length;
-const maxSlide = 7;
-console.log("slideItems",slideItems)
+const maxSlide = slideItems.length;
 // 버튼 클릭할 때 마다 현재 슬라이드가 어디인지 알려주기 위한 변수
 let currSlide = 1;
 
@@ -24,10 +21,11 @@ let currSlide = 1;
 nextBtn.addEventListener("click", () => {
   // 이후 버튼 누를 경우 현재 슬라이드를 변경
   currSlide++;
+  console.log(currSlide,"x")
   // 마지막 슬라이드 이상으로 넘어가지 않게 하기 위해서
   if (currSlide <= maxSlide) {
     // 슬라이드를 이동시키기 위한 offset 계산
-    const offset = 70 * (currSlide - 1);
+    const offset = 20 * (currSlide - 1);
     // 각 슬라이드 아이템의 left에 offset 적용
     slideItems.forEach((i) => {
       i.setAttribute("style", `left: ${-offset}px`);
@@ -44,7 +42,7 @@ prevBtn.addEventListener("click", () => {
   // 1번째 슬라이드 이하로 넘어가지 않게 하기 위해서
   if (currSlide > 0) {
     // 슬라이드를 이동시키기 위한 offset 계산
-    const offset = 70 * (currSlide - 1);
+    const offset = 80 * (currSlide - 1);
     // 각 슬라이드 아이템의 left에 offset 적용
     slideItems.forEach((i) => {
       i.setAttribute("style", `left: ${-offset}px`);
