@@ -1,3 +1,4 @@
+//focused input
 $(document).ready(function() {
     $('#smail-1').click(function() {
         $("#commentFirstInput").focus();
