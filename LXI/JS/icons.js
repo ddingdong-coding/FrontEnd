@@ -25,7 +25,7 @@
 
     });
 
-//focused input
+//send the link
 $(document).ready(function() {
     $('.bi-send').click(function() {
        alert("link copied")
