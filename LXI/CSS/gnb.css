@@ -1,46 +1,48 @@
-       /* 인스타그램 로고  */
-       .gnb {
-        height: 60px;
-        border-bottom: 2px inset rgb(239, 239, 239);
+/* 인스타그램 로고  */
+.gnb {
+    height: 60px;
+    border-bottom: 2px inset rgb(239, 239, 239);
 
-    }
-    .gnb > .contents {
-        width: 800px;
-        margin: 20px auto;
-        padding: 0 20px;
+}
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
+.gnb>.contents {
+    width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
 
-    }
-    .contents img {
-        width: 120px;
-        margin-right:auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-    }
+}
 
-    .contents >input {
+.contents img {
+    width: 120px;
+    margin-right: auto;
 
-        width: 300px;
-        height: 40px;
+}
 
-        border: none;
-        border-radius: 5px;
-        background-color: rgb(232, 232, 232);
+.contents>input {
 
-        margin:auto;
+    width: 300px;
+    height: 40px;
 
-    }
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(232, 232, 232);
 
-    .contents div:last-child {
-        width: 200px;
-        font-size: 25px;
-        padding: 0 10px;
+    margin: auto;
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+}
+
+.contents div:last-child {
+    width: 200px;
+    font-size: 25px;
+    padding: 0 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
