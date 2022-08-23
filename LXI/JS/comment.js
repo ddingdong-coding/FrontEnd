@@ -1,3 +1,15 @@
+$(document).ready(function() {
+    $('#smail-1').click(function() {
+        $("#commentFirstInput").focus();
+    })
+    $('#smail-2').click(function() {
+        $("#commentSecondInput").focus();
+    })
+    $('#smail-3').click(function() {
+        $("#commentThirdInput").focus();
+    })
+});
+
 // 입력한 댓글 보여주는 함수 
 //첫번째 피드 
 function postFirstComment() {
