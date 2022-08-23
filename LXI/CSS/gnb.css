@@ -46,3 +46,9 @@
     align-items: center;
     justify-content: space-between;
 }
+/* 수정 */
+.contents div >i {
+
+    margin: 0 5px;
+
+}
