@@ -1,41 +1,6 @@
-/* PC */
-@media screen and (min-width: 801px) {
-    .gnb>.contents {
-        width: 800px;
-    }
-
-    .contents img {
-        width: 100px;
-
-    }
-
-    .contents>input {
-        width: 200px;
-        padding: 0 10px;
-
-    }
-
-    .contents div:last-child {
-        width: 100px;
-        font-size: 25px;
-        margin-right: 30px;
-    }
-
-    /* 수정 */
-    .contents div i {
-
-        padding: 0 5px;
-
-    }
-
-}
 
 /* 모바일에 사용될 스타일 시트 */
-@media screen and (max-width: 799px) {
-    body{
-        background-color: blue;
-    } 
-
+@media screen and (min-width:480px) and (max-width:767px) {
     .gnb>.contents {
         width: 700px;
     }
@@ -46,7 +11,7 @@
     }
 
     .contents>input {
-        width: 250px;
+        width: 280px;
         padding: 0 10px;
 
     }
@@ -66,13 +31,8 @@
 }
 
 @media screen and (max-width: 670px) {
-    body{
-        background-color: green;
-    } 
     .gnb>.contents {
         width: 550px;
-        /* margin: 20px 0;
-        padding: 0; */
     }
 
     .contents img {
@@ -81,7 +41,7 @@
     }
 
     .contents>input {
-        width: 190px;
+        width: 230px;
 
     }
     .contents div:last-child {
@@ -104,11 +64,13 @@
 }
 
 @media screen and (max-width: 520px) {
-    body{
-        background-color: yellow;
-    } 
     .gnb>.contents {
         width: 500px;
+    }
+    .contents>input {
+        width: 210px;
+        margin: 0 10px;
+
     }
 
     .story {
@@ -129,3 +91,24 @@
     }
 
 }
+
+@media screen and (max-width: 414px) {
+    .contents div:last-child {
+        margin-right:90px;
+        margin-left:10px;
+        width: 70px;
+        font-size:20px;
+        
+    }
+
+    .wrap {
+        width: 470px;
+        margin: 20px 10px;
+        margin-left: 6px;
+    }
+    .story {
+        width: 480px;
+        margin-left: 15px;
+    }
+};
+
