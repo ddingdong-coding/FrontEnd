@@ -19,14 +19,14 @@
     .contents div:last-child {
         width: 100px;
         font-size: 20px;
-        margin-right: 90px;
+        margin-right: 80px;
     }
 
     .contents div:last-child i {
-        margin: 0 3px;
+        margin: 0 2px;
     }
     .contents div i {
-        padding: 0 3px;
+        padding: 0 2px;
     }
 }
 
