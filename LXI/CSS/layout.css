@@ -1,3 +1,48 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+a {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 390px) {
+    .gnb{
+        width: 550px;
+    }
+    .gnb>.contents {
+        width: 200px;
+    }
+    .contents img {
+        width: 95px;
+        margin-right: 10px
+
+    }
+     .contents>input {
+        width: 250px;
+
+    }
+    .contents div:last-child {
+        width: 70px;
+        font-size:20px;
+        
+    }
+    .contents div >i {
+        margin: 0 4px;
+    
+    }
+
+}
+
+
 
 /* 모바일에 사용될 스타일 시트 */
 @media screen and (min-width:480px) and (max-width:767px) {
@@ -64,24 +109,14 @@
 }
 
 @media screen and (max-width: 520px) {
-    .gnb>.contents {
-        width: 500px;
-    }
     .contents>input {
         width: 210px;
         margin: 0 10px;
 
     }
-
     .story {
         width: 480px;
     }
-
-    .wrap {
-        width: 480px;
-
-    }
-
     .content {
         width: 480px;
     }
@@ -102,7 +137,6 @@
     }
 
     .wrap {
-        width: 470px;
         margin: 20px 10px;
         margin-left: 6px;
     }

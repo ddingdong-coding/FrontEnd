@@ -1,4 +1,4 @@
-        /* 전체 피드 div */
+/* 전체 피드 div */
         .wrap {
             width: 600px;
             margin: 20px auto;
@@ -103,6 +103,11 @@
             margin-right: auto;
         }
 
+        #sns_urlCoby {
+                color: black;
+                margin-right: auto;
+            }
+            
         .card-body>div>.bi-bookmark {
             color: black;
         }
@@ -162,3 +167,6 @@
             list-style: none;
             padding-left: 0px;
         }
+
+
+

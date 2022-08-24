@@ -52,7 +52,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
 
-    /* 컨테이너의 크기에 맞춰 이미지 조절 하는 코드 */
+    /* the codes for maintaining its aspect ratio  */
     object-fit: cover;
 
     /* 스토리 테두리 */
