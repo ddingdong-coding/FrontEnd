@@ -4,14 +4,14 @@ const prevBtn = document.querySelector(".slide_prev_button");
 const nextBtn = document.querySelector(".slide_next_button");
 
 (function addEvent(){
-  prevBtn.addEventListener('click', translateContainer.bind(this, 2));
-  nextBtn.addEventListener('click', translateContainer.bind(this, -2));
+  prevBtn.addEventListener('click', translateContainer.bind(this, 1));
+  nextBtn.addEventListener('click', translateContainer.bind(this, -1));
 })();
 
 function translateContainer(direction){
   const selectedBtn = (direction === 1) ? 'slide_prev_button' : 'slide_next_button';
-  container.style.transitionDuration = '500ms';
-  container.style.transform = `translateX(${direction * (100 / 9)}%)`;
+  container.style.transitionDuration = '900ms';
+  container.style.transform = `translateX(${direction * (100 / 10)}%)`;
   container.ontransitionend = () => reorganizeEl(selectedBtn);
 }
 
