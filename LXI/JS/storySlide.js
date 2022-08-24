@@ -1,89 +1,21 @@
 
-
-// 슬라이크 전체 크기(width 구하기)
-// const slide = document.querySelector(".story");
-// let storySlideWidth = slide.clientWidth;
-
-let imgIndex=0;
-let position=0
-let Image_WIDTH =70;
-// 버튼 엘리먼트 선택하기
+const container = document.querySelector(".story-1");
 const prevBtn = document.querySelector(".slide_prev_button"); 
 const nextBtn = document.querySelector(".slide_next_button");
 
-// 슬라이드 전체를 선택해 값을 변경해주기 위해 슬라이드 전체 선택하기
-const slideItems = document.querySelectorAll(".storyImg");
-// 현재 슬라이드 위치가 슬라이드 개수를 넘기지 않게 하기 위한 변수
-// const maxSlide = slideItems.length;
-// 버튼 클릭할 때 마다 현재 슬라이드가 어디인지 알려주기 위한 변수
-let currSlide = 1;
+(function addEvent(){
+  prevBtn.addEventListener('click', translateContainer.bind(this, 2));
+  nextBtn.addEventListener('click', translateContainer.bind(this, -2));
+})();
 
-
-// 버튼 엘리먼트에 클릭 이벤트 추가하기
-// nextBtn.addEventListener("click", () => {
-  // 이후 버튼 누를 경우 현재 슬라이드를 변경
-  // currSlide++;
-  // console.log(currSlide,"x")
-  // 마지막 슬라이드 이상으로 넘어가지 않게 하기 위해서
-  // if (currSlide <= maxSlide) {
-    // 슬라이드를 이동시키기 위한 offset 계산
-    // const offset = 20 * (currSlide - 1);
-    // 각 슬라이드 아이템의 left에 offset 적용
-//     slideItems.forEach((i) => {
-//       i.setAttribute("style", `left: ${-offset}px`);
-//     });
-
-//   } else {
-//     currSlide--;
-//   }
-// });
-// 버튼 엘리먼트에 클릭 이벤트 추가하기
-// prevBtn.addEventListener("click", () => {
-  // 이전 버튼 누를 경우 현재 슬라이드를 변경
-  // currSlide--;
-  // 1번째 슬라이드 이하로 넘어가지 않게 하기 위해서
-  // if (currSlide > 0) {
-    // 슬라이드를 이동시키기 위한 offset 계산
-    // const offset = 80 * (currSlide - 1);
-    // 각 슬라이드 아이템의 left에 offset 적용
-//     slideItems.forEach((i) => {
-//       i.setAttribute("style", `left: ${-offset}px`);
-//     });
-//   } else {
-//     currSlide++;
-//   }
-// });
-
-function pre(){
-  console.log("s",imgIndex)
-  if(imgIndex > 0){
-    nextBtn.removeAttribute('disabled')
-    position +=Image_WIDTH;
-    slideItems.style.transform =`translateX(${position}px)`
-    imgIndex = imgIndex - 1;
-  }
-  if(imgIndex==9){
-    nextBtn.setAttribute('disabled','true')
-  }
+function translateContainer(direction){
+  const selectedBtn = (direction === 1) ? 'slide_prev_button' : 'slide_next_button';
+  container.style.transitionDuration = '500ms';
+  container.style.transform = `translateX(${direction * (100 / 9)}%)`;
+  container.ontransitionend = () => reorganizeEl(selectedBtn);
 }
 
-
-function nextv(){
-  if(imgIndex < 9){
-    nextBtn.removeAttribute('disabled')
-    position -=Image_WIDTH;
-    slideItems.style.transform =`translateX(${position}px)`
-    imgIndex = imgIndex + 1;
-  }
-  if(imgIndex==9){
-    nextBtn.setAttribute('disabled','true')
-  }
+function reorganizeEl(selectedBtn) {
+  container.removeAttribute('style');
+  (selectedBtn === 'slide_prev_button') ? container.insertBefore(container.lastElementChild, container.firstElementChild): container.appendChild(container.firstElementChild);
 }
-
-function init(){
-  prevBtn.setAttribute('disabled','true')
-  prevBtn.addEventListener("click",pre)
-  nextBtn.addEventListener("click",nextv)
-}
-
-init();

@@ -31,11 +31,6 @@
     /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
   }
   
-  /* 첫 번째 슬라이드 가운데에 정렬하기위해
-  첫번째 슬라이드만 margin-left조정 */
-  /* .slides li:first-child{
-    margin-left: 100px;
-  } */
   
   /* 슬라이드들 옆으로 정렬 */
   .slides li:not(:last-child){
