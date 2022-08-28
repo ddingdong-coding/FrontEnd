@@ -17,10 +17,14 @@
 .search_wrapper .search_container .search_area {
     width: 100%;
     position: relative;
+    background-color: white;
+    /* background-color: rgb(244, 250, 253); */
+    
 }
 
 .gnb .search_wrapper .search_container .search_inner {
     width: 100%;
+    background-color: rgb(244, 250, 253);
 }
 
 /*-------------------------------------------------------------------
@@ -42,9 +46,13 @@
 .search_area .input_window {
     /* width: calc(100% - 70px);
     width: calc(100%); */
+
+    
     background: #fff;
+
     font-size: 1rem;
     height: 3rem;
+
 }
 
 .search_area .input_window input {
@@ -54,6 +62,7 @@
     box-sizing: border-box;
     border: none;
     text-indent: 1em;
+    background-color: rgb(244, 250, 253);
 
 }
 .search_area .input_window input:focus {
@@ -86,7 +95,8 @@
     width: 100%;
     left: 0;
     right: 0;
-    background: #fff;
+    /* background: #fff; */
+    background-color: rgb(244, 250, 253);
     /* box-shadow: 0 0 4px 1px rgb(0 0 0 / 26%); */
     border-radius:0 0 30px 30px;
     color: #595959;
@@ -100,7 +110,8 @@
     width: 100%;
     left: 0;
     right: 0;
-    background: #fff;
+    /* background: #fff; */
+    background-color: rgb(244, 250, 253);
     box-shadow: 0 1px 4px 0 rgb(0 0 0 / 26%);
     border-radius: 10px;
 }
