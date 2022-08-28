@@ -1,0 +1,109 @@
+.wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    margin-top:140px;
+}
+.wrap div {
+    margin: 0 48px;
+}
+.header{
+    padding-top: 70px;
+}
+.header p{
+    width: 500px;
+
+    margin-top: 20px;
+
+    font-size: 28px;
+    font-weight: 500;
+}
+.header img {
+    width: 301px;
+    height: 106px;
+
+    margin: 0;
+
+    margin: -28px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loginBox{
+    width : 410px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.login {
+    width : 396px;
+    height: 346px;
+
+    background-color: white;
+    border-radius: 10px;
+    /* 그림자 blur 적용 */
+    box-shadow: 0 5px 5px 0 rgb(222, 222, 222);
+
+}
+.login input{
+    width: 364px;
+    height: 52px;
+
+    margin: 8px 0;
+    /* 들여쓰기 */
+    text-indent: 1em;
+
+    border-radius: 5px;
+    border: 0.5px solid rgb(221, 221, 221);
+}
+.login input::placeholder {
+    font-size: 15px;
+}
+.login input:focus {
+    color: rgb(20, 19, 19);
+}
+.login > button {
+    width: 364px;
+    height: 52px;
+
+    margin: 5px 0;
+    border-radius: 5px;
+
+    color: white;
+    font-size: 20px;
+
+    border: transparent;
+    background-color: #1877f2;
+
+    cursor: pointer;
+
+}
+.login > button:last-child {
+    background-color: #42b72a;
+    width: 194px;
+    font-size: 18px;
+}
+.login a {
+    background-color: white;
+    margin-top: 10px;
+    color: #1877f2;
+}
+.loginBox div:last-child{
+    width : 396px;
+
+    text-align: center;
+    margin: 20px 0;
+}
+.loginBox div:last-child a{
+    background-color: transparent;
+    color: #1877f2;
+}
+/* 인풋창 커서 이동시, 글자색 연하게 */

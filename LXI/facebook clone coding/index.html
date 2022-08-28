@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./CSS/logIn.css">
+    <link rel="stylesheet" href="./CSS/layout.css">
+    <title>sparat coding club | facebook clone coding </title>
+</head>
+<script>
+    function checkEmail(){
+        let email = $("#email").val();
+        if(!email.includes('@')){
+            alert("Please check your email again")
+        }
+    }
+    function checkPassword(){
+        let password = $("#password").val();
+        if(!(password=="facebook")){
+            alert("Please check your password")
+        }else{
+            window.location.href="mainPage.html";
+        }
+    }
+    
+</script>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <img src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg">
+            <p>
+                Connect with friends and the world aroudn you on Facebook.
+            </p>
+        </div>
+        <div  class="loginBox">
+            <div class="login">
+                <input type="text" id="email" placeholder="Email or phone number">
+                <input type="password" id="password" placeholder="Password">
+                <button onclick="checkEmail(),checkPassword()">Log In</button>
+                <a href="">Forgot password?</a>
+                <hr>
+                <button>Create new account</button>
+            </div>
+            <div>
+                <a href="">Create a Page</a> for a celebrity, brand or business.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
