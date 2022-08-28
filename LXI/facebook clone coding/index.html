@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +11,22 @@
     <title>sparat coding club | facebook clone coding </title>
 </head>
 <script>
-    function checkEmail(){
+    function checkEmailandPassword() {
         let email = $("#email").val();
-        if(!email.includes('@')){
-            alert("Please check your email again")
-        }
-    }
-    function checkPassword(){
         let password = $("#password").val();
-        if(!(password=="facebook")){
-            alert("Please check your password")
-        }else{
-            window.location.href="mainPage.html";
+        if (!email.includes('@')) {
+            alert("Please check your email again")
+        } else {
+            if (!(password == "facebook")) {
+                alert("Please check your password")
+            } else {
+                window.location.href = "mainPage.html";
+            }
         }
     }
-    
+
 </script>
+
 <body>
     <div class="wrap">
         <div class="header">
@@ -34,11 +35,11 @@
                 Connect with friends and the world aroudn you on Facebook.
             </p>
         </div>
-        <div  class="loginBox">
+        <div class="loginBox">
             <div class="login">
                 <input type="text" id="email" placeholder="Email or phone number">
                 <input type="password" id="password" placeholder="Password">
-                <button onclick="checkEmail(),checkPassword()">Log In</button>
+                <button onclick="checkEmailandPassword()">Log In</button>
                 <a href="">Forgot password?</a>
                 <hr>
                 <button>Create new account</button>
@@ -49,4 +50,5 @@
         </div>
     </div>
 </body>
+
 </html>
