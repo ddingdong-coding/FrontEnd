@@ -7,7 +7,7 @@ function checkEmailandPassword() {
         if (!(password == "facebook")) {
             alert("Please check your password")
         } else {
-            window.location.href = "mainPage.html";
+            window.location.href = "main.html";
         }
     }
 }
