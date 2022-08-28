@@ -10,23 +10,6 @@
     <link rel="stylesheet" href="./CSS/layout.css">
     <title>sparat coding club | facebook clone coding </title>
 </head>
-<script>
-    function checkEmailandPassword() {
-        let email = $("#email").val();
-        let password = $("#password").val();
-        if (!email.includes('@')) {
-            alert("Please check your email again")
-        } else {
-            if (!(password == "facebook")) {
-                alert("Please check your password")
-            } else {
-                window.location.href = "mainPage.html";
-            }
-        }
-    }
-
-</script>
-
 <body>
     <div class="wrap">
         <div class="header">
@@ -50,5 +33,5 @@
         </div>
     </div>
 </body>
-
+<script src="./JS/logIn.js"></script>
 </html>
