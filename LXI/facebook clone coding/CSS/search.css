@@ -1,0 +1,129 @@
+/*-------------------------------------------------------------------
+	## search_wrapper layout
+-------------------------------------------------------------------*/
+.gnb > .search_wrapper {
+
+    height: 56px;
+    margin-top: 5px;
+}
+
+.gnb .search_wrapper .search_container {
+    width: calc(100%-30);
+    /* margin: auto; */
+
+
+}
+
+.search_wrapper .search_container .search_area {
+    width: 100%;
+    position: relative;
+}
+
+.gnb .search_wrapper .search_container .search_inner {
+    width: 100%;
+}
+
+/*-------------------------------------------------------------------
+    ## search input
+-------------------------------------------------------------------*/
+.search_area form {
+    margin-top: 3px;
+    border-radius: 30px;
+    overflow: hidden;
+
+}
+
+.search_area fieldset {
+    /* display: flex; */
+    width: 100%;
+    /* align-items: stretch; */
+}
+
+.search_area .input_window {
+    /* width: calc(100% - 70px);
+    width: calc(100%); */
+    background: #fff;
+    font-size: 1rem;
+    height: 3rem;
+}
+
+.search_area .input_window input {
+    width: 100%;
+    height: 100%;
+    color: #666;
+    box-sizing: border-box;
+    border: none;
+    text-indent: 1em;
+
+}
+.search_area .input_window input:focus {
+    outline: none;
+}
+
+.search_area .input_window input::placeholder {
+    color: #999;
+}
+
+
+.search_container .recommend_comment {
+    margin-top: 7px;
+    font-size: 1.2rem;
+    opacity: .95;
+}
+
+.search_container .recommend_comment a+a {
+    display: inline-block;
+    margin-left: 0.7rem;
+}
+
+/*-------------------------------------------------------------------
+    ## autoFrame recent_wrapper
+-------------------------------------------------------------------*/
+.recent_wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 2rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    /* box-shadow: 0 0 4px 1px rgb(0 0 0 / 26%); */
+    border-radius:0 0 30px 30px;
+    color: #595959;
+}
+
+.recent_wrapper .no_data {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgb(0 0 0 / 26%);
+    border-radius: 10px;
+}
+
+.recent_wrapper .no_data span {
+    display: block;
+    padding: 4rem 1.2rem;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.recent_list {
+    width: 100%;
+}
+
+.recent_list .recent_item {
+    padding: 1.2rem 1.2rem;
+    font-size: 1 rem;
+    cursor: pointer;
+    list-style: none;
+
+}
+
+.recent_list .recent_item:hover {
+    background: #fafafa;
+}
