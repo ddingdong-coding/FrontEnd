@@ -128,7 +128,7 @@
 }
 
 .recent_list .recent_item {
-    padding: 1.2rem 1.2rem;
+    padding: 1.2rem 0.5rem;
     font-size: 1 rem;
     cursor: pointer;
     list-style: none;

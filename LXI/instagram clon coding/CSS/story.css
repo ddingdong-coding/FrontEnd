@@ -1,4 +1,4 @@
-/* 스토리 */
+/* story */
 
 .story {
     width: 500px;
@@ -55,7 +55,7 @@
     /* the codes for maintaining its aspect ratio  */
     object-fit: cover;
 
-    /* 스토리 테두리 */
+   /* the border of story */
     border: 3px solid transparent;
     background-image: linear-gradient(#fff, #fff), linear-gradient(to right, rgb(255, 208, 0) 0%, rgb(225, 19, 0) 50%, rgb(255, 0, 225));
     background-origin: border-box;

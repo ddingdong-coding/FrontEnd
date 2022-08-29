@@ -1,4 +1,4 @@
-    //검색 기능 함수
+    //search funtion
     function search() {
         let searchWord = $("#searchInput").val();
         let link = `https://www.instagram.com/explore/tags/${searchWord}`

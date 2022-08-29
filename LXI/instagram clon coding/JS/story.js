@@ -1,5 +1,5 @@
 
-//스토리 사진 받아 오는 함수 
+//retrieve images from api
 function renderStory() {
     fetch("https://picsum.photos/v2/list")
         .then(res => res.json()).then((data) => {

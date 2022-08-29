@@ -1,8 +1,7 @@
-/* 초기화 */
+
 *{
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
   }
 
   .slides {
@@ -10,7 +9,7 @@
     flex-direction: row;
   }
   
-  /* 보여줄 구간의 높이와 넓이 설정 */
+  /* set the width and height of pictures */
   #slideShow {
     width: 500px;
     height: 500px;
@@ -26,13 +25,11 @@
     position: absolute;
     left: 0;
     top: 0;
-    /* width: 2500px; 슬라이드할 사진과 마진 총 넓이 */
     transition: left 0.5s ease-out; 
-    /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
   }
   
   
-  /* 슬라이드들 옆으로 정렬 */
+  /* arrange slides in a row*/
   .slides li:not(:last-child){
     float: left;
     margin-right: 100px;
@@ -54,7 +51,7 @@
     cursor: pointer;
   }
   
-  /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+  /* when the cursor is on the next and prev button */
   .controller span:hover{
     background-color: rgba(128, 128, 128, 0.11);
   }
@@ -73,8 +70,7 @@
     right: 10px;
   }
   
-  /* 다음 화살표에 마우스 커서가 올라가 있을때 
-  이전 화살표가 살짝 오른쪽으로 이동하는 효과*/
+  /* when the cursor is on the next button, it slightly moves to  the right side.*/
   .next:hover{
     transform: translateX(10px);
   }
@@ -87,7 +83,7 @@
   
     /* position */
     position: absolute;
-    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    /* to make the button in the middle of the screen */
     top: calc(50% - 16px);
   
     /* size */

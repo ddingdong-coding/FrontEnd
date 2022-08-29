@@ -18,9 +18,8 @@
     <title>sparat coding club | facebook clone coding </title>
 </head>
 <style>
-
     .wrap {
-        
+
         background-color: white;
     }
 
@@ -39,13 +38,13 @@
     .gnb img {
         /* margin: 5px 20px; */
         width: 40px;
-        margin-right:auto;
+        margin-right: auto;
         background-color: transparent;
     }
 
-    .gnb >div:nth-child(2){
+    .gnb>div:nth-child(2) {
         width: 500px;
-        margin:auto;
+        margin: auto;
         margin-right: 0px;
         background-color: white;
 
@@ -65,10 +64,51 @@
         justify-content: space-between;
         align-items: center;
     }
-    .icons > i {
+
+    .icons>i {
         margin: 0 10px;
     }
+
+    .modal {
+        border: none;
+        width: 300px;
+        height: 250px;
+
+        left: 72%;
+        top: 8%;
+        background: rgb(244, 250, 253);
+        border-radius: 20px;
+
+    }
+    .modal-content {
+        border: none;
+        background: rgb(244, 250, 253)
+    }
+    .modal input {
+        width: 280px;
+        height: 40px;
+        margin:auto;
+        margin-top:10px;
+
+        border-radius: 30px;
+        border: none;
+        text-indent: 1em;
+    }
+    .modal-content p {
+        text-align: center;
+        margin: 20px 0;
+    }
 </style>
+<script>
+    $(function () {
+        $(".bi-messenger").click(function () {
+            $(".modal").fadeIn();
+        })
+        $("#main,#advice,#currentWeather").click(function () {
+            $("#modal").fadeOut();
+        })
+    })
+</script>
 
 <body>
     <div class="wrap">
@@ -91,22 +131,22 @@
                                     </fieldset>
                                 </form>
                                 <div id="autoFrame" class="recent_wrapper">
-                                <ul class="recent_list">
-                                    <!-- 기록 들어가는 자리 -->
-                                    <li class="item recent_item" data-rank="${index + 1}" data-template-type="history"
-                                        data-keyword="${item.search}">
-                                        <a href="#" class="kwd">
-                                            <span class="fix">
-                                                <span>${item.search}</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                 <!-- 전체삭제 후에 보여지는 화면 -->
-                                <div class="no_data">
-                                    <span>최근 검색어 내역이 없습니다.</span>
-                                </div> 
-                            </div>
+                                    <ul class="recent_list">
+                                        <!-- 기록 들어가는 자리 -->
+                                        <li class="item recent_item" data-rank="${index + 1}"
+                                            data-template-type="history" data-keyword="${item.search}">
+                                            <a href="#" class="kwd">
+                                                <span class="fix">
+                                                    <span>${item.search}</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- 전체삭제 후에 보여지는 화면 -->
+                                    <div class="no_data">
+                                        <span>최근 검색어 내역이 없습니다.</span>
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
@@ -120,6 +160,13 @@
             </div>
 
         </div>
+        <div class="modal" tabindex="-1">
+              <div class="modal-content">
+                <input type="text" id="todoInput" placeholder="Messenger Search">
+                  <p>There are no messages.</p>
+                  <a href=""><p>see all in Messenger</p></a>
+              </div>
+          </div>
 </body>
 <!-- <script src="../JS/logIn.js"></script> -->
 

@@ -1,4 +1,4 @@
-    //좋아요 북마크
+    //like bookmark post 
     var i = 0;
     $('.bi-suit-heart').on('click', function () {
         if (i == 0) {
@@ -24,26 +24,20 @@
         }
 
     });
-
-//send the link
-// $(document).ready(function() {
-//     $('.bi-send').click(function() {
-//        alert("link copied")
-//     })
-// });
-
+//clip post 
 function clip() {
 
-    var url = '';    // <a>태그에서 호출한 함수인 clip 생성
+    var url = '';    // declare url variable
     var textarea = document.createElement("textarea");
-    //url 변수 생성 후, textarea라는 변수에 textarea의 요소를 생성
+     //create a varible called textarea and assign the textarea 
 
-    document.body.appendChild(textarea); //</body> 바로 위에 textarea를 추가(임시 공간이라 위치는 상관 없음)
-    url = window.document.location.href;  //url에는 현재 주소값을 넣어줌
-    textarea.value = url;  // textarea 값에 url를 넣어줌
-    textarea.select();  //textarea를 설정
-    document.execCommand("copy");   // 복사
-    document.body.removeChild(textarea); //extarea 요소를 없애줌
 
-    alert("link copied")  // 알림창
+    document.body.appendChild(textarea); //add textarea right above the body tag
+    url = window.document.location.href;  //assign current address to the url
+    textarea.value = url;  // assign current address to the value of textarea
+    textarea.select();  //select all the texts in a <textarea>
+    document.execCommand("copy");   // copy
+    document.body.removeChild(textarea); //remove the content of the textarea 
+
+    alert("link copied")  // alert the content
 }

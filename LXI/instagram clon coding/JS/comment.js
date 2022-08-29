@@ -11,8 +11,8 @@ $(document).ready(function() {
     })
 });
 
-// 입력한 댓글 보여주는 함수 
-//첫번째 피드 
+// the funtions that show comments on the page
+//first feed comments
 function postFirstComment() {
     let comment = $("#commentFirstInput").val();
     if (!comment) {
@@ -20,13 +20,13 @@ function postFirstComment() {
     } else {
         let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
         $('#firstComment').append(temp_html)
-        //인풋창 초기화
+        //initializing the input box
         document.getElementById('commentFirstInput').value = null
     }
 
 
 }
-//두번째 피드 
+//second feed comments
 function postSecondComment() {
     let comment = $("#commentSecondInput").val();
     if (!comment) {
@@ -34,12 +34,12 @@ function postSecondComment() {
     } else {
         let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
         $('#secondComment').append(temp_html)
-        //인풋창 초기화
+        //initializing the input box
         document.getElementById('commentSecondInput').value = null
     }
 
 }
-//세번째 피드 
+//the last feed comments
 function postThirdComment() {
     let comment = $("#commentThirdInput").val();
     if (!comment) {
@@ -47,7 +47,7 @@ function postThirdComment() {
     } else {
         let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
         $('#thirdComment').append(temp_html)
-        //인풋창 초기화
+        //initializing the input box
         document.getElementById('commentThirdInput').value = null
     }
 

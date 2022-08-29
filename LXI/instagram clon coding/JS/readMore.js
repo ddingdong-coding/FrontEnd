@@ -1,9 +1,9 @@
-//각 피드의 캡션값 가지고 오기
+// assign contents in captions to variables
 let first = document.getElementById('captionFirst').innerText
 let second = document.getElementById('captionSecond').innerText
 let third = captionContent = document.getElementById('captionThird').innerText
 
-//더보기 - 더 효율적인 방법은 없을까?
+//readmore functions
 function captionFirst() {
     if (first.length > 8) {
         $("#captionFirst").html(`${first.substring(0, 8)}...`);

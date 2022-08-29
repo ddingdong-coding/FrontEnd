@@ -1,4 +1,4 @@
-
+//story photo slides function
 const container = document.querySelector(".story-1");
 const prevBtn = document.querySelector(".slide_prev_button"); 
 const nextBtn = document.querySelector(".slide_next_button");

@@ -44,7 +44,7 @@ a {
 
 
 
-/* 모바일에 사용될 스타일 시트 */
+/* codes for mobile phone*/
 @media screen and (min-width:480px) and (max-width:767px) {
     .gnb>.contents {
         width: 700px;

@@ -28,6 +28,7 @@
 </head>
 
 <body>
+    <!-- Navigation Bar -->
     <div class="gnb">
         <div class="contents">
             <img
@@ -45,6 +46,7 @@
         </div>
     </div>
     <div class="wrap">
+        <!-- storys -->
         <div class="story"  id="story">
             <div class="story-1" id="story-1">
                 <div class="storyImg storyImg-1"></div>
@@ -62,13 +64,15 @@
             <div class="slide_next_button slide_button">▶</div>
         </div>
 
-        <!-- 첫번째 피드 -->
+        <!-- first feed -->
         <div class="content">
+            <!-- profile picture and userId -->
             <div class="feedUser">
                 <img src="http://www.naewoeilbo.com/news/photo/202110/414285_189601_940.png">
                 <span>AMILY_99</span>
                 <i class="bi bi-three-dots"></i>
             </div>
+            <!-- photo -->
             <div class="card">
                 <img id="fristFeed" src="https://www.sputnik.kr/article_img/202009/article_1601089284.jpg"
                     class="card-img-top" alt="...">
@@ -82,12 +86,14 @@
                     </div>
                     <p class="card-text" id="firstLikes">544 likes</p>
                     <span class="user">AMILY_99</span>
+                     <!-- caption -->
                     <span id="captionFirst" class="caption">
                         Being with you is always..
                     </span>
                     <a class="btn-more" id="btn-1" onclick="readMoreFirst()">Read more</a>
                     <ul id="firstComment">
                     </ul>
+                    <!-- comment -->
                     <div class="comment">
                         <i class="bi bi-emoji-smile" id="smail-1"></i>
                         <input class="form-control form-control-sm" id="commentFirstInput" type="text"
@@ -97,14 +103,16 @@
                 </div>
             </div>
         </div>
-        <!-- 두번째 피드 -->
+        <!-- second feed -->
         <div class="content">
+             <!-- profile picture and userId -->
             <div class="feedUser">
                 <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQheTU3WJeKEHtPfoMq73mRMP6UHmxg6qdC0w&usqp=CAU">
                 <span>Messy_teria</span>
                 <i class="bi bi-three-dots"></i>
             </div>
+             <!-- photo -->
             <div class="card">
                 <img src="https://phantom-marca.unidadeditorial.es/91b17d9b58d4e32dab8f04dee6bd7cd6/resize/1320/f/jpg/assets/multimedia/imagenes/2022/02/08/16443093703854.jpg"
                     class="card-img-top" alt="...">
@@ -118,12 +126,14 @@
                     </div>
                     <p class="card-text">67 likes</p>
                     <span class="user">green_teria</span>
+                    <!-- caption -->
                     <span id="captionSecond" class="caption">
                         No sweat, No sweet
                     </span>
                     <a class="btn-more" id="btn-2" onclick="readMoreSecond()">Read more</a>
                     <ul id="secondComment">
                     </ul>
+                    <!-- comment -->
                     <div class="comment">
                         <i class="bi bi-emoji-smile" id="smail-2"></i>
                         <input class="form-control form-control-sm" id="commentSecondInput" type="text"
@@ -133,14 +143,16 @@
                 </div>
             </div>
         </div>
-        <!-- 세번째 피드  -->
+        <!-- third feed -->
         <div class="content">
+            <!-- profile picture and userId -->
             <div class="feedUser">
                 <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB6b0jq_vIKDO7RKISVCkX9kqbIZukFUNEtw&usqp=CAU">
                 <span>maison.saisons</span>
                 <i class="bi bi-three-dots"></i>
             </div>
+            <!-- photo -->
             <div class="card">
                 <div id="slideShow">
                     <div class="slides">
@@ -152,8 +164,8 @@
                             alt="">
                     </div>
                     <p class="controller">
-                        <!-- &lang: 왼쪽 방향 화살표
-                      &rang: 오른쪽 방향 화살표 -->
+                        <!-- &lang: left side caret
+                      &rang: right side caret -->
                         <span class="prev">&lang;</span>
                         <span class="next">&rang;</span>
                     </p>
@@ -168,12 +180,14 @@
                     </div>
                     <p class="card-text">677 likes</p>
                     <span class="user">maison.saisons</span>
+                    <!-- caption -->
                     <span id="captionThird" class="caption">
                         such a nice day!
                     </span>
                     <a class="btn-more" id="btn-3" onclick="readMoreThird()">Read more</a>
                     <ul id="thirdComment">
                     </ul>
+                    <!-- comment -->
                     <div class="comment">
                         <i class="bi bi-emoji-smile" id="smail-3"></i>
                         <input class="form-control form-control-sm" id="commentThirdInput" type="text"
@@ -187,7 +201,7 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </body>
-<!-- script가 body 아래 있어야지 좋아요 기능이 작동합니다 -->
+<!-- script links should be down below to make the likes work  -->
 <script src="../JS/slideShow.js"></script>
 <script src="../JS/layout.js"></script>
 <script src="../JS/searchInput.js"></script>
@@ -196,5 +210,4 @@
 <script src="../JS/readMore.js"></script>
 <script src="../JS/comment.js"></script>
 <script src="../JS/storySlide.js"></script>
-
 </html>

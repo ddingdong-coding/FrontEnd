@@ -1,4 +1,4 @@
-/* 전체 피드 div */
+        /* wrapping the whole divs in a feed*/
         .wrap {
             width: 600px;
             margin: 20px auto;
@@ -9,7 +9,7 @@
             justify-content: center;
         }
 
-        /* 각 피드 div - 유저정보, 이미지, 아이콘들, 내용, 댓글 포함*/
+        /*each feed css*/
         .content {
             width: 500px;
             margin: 20px auto;
@@ -24,7 +24,7 @@
 
         }
 
-        /* 유저 정보  */
+        /* user info  */
         .feedUser {
             width: 500px;
             height: 60px;
@@ -38,6 +38,7 @@
 
         }
 
+        /* user Id css */
         .feedUser>img {
             width: 30px;
             height: 30px;
@@ -48,24 +49,26 @@
             object-fit: cover;
         }
 
+        /* user Id css */
         .feedUser>span {
             margin-right: auto;
             font-size: 18px;
             font-weight: 500;
         }
 
+        /* three dots css */
         .feedUser>i {
             font-size: 18px;
         }
 
-        /* 유저 정보 아래 컨텐츠 - 이미지, 아이콘들, 피드 texts, 댓글 */
+        /* the info under the profile  */
         .card {
             width: 500px;
             border-radius: 12px;
             border: 1px solid rgb(239, 239, 239);
         }
 
-        /* 피드 이미지  */
+        /* feed image */
         .card>img {
             height: 500px;
             object-fit: cover;
@@ -73,7 +76,7 @@
             /* background-position: center; */
         }
 
-        /* 아이콘들 css */
+        /* icons */
         .card-body>div {
             display: flex;
             flex-direction: row;
@@ -104,10 +107,10 @@
         }
 
         #sns_urlCoby {
-                color: black;
-                margin-right: auto;
-            }
-            
+            color: black;
+            margin-right: auto;
+        }
+
         .card-body>div>.bi-bookmark {
             color: black;
         }
@@ -121,8 +124,7 @@
             font-weight: 500;
         }
 
-        /* 유저 이름  */
-        /* 수정 */
+        /* the userId in the card  */
         .user {
             font-size: 16px;
             font-weight: 600;
@@ -139,7 +141,7 @@
             margin-left: 3px;
         }
 
-        /* 댓글 */
+        /* comment */
         .card-body div>input {
             border: none;
             font-weight: normal;
@@ -167,6 +169,3 @@
             list-style: none;
             padding-left: 0px;
         }
-
-
-

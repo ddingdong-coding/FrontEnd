@@ -15,13 +15,13 @@
     justify-content: center;
 
 }
-
+/* instagram image */
 .contents img {
     width: 150px;
     margin-right: auto;
 
 }
-
+/* inputbox */
 .contents>input {
 
     width: 300px;
@@ -34,7 +34,7 @@
     margin: auto;
 
 }
-
+/* the last div css in the content  */
 .contents div:last-child {
     width: 200px;
     font-size: 25px;
@@ -45,7 +45,7 @@
     align-items: center;
     justify-content: space-between;
 }
-/* 수정 */
+/* icons */
 .contents div >i {
 
     margin: 0 5px;
