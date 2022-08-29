@@ -20,7 +20,7 @@ function postFirstComment() {
     } else {
         let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
         $('#firstComment').append(temp_html)
-        //initializing the input box
+        //initializing the input box value
         document.getElementById('commentFirstInput').value = null
     }
 
@@ -34,7 +34,7 @@ function postSecondComment() {
     } else {
         let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
         $('#secondComment').append(temp_html)
-        //initializing the input box
+        //initializing the input box value
         document.getElementById('commentSecondInput').value = null
     }
 
@@ -47,7 +47,7 @@ function postThirdComment() {
     } else {
         let temp_html = `<li> <span style="font-weight:460;"> happyMe </span>  ${comment}</li>`
         $('#thirdComment').append(temp_html)
-        //initializing the input box
+        //initializing the input box value
         document.getElementById('commentThirdInput').value = null
     }
 
