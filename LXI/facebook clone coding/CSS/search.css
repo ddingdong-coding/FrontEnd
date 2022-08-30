@@ -1,3 +1,52 @@
+/* 파일명 수정 필요 */
+.gnb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10px;
+    margin: 0 30px;
+    height: 60px;
+    background-color: white;
+}
+
+.gnb img {
+    /* margin: 5px 20px; */
+    width: 40px;
+    margin-right: auto;
+    background-color: transparent;
+}
+
+.gnb>div:nth-child(2) {
+    width: 550px;
+    margin: auto;
+    margin-right: 0px;
+    /* padding-left: 40px; */
+    background-color: white;
+
+
+}
+
+.icons {
+    /* width: calc(100%); */
+    margin-left: auto;
+    font-size: 30px;
+    background-color: white;
+
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icons>i {
+    margin: 0 10px;
+}
+
+
 /*-------------------------------------------------------------------
 	## search_wrapper layout
 -------------------------------------------------------------------*/

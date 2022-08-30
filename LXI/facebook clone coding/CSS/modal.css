@@ -1,0 +1,37 @@
+
+    .modal {
+        border: none;
+        width: 300px;
+        height: 250px;
+
+        left: 72%;
+        top: 8%;
+        background: rgb(244, 250, 253);
+        border-radius: 10px;
+
+    }
+
+    .modal-content {
+        border: none;
+        background: rgb(244, 250, 253)
+    }
+
+    .modal input {
+        width: 280px;
+        height: 40px;
+        margin: auto;
+        margin-top: 10px;
+
+        border-radius: 30px;
+        border: none;
+        text-indent: 1em;
+    }
+
+    .modal input:focus {
+        outline: none;
+    }
+
+    .modal-content p {
+        text-align: center;
+        margin: 20px 0;
+    }

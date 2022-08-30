@@ -1,0 +1,125 @@
+.tab_menu {
+  margin-top: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  width: 600px;
+  padding-left: 0pxs;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.wrap-tab {
+  /* padding: 15px; */
+  /* letter-spacing: -0.5px; */
+  width: 500px;
+}
+
+.tab_menu {
+  position: relative;
+}
+
+.tab_menu .list {
+  overflow: hidden;
+}
+
+.tab_menu .list li {
+  float: left;
+  margin-right: 14px;
+
+}
+
+.tab_menu .list .btn {
+  font-size: 15px;
+  width: 160px;
+}
+
+.tab_menu .list .cont {
+  width: 600px;
+  height: 300px;
+  /* line-height: 100px; */
+  margin-top: 20px;
+  margin-left: 10px;
+
+
+  display: none;
+  position: absolute;
+
+
+  top: 25px;
+  left:0; 
+  border-radius: 10px;
+  background: white;
+  /* background: rgb(244, 250, 253); */
+  color: black;
+  text-align: center;
+
+}
+
+.tab_menu .list li.is_on .btn {
+  border-bottom: solid 3px #1876F2;
+  color:  #1876F2;
+}
+
+.tab_menu .list li.is_on .cont {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* tab 1 content */
+
+.tab_cont1{
+  width: 112.5px;
+  height: 220px;
+  margin: 20px;
+
+  float: left;
+
+  border: 1px solid rgb(238, 237, 237);
+  border-radius: 10px;
+
+}
+.tab_cont1 >img{
+  width: 112.5px;
+  height: 151px;
+  object-fit: cover;
+}
+.tab_cont1 > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-color: white;
+  margin: auto;
+  margin-top: -20px;
+  position: relative;
+
+}
+.tab_cont1 > div i {
+  font-size: 34px;
+  position: static;
+  color:  #1876F2;
+}
+
+.story-explain{
+
+  text-align: left;
+  margin-top: 80px;
+
+}
+.story-explain div{
+  margin: 14px 5px;
+}

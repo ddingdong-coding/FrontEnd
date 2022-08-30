@@ -11,3 +11,13 @@ a, img{
     font-weight: normal;
     /* background-color: rgb(244, 250, 253); */
 }
+.wrap {
+
+    background-color: white;
+}
+
+
+.main {
+    width: 600px;
+    margin:auto;
+  }
