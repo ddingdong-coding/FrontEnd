@@ -1,9 +1,11 @@
 .post {
     width: 600px;
     height: 150px;
-    background-color: pink;
-    /* margin-top: 20px; */
+    /* background-color: pink; */
+    margin-left: 10px;
+    margin-top: 10px;
     border-radius: 10px;
+    border : 0.5px solid rgb(232, 232, 232);
     padding: 20px;
 }
 
@@ -52,5 +54,5 @@
 
 }
 .bi-emoji-smile {
-    color: yellow;
+    color: orange;
 }
