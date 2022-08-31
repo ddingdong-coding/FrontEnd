@@ -23,10 +23,10 @@
     .post {
         width: 600px;
         height: 150px;
-        background-color: yellow;
+        background-color: pink;
         /* margin-top: 20px; */
         border-radius: 10px;
-        padding:20px;
+        padding: 20px;
     }
 
     .post>img {
@@ -36,18 +36,45 @@
         margin: 0 5px;
 
         border-radius: 50%;
+        object-fit: cover;
 
     }
+
     .post>input {
         width: 500px;
         height: 40px;
         font-size: 20px;
         background-color: rgb(232, 232, 232);
         border: none;
-        vertical-align:-3px;
+        vertical-align: -3px;
 
         text-indent: 10px;
         border-radius: 30px;
+    }
+
+    .post-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 20px;
+        margin-right: 5px;
+        font-size: 15px;
+    }
+    .post-icons i{
+        margin-right: 5px;
+        font-size: 28px;
+    }
+    .bi-camera-reels {
+        color: red;
+    }
+    .bi-file-image {
+        color: green;
+
+    }
+    .bi-emoji-smile {
+        color: yellow;
     }
 </style>
 <script>
@@ -112,7 +139,7 @@
                 <p>see all in Messenger</p>
             </a>
         </div>
-    </div>   
+    </div>
     <div class="modal-con modal2">
         <div class="con">
             <h1>Notifications</h1>
@@ -126,64 +153,101 @@
             세번째 모달
         </div>
     </div>
-        <div class="main">
-            <!-- main-tap -->
-            <div class="wrap-tab">
-                <div class="tab_menu">
-                    <ul class="list">
-                        <li class="is_on">
-                            <a class="btn">Stories</a>
-                            <div id="tab1" class=" firstTap cont ">
-                                <div class="tab_cont1">
-                                    <img
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrADi_aYnw2ME7sn5y68up__5RXqbuvi_lsA&usqp=CAU">
-                                    <div>
-                                        <i class="bi bi-plus-circle-fill"></i>
-                                    </div>
-                                    Creat story
+    <div class="main">
+        <!-- main-tap -->
+        <div class="wrap-tab">
+            <div class="tab_menu">
+                <ul class="list">
+                    <li class="is_on">
+                        <a class="btn">Stories</a>
+                        <div id="tab1" class="cont ">
+                            <div class="tab_cont1">
+                                <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU">
+                                <div>
+                                    <i class="bi bi-plus-circle-fill"></i>
                                 </div>
-                                <div class="story-explain">
-                                    <div>
-                                        <i class="bi bi-person-heart"></i> share everyday momenys with friends and
-                                        family.
-                                    </div>
-                                    <div>
-                                        <i class="bi bi-alarm"></i> stories disappear after 24 hours.
-                                    </div>
-                                    <div>
-                                        <i class="bi bi-messenger"></i> Replies and reactions are private.
-                                    </div>
+                                Create story
+                            </div>
+                            <div class="story-explain">
+                                <div>
+                                    <i class="bi bi-person-heart"></i> share everyday moments with friends and
+                                    family.
+                                </div>
+                                <div>
+                                    <i class="bi bi-alarm"></i> stories disappear after 24 hours.
+                                </div>
+                                <div>
+                                    <i class="bi bi-messenger"></i> Replies and reactions are private.
                                 </div>
                             </div>
-                        </li>
-                        <li>
-                            <a class="btn">Reels</a>
-                            <div id="tab2" class="cont">
-                                <div class="reels" id="reels">
-                                    <div class="reelsImg reelsImg-1"></div>
-                                    <div class="reelsImg reelsImg-2"></div>
-                                    <div class="reelsImg reelsImg-3"></div>
-                                    <div class="reelsImg reelsImg-4"></div>
-                                    <div class="reelsImg reelsImg-5"></div>
-                                    <div class="reelsImg reelsImg-6"></div>
-                                    <div class="reelsImg reelsImg-7"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="btn">Reels</a>
+                        <div id="tab2" class="cont">
+                            <div class="reels" id="reels">
+                                <div class="reelsImg reelsImg-1"></div>
+                                <div class="reelsImg reelsImg-2"></div>
+                                <div class="reelsImg reelsImg-3"></div>
+                                <div class="reelsImg reelsImg-4"></div>
+                                <div class="reelsImg reelsImg-5"></div>
+                                <div class="reelsImg reelsImg-6"></div>
+                                <div class="reelsImg reelsImg-7"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="btn">Rooms</a>
+                        <div id="tab1" class="cont ">
+                            <div class="tab_cont3">
+                                <div class="room-video">
+                                    <div>
+                                        <i class="bi bi-camera-video"></i>
+                                    </div>
+                                    <h6>Ellie's Room</h6>
+                                    <p>Get started</p>
+                                    <div>
+                                        Create
+                                    </div>
+
                                 </div>
                             </div>
-                        </li>
-                        <li>
-                            <a class="btn">Rooms</a>
-                            <div id="tab3" class="cont">Tab Content3</div>
-                        </li>
-                    </ul>
+                            <div class="room-explain">
+                                <div>
+                                    <i class="bi bi-person-heart"></i> share everyday moments 
+                                </div>
+                                <div>
+                                    <i class="bi bi-alarm"></i> stories disappear 
+                                </div>
+                                <div>
+                                    <i class="bi bi-messenger"></i> Replies and reactions are private.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="post">
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU">
+            <input id="" name="" type="text" class="" placeholder="What's on your mind, Ellie?">
+            <hr>
+            <div class="post-icons">
+                <div class="live-video">
+                    <i class="bi bi-camera-reels"></i>   Live  video
+                </div>
+                <div class="photo-video">
+                    <i class="bi bi-file-image"></i>   Photo/video
+                </div>
+                <div class="feeling-activity">
+                    <i class="bi bi-emoji-smile"></i>   Feeling/activity
                 </div>
             </div>
-            <div class="post">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrADi_aYnw2ME7sn5y68up__5RXqbuvi_lsA&usqp=CAU">
-                <input id="" name="" type="text" class="""
-                    placeholder="What's on your mind, Ellie?">
-            </div>
-
         </div>
+
+    </div>
 </body>
 <script src="../JS/slide.js"></script>
 <script src="../JS/script.js"></script>
