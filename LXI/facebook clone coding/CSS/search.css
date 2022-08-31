@@ -42,7 +42,7 @@
     align-items: center;
 }
 
-.icons>i {
+.icons a i {
     margin: 0 10px;
 }
 
