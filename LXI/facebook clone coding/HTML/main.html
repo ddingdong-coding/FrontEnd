@@ -17,64 +17,38 @@
     <link rel="stylesheet" href="../CSS/search.css">
     <link rel="stylesheet" href="../CSS/modal.css">
     <link rel="stylesheet" href="../CSS/tap.css">
+    <link rel="stylesheet" href="../CSS/post.css">
     <title>sparat coding club | facebook clone coding </title>
 </head>
 <style>
-    .post {
-        width: 600px;
-        height: 150px;
-        background-color: pink;
-        /* margin-top: 20px; */
-        border-radius: 10px;
-        padding: 20px;
-    }
-
-    .post>img {
-        margin-left: 10px;
-        width: 38px;
-        height: 38px;
-        margin: 0 5px;
-
-        border-radius: 50%;
-        object-fit: cover;
-
-    }
-
-    .post>input {
-        width: 500px;
-        height: 40px;
-        font-size: 20px;
-        background-color: rgb(232, 232, 232);
-        border: none;
-        vertical-align: -3px;
-
-        text-indent: 10px;
-        border-radius: 30px;
-    }
-
-    .post-icons {
+    .reels {
         display: flex;
         flex-direction: row;
+
+        border: transparent;
+        overflow: hidden;
+    }
+    .reels div {
+        margin-top: 15px;
+    }
+
+    .reels div img {
+
         justify-content: space-between;
-        align-items: center;
 
-        padding: 0 20px;
-        margin-right: 5px;
-        font-size: 15px;
-    }
-    .post-icons i{
-        margin-right: 5px;
-        font-size: 28px;
-    }
-    .bi-camera-reels {
-        color: red;
-    }
-    .bi-file-image {
-        color: green;
+        width: 100px;
+        height: 200px;
 
-    }
-    .bi-emoji-smile {
-        color: yellow;
+        margin-right: 13px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+
+        border-radius: 10px;
+
+
+        /* the codes for maintaining its aspect ratio  */
+        object-fit: cover;
+
     }
 </style>
 <script>
@@ -196,6 +170,8 @@
                                 <div class="reelsImg reelsImg-6"></div>
                                 <div class="reelsImg reelsImg-7"></div>
                             </div>
+                            <div class="slide_prev_button slide_button">◀</div>
+                            <div class="slide_next_button slide_button">▶</div>
                         </div>
                     </li>
                     <li>
@@ -216,7 +192,7 @@
                             </div>
                             <div class="room-explain">
                                 <div>
-                                    <i class="bi bi-people"></i> Have live audio conversations with friends. 
+                                    <i class="bi bi-people"></i> Have live audio conversations with friends.
                                 </div>
                                 <div>
                                     <i class="bi bi-people"></i> Control who can join you in your room.
@@ -237,13 +213,13 @@
             <hr>
             <div class="post-icons">
                 <div class="live-video">
-                    <i class="bi bi-camera-reels"></i>   Live  video
+                    <i class="bi bi-camera-reels"></i> Live video
                 </div>
                 <div class="photo-video">
-                    <i class="bi bi-file-image"></i>   Photo/video
+                    <i class="bi bi-file-image"></i> Photo/video
                 </div>
                 <div class="feeling-activity">
-                    <i class="bi bi-emoji-smile"></i>   Feeling/activity
+                    <i class="bi bi-emoji-smile"></i> Feeling/activity
                 </div>
             </div>
         </div>
