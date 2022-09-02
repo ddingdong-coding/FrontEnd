@@ -7,7 +7,6 @@ function posting(){
         body: formData,
       }).then((res) => {
         if(res.status ===200 || res.status ===201) {
-          console.log("성공 했니?")
           res.json().then(json => console.log(json));
         }else {
           console.error(res.statusText);
