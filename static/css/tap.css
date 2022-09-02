@@ -1,0 +1,198 @@
+.tab_menu {
+  margin-top: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+  width: 600px;
+  padding-left: 0pxs;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.wrap-tab {
+  /* padding: 15px; */
+  /* letter-spacing: -0.5px; */
+  width: 600px;
+  height: 360px;
+  
+}
+
+.tab_menu {
+  position: relative;
+}
+
+.tab_menu .list {
+  overflow: hidden;
+}
+
+.tab_menu .list li {
+  float: left;
+  margin-right: 14px;
+
+}
+
+.tab_menu .list .btn {
+  font-size: 15px;
+  width: 160px;
+}
+
+.tab_menu .list .cont {
+  width: 600px;
+  height: 300px;
+  border : 0.5px solid rgb(232, 232, 232);
+  /* line-height: 100px; */
+  margin-top: 20px;
+  margin-left: 10px;
+
+
+  display: none;
+  position: absolute;
+
+
+  top: 25px;
+  left:0; 
+  border-radius: 10px;
+  background: white;
+  /* background: rgb(244, 250, 253); */
+  color: black;
+  text-align: center;
+
+}
+
+.tab_menu .list li.is_on .btn {
+  border-bottom: solid 3px #1876F2;
+  color:  #1876F2;
+}
+
+.tab_menu .list li.is_on .cont {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* tab 1 content */
+
+.tab_cont1{
+  width: 112.5px;
+  height: 220px;
+  margin: 20px;
+
+  float: left;
+
+  border: 1px solid rgb(238, 237, 237);
+  border-radius: 10px;
+
+}
+.tab_cont1 >img{
+  width: 112.5px;
+  height: 151px;
+  object-fit: cover;
+}
+.tab_cont1 > div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-color: white;
+  margin: auto;
+  margin-top: -20px;
+  position: relative;
+
+}
+.tab_cont1 > div i {
+  font-size: 34px;
+  position: static;
+  color:  #1876F2;
+}
+
+.story-explain{
+
+  text-align: left;
+  margin-top: 70px;
+
+}
+.story-explain div{
+  margin: 14px 5px;
+}
+
+.story-explain i {
+  margin-right: 8px;
+}
+/* tap3 */
+.tab_cont3 {
+  margin: 20px;
+  padding: 8px;
+}
+/* 좀 더 올가나이즈 하기 */
+.tab_cont3 .room-video {
+  width: 200x;
+  height: 190px;
+
+  border: 0.5px solid grey;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  float: left;
+  margin-right:20px;
+  padding-top: 10px;
+}
+
+.room-video div:first-child {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgb(244, 250, 253);
+  margin-bottom: 25px;
+}
+
+.room-video div:first-child i {
+  font-size: 36px;
+  color: #1876F2;
+
+}
+.room-explain {
+  text-align: left;
+  margin-top: 35px;
+
+}
+.room-explain div{
+  margin: 20px 5px;
+}
+
+.room-explain div i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+.room-video p{
+  font-size: 12px;
+}
+.room-video div:last-child {
+  margin: 10px;
+  width: 160px;
+  height: 38px;
+  color:#1876F2;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  border: 2px solid #e0edfc;
+}
