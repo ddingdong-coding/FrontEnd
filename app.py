@@ -31,6 +31,19 @@ def posting():
     db.posting.insert_one(doc)
         
     return jsonify(result={"status": 200})
+# 댓글
+# @app.route('/main/comment/',methods=['POST'])
+# def posting():
+#     comment = request.form['comment']
+#     print(comment)
+#     today = datetime.now()
+#     doc ={
+#         'comment':comment,
+#         'today':today.strftime('%Y.%m.%d-%H-%M')
+#     }
+#     db.comment.insert_one(doc)
+        
+#     return jsonify(result={"status": 200})
 
 @app.route('/main/post', methods=['GET'])
 def listing():

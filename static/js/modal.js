@@ -1,24 +1,24 @@
-function openModal(modalname){
-    document.get
-    // $("#modal").fadeIn(300);
-    $("."+modalname).fadeIn(300);
-  }
-  
-  $(".main, .wrap, .gnb, post, body").on('click',function(){
-    $("#modal").fadeOut(300);
-    $(".modal-con").fadeOut(300);
-  });
+function openModal(modalname) {
+  document.get
+  // $("#modal").fadeIn(300);
+  $("." + modalname).fadeIn(300);
+}
+
+$(".main, .wrap, post").on('click', function () {
+  $("#modal").fadeOut(300);
+  $(".modal-con").fadeOut(300);
+});
 
 
-  $(function () {
-    $(".inputPost").click(function () {
-      console.log("클릭")
-        $("#postModal").fadeIn();
-        console.log("click open");
-    })
-    $("#exit").click(function () {
-        $("#postModal").fadeOut();
-    })
+$(function () {
+  $(".inputPost").click(function () {
+    console.log("클릭")
+    $("#postModal").fadeIn();
+    console.log("click open");
+  })
+  $("#exit").click(function () {
+    $("#postModal").fadeOut();
+  })
 })
 
 // $(function () {

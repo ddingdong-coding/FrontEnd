@@ -58,3 +58,20 @@ $(document).ready(function () {
 
     })
 })
+// 댓글
+// $(document).ready(function () {
+//   let url = `/main/{post_id}/comment/`
+//   fetch(url)
+//     .then(res => res.json()).then((data) => {
+//       let posting = data['listing']
+
+//       console.log("성공", data['listing'])
+//       for (let i = 0; i < posting.length; i++) {
+//         let time = data['listing'][i]['today'].substring(2, 14)
+//         let content = data['listing'][i]['content']
+//         let temp_html = ``
+//         $('#postBox').append(temp_html);
+//       }
+
+//     })
+// })
