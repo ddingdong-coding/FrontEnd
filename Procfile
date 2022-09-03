@@ -1,2 +1,2 @@
-worker: python -m flask run
+worker: python app.py
 
