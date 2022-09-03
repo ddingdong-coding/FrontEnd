@@ -1,5 +1,5 @@
 function posting(){
-    let content =$("#post").val()
+    let content =$("#inputModal").val()
     const formData = new FormData();
     formData.append('content',content)
     fetch('/main', {

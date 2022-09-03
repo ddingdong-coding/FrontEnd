@@ -16,7 +16,7 @@ function openModal(modalname){
         $("#postModal").fadeIn();
         console.log("click open");
     })
-    $(".gnb, .wrap-tab").click(function () {
+    $("#exit").click(function () {
         $("#postModal").fadeOut();
     })
 })

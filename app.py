@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 from pymongo import MongoClient
-client = MongoClient('dburl')
+client = MongoClient('mongodb+srv://ellie:mshee791008!@cluster0.xhjvgcr.mongodb.net/?retryWrites=true&w=majority')
 db = client.facebook
 
 from datetime import datetime

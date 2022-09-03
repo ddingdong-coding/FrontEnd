@@ -40,7 +40,7 @@
         
 
         border-radius: 10px;
-        background: rgba(255, 255, 0, 0.8);
+        background: rgba(255, 255, 255);
 
         /* 중앙정렬 */
         position: fixed;
@@ -54,10 +54,19 @@
         -o-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
 
+        box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3); 
+    }
+    .postModal div:first-child {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
     .postModal h1 {
         font-size: 25px;
-        text-align:center;
+        margin:auto;
+        margin-right:20px
+      
     }
     .postModal > textarea {
         border: 3px, solid, black;
@@ -83,6 +92,27 @@
     }
     .postModal > div span {
         margin: 0px 10px;
+    }
+    .postModal > div i {
+        font-size: 25px;
+        margin-left:auto;
+        margin-right:10px;
+    }
+    .postModal >div:last-child {
+        width:400px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .postModal >div:last-child button {
+        width:400px;
+        height:45px;
+        font-size:20px;
+        border-radius:20px;
+        border:none;
+
     }
   </style>
   <script></script>
@@ -273,7 +303,6 @@
             placeholder="What's on your mind, ellie?"
           />
         </div>
-        <button onclick="posting()" type="button">입력</button>
         <hr />
         <div class="post-icons">
           <div class="live-video">
@@ -288,13 +317,19 @@
         </div>
       </div>
       <div class="postModal" id="postModal">
-        <h1> Create post </h1>
+        <div>
+            <h1> Create post </h1>
+            <i class="bi bi-x-circle" id="exit"></i>
+        </div>
         <hr>
         <div>
             <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU">
             <span> ellie </span>
         </div>
-        <textarea rows="7" cols="46" placeholder="What's on your mind, ellie?"></textarea>
+        <textarea id="inputModal" rows="7" cols="46" placeholder="What's on your mind, ellie?"></textarea>
+        <div>
+            <button onclick="posting()" type="button">Post</button>
+        </div>
       </div>
     </div>
   </body>
