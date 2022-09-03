@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://ellie:mshee791008!@cluster0.xhjvgcr.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://ellie:ms@cluster0.xhjvgcr.mongodb.net/?retryWrites=true&w=majority')
 db = client.facebook
 
 from datetime import datetime
@@ -26,7 +26,7 @@ def posting():
     today = datetime.now()
     doc ={
         'content':content,
-        'today':today
+        'today':today.strftime('%Y.%m.%d-%H-%M')
     }
     db.posting.insert_one(doc)
         
@@ -35,6 +35,7 @@ def posting():
 @app.route('/main/post', methods=['GET'])
 def listing():
     postings = list(db.posting.find({}, {'_id': False}))
+    # postings = db.posting.find().sort({"_id":-1})
     print(postings)
     print("리스팅 성공")
     return jsonify({'all_posts': postings})
