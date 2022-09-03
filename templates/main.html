@@ -33,12 +33,14 @@
     .postModal {
         display:none;
         position:fixed; 
-        width: 400px;
-        height: 300px;
+        width: 500px;
+        height: 450px;
+
+        padding: 8px;
+        
 
         border-radius: 10px;
-        background: black;
-        {% comment %} background: rgba(255, 255, 255, 0.8); {% endcomment %}
+        background: rgba(255, 255, 0, 0.8);
 
         /* 중앙정렬 */
         position: fixed;
@@ -52,6 +54,35 @@
         -o-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
 
+    }
+    .postModal h1 {
+        font-size: 25px;
+        text-align:center;
+    }
+    .postModal > textarea {
+        border: 3px, solid, black;
+        font-size: 20px;
+        background-color: transperate;
+        border: none;
+        text-indent: 10px;
+    }
+    .postModal > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 10px 0px;
+    
+    }
+
+    .postModal > div img {
+        width:40px;
+        height: 40px;
+        object-fit: cover;
+
+        border-radius:50%;
+    }
+    .postModal > div span {
+        margin: 0px 10px;
     }
   </style>
   <script></script>
@@ -231,15 +262,15 @@
         </div>
       </div>
       <div class="post" id="post">
+        <div class="inputPost" id="inputPost">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU"
         />
-        <div class="inputPost" id="inputPost">
             <input
             name=""
             type="text"
             class=""
-            placeholder="What's on your mind, Ellie?"
+            placeholder="What's on your mind, ellie?"
           />
         </div>
         <button onclick="posting()" type="button">입력</button>
@@ -257,7 +288,13 @@
         </div>
       </div>
       <div class="postModal" id="postModal">
-
+        <h1> Create post </h1>
+        <hr>
+        <div>
+            <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU">
+            <span> ellie </span>
+        </div>
+        <textarea rows="7" cols="46" placeholder="What's on your mind, ellie?"></textarea>
       </div>
     </div>
   </body>

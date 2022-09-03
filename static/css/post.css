@@ -9,7 +9,7 @@
     padding: 20px;
 }
 
-.post>img {
+.post .inputPost img {
     margin-left: 10px;
     width: 38px;
     height: 38px;
@@ -20,7 +20,7 @@
 
 }
 
-.post input {
+.post .inputPost input {
     width: 500px;
     height: 40px;
     font-size: 20px;
