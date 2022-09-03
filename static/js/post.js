@@ -13,3 +13,21 @@ function posting(){
         }
       }).catch(err => console.error(err))
 }
+
+$(document).ready(function () {
+  let url = `/main/post`
+  fetch(url)
+      .then(res => res.json()).then((data) => {
+        let posting = data['all_posts']
+
+        console.log(data['all_posts'].length)
+        for (let i=0; i<posting.length;i++) {
+          let time = data['all_posts'][i]['today'].substring(7,22)
+          let content = data['all_posts'][i]['content']
+          let temp_html = `<p>Time: ${time}</p>
+          <p> Message: ${content}</p>`
+          $('#postList').append(temp_html);
+        }
+
+      })
+})

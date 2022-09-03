@@ -32,6 +32,12 @@ def posting():
         
     return jsonify(result={"status": 200})
 
+@app.route('/main/post', methods=['GET'])
+def listing():
+    postings = list(db.posting.find({}, {'_id': False}))
+    print(postings)
+    print("리스팅 성공")
+    return jsonify({'all_posts': postings})
 
 
 if __name__ == '__main__':
