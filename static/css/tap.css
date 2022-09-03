@@ -1,5 +1,5 @@
 .tab_menu {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 * {
@@ -17,6 +17,7 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
+
 a {
   text-decoration: none;
   color: #333;
@@ -27,7 +28,7 @@ a {
   /* letter-spacing: -0.5px; */
   width: 600px;
   height: 360px;
-  
+
 }
 
 .tab_menu {
@@ -52,7 +53,7 @@ a {
 .tab_menu .list .cont {
   width: 600px;
   height: 300px;
-  border : 0.5px solid rgb(232, 232, 232);
+  border: 0.5px solid rgb(232, 232, 232);
   /* line-height: 100px; */
   margin-top: 20px;
   margin-left: 10px;
@@ -63,7 +64,7 @@ a {
 
 
   top: 25px;
-  left:0; 
+  left: 0;
   border-radius: 10px;
   background: white;
   /* background: rgb(244, 250, 253); */
@@ -74,7 +75,7 @@ a {
 
 .tab_menu .list li.is_on .btn {
   border-bottom: solid 3px #1876F2;
-  color:  #1876F2;
+  color: #1876F2;
 }
 
 .tab_menu .list li.is_on .cont {
@@ -84,7 +85,7 @@ a {
 
 /* tab 1 content */
 
-.tab_cont1{
+.tab_cont1 {
   width: 112.5px;
   height: 220px;
   margin: 20px;
@@ -95,12 +96,14 @@ a {
   border-radius: 10px;
 
 }
-.tab_cont1 >img{
+
+.tab_cont1>img {
   width: 112.5px;
   height: 151px;
   object-fit: cover;
 }
-.tab_cont1 > div {
+
+.tab_cont1>div {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -111,30 +114,34 @@ a {
   position: relative;
 
 }
-.tab_cont1 > div i {
+
+.tab_cont1>div i {
   font-size: 34px;
   position: static;
-  color:  #1876F2;
+  color: #1876F2;
 }
 
-.story-explain{
+.story-explain {
 
   text-align: left;
   margin-top: 70px;
 
 }
-.story-explain div{
+
+.story-explain div {
   margin: 14px 5px;
 }
 
 .story-explain i {
   margin-right: 8px;
 }
+
 /* tap3 */
 .tab_cont3 {
   margin: 20px;
   padding: 8px;
 }
+
 /* 좀 더 올가나이즈 하기 */
 .tab_cont3 .room-video {
   width: 200x;
@@ -149,7 +156,7 @@ a {
   justify-content: center;
 
   float: left;
-  margin-right:20px;
+  margin-right: 20px;
   padding-top: 10px;
 }
 
@@ -166,12 +173,14 @@ a {
   color: #1876F2;
 
 }
+
 .room-explain {
   text-align: left;
   margin-top: 35px;
 
 }
-.room-explain div{
+
+.room-explain div {
   margin: 20px 5px;
 }
 
@@ -179,14 +188,16 @@ a {
   margin-right: 8px;
   font-size: 18px;
 }
-.room-video p{
+
+.room-video p {
   font-size: 12px;
 }
+
 .room-video div:last-child {
   margin: 10px;
   width: 160px;
   height: 38px;
-  color:#1876F2;
+  color: #1876F2;
 
 
   display: flex;

@@ -50,9 +50,9 @@
 /*-------------------------------------------------------------------
 	## search_wrapper layout
 -------------------------------------------------------------------*/
-.gnb > .search_wrapper {
+.gnb>.search_wrapper {
 
-    height: 56px;
+    height: 70px;
     margin-top: 5px;
 }
 
@@ -68,7 +68,7 @@
     position: relative;
     background-color: white;
     /* background-color: rgb(244, 250, 253); */
-    
+
 }
 
 .gnb .search_wrapper .search_container .search_inner {
@@ -81,22 +81,27 @@
 -------------------------------------------------------------------*/
 .search_area form {
     margin-top: 3px;
-    border-radius: 30px;
+    /* border-radius: 30px; */
     overflow: hidden;
 
 }
 
 .search_area fieldset {
-    /* display: flex; */
+    display: flex;
     width: 100%;
-    /* align-items: stretch; */
+    align-items: stretch;
+
 }
 
 .search_area .input_window {
-    /* width: calc(100% - 70px);
-    width: calc(100%); */
+    width: calc(100% - 70px);
+    /* width: calc(100%); */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
-    
+
     background: #fff;
 
     font-size: 1rem;
@@ -106,14 +111,16 @@
 
 .search_area .input_window input {
     width: 100%;
-    height: 100%;
+    height: 90%;
     color: #666;
     box-sizing: border-box;
     border: none;
+    border-radius: 10px;
     text-indent: 1em;
     background-color: rgb(244, 250, 253);
 
 }
+
 .search_area .input_window input:focus {
     outline: none;
 }
@@ -122,6 +129,11 @@
     color: #999;
 }
 
+fieldset button {
+    background-color: white;
+    border: none;
+    margin-left: 8px;
+}
 
 .search_container .recommend_comment {
     margin-top: 7px;
@@ -145,13 +157,13 @@
     left: 0;
     right: 0;
     /* background: #fff; */
-    background-color: rgb(244, 250, 253);
+    /* background-color: rgb(244, 250, 253); */
     /* box-shadow: 0 0 4px 1px rgb(0 0 0 / 26%); */
-    border-radius:0 0 30px 30px;
+    /* border-radius: 0 0 30px 30px; */
     color: #595959;
 }
 
-.recent_wrapper .no_data {
+.gnb .recent_wrapper .no_data {
     display: none;
     position: absolute;
     z-index: 1;

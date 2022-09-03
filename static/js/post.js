@@ -25,11 +25,35 @@ $(document).ready(function () {
         let time = data['all_posts'][i]['today'].substring(2, 14)
         let content = data['all_posts'][i]['content']
         let temp_html = `
-          <div class="postList">
-            <p>Time: ${time}</p>
-            <p> Message: ${content}</p>
-          </div>`
-        $('.postBox').append(temp_html);
+        <div class="postCard">
+        <div class="postUser">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
+          <div>
+            Ellie
+          </div>
+          <div class="postTime">
+            ${time}
+          </div>
+        </div>
+        <div class="postContent">
+          <h2>${content}</h2>
+        </div>
+        <div class="postIcons">
+          <div>
+            <i class="bi bi-hand-thumbs-up"></i> Likes
+          </div>
+          <div>
+            <i class="bi bi-chat-dots"></i> Commentss
+          </div>
+        </div>
+        <div class="postComment">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
+          <input placeholder="Wrtie a comment...">
+        </div>
+      </div>`
+        $('#postBox').append(temp_html);
       }
 
     })

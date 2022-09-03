@@ -5,7 +5,7 @@
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 10px;
-    border : 0.5px solid rgb(232, 232, 232);
+    border: 0.5px solid rgb(232, 232, 232);
     padding: 20px;
 }
 
@@ -42,17 +42,105 @@
     margin-right: 5px;
     font-size: 15px;
 }
-.post-icons i{
+
+.post-icons i {
     margin-right: 5px;
     font-size: 28px;
 }
+
 .bi-camera-reels {
     color: red;
 }
+
 .bi-file-image {
     color: green;
 
 }
+
 .bi-emoji-smile {
     color: orange;
+}
+
+.postBox {
+    /* padding: 10px; */
+}
+
+.postCard {
+    width: 600px;
+    height: 300px;
+    border: 0.5px solid rgb(232, 232, 232);
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+
+}
+
+.postUser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 8px;
+}
+
+/* post */
+.postCard .postUser img {
+    /* margin: 30px; */
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.postCard .postUser div:first-child {
+    margin-left: 20px;
+}
+
+.postCard .postUser .postTime {
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.postCard .postContent {
+    padding: 10px;
+}
+
+.postCard .postIcons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    margin: 10px 0;
+}
+
+.postCard .postIcons div {
+    width: 280;
+    margin: auto;
+    font-size: 20px;
+}
+
+.postCard .postComment img {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.postCard .postComment input {
+    vertical-align: -3px;
+    width: 80%;
+    height: 40px;
+    background-color: rgb(232, 232, 232);
+    border: none;
+    margin-left: 5px;
+
+    text-indent: 10px;
+    border-radius: 30px;
 }
