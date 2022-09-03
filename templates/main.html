@@ -1,241 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <!-- <link rel="stylesheet" href="../CSS/main.css"> -->
-    <link rel="stylesheet" href="../static/css/layout.css">
-    <link rel="stylesheet" href="../static/css/search.css">
-    <link rel="stylesheet" href="../static/css/modal.css">
-    <link rel="stylesheet" href="../static/css/tap.css">
-    <link rel="stylesheet" href="../static/css//post.css">
-    <title>sparat coding club | facebook clone coding </title>
-</head>
-<style>
-    .reels {
-        display: flex;
-        flex-direction: row;
-
-        border: transparent;
-        overflow: hidden;
-    }
-    .reels div {
-        margin-top: 15px;
-    }
-
-    .reels div img {
-
-        justify-content: space-between;
-
-        width: 100px;
-        height: 200px;
-
-        margin-right: 13px;
-        margin-top: 5px;
-        margin-bottom: 5px;
+    <link rel="stylesheet" href="../static/css/layout.css" />
+    <link rel="stylesheet" href="../static/css/search.css" />
+    <link rel="stylesheet" href="../static/css/modal.css" />
+    <link rel="stylesheet" href="../static/css/tap.css" />
+    <link rel="stylesheet" href="../static/css//post.css" />
+    <link rel="stylesheet" href="../static/css//slide.css" />
+    <title>sparat coding club | facebook clone coding</title>
+  </head>
+  <style>
+    .postModal {
+        display:none;
+        position:fixed; 
+        width: 400px;
+        height: 300px;
 
         border-radius: 10px;
+        background: black;
+        {% comment %} background: rgba(255, 255, 255, 0.8); {% endcomment %}
 
+        /* 중앙정렬 */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
 
-        /* the codes for maintaining its aspect ratio  */
-        object-fit: cover;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
 
     }
-</style>
-<script>
-</script>
+  </style>
+  <script></script>
 
-<body>
+  <body>
     <div class="wrap">
-        <div class="gnb">
-            <div>
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmINsmNY_Mnuh5_McX4DyMAa2CLZmOAUZF4w&usqp=CAU">
-            </div>
-            <div>
-                <div class="search_wrapper">
-                    <div class="search_container">
-                        <div class="search_inner">
-                            <div id="search" class="search_area">
-                                <form id="sform" name="sform" action="https://facebook.com/" method="get" role="search">
-                                    <fieldset>
-                                        <div class="input_window">
-                                            <input id="query" name="query" type="text" maxlength="255"
-                                                class="input_text" tabindex="1" placeholder="Search Facebook">
-                                        </div>
-                                    </fieldset>
-                                </form>
-                                <div id="autoFrame" class="recent_wrapper">
-                                    <ul class="recent_list">
-                                        <!-- 기록 들어가는 자리 -->
-                                        <li class="item recent_item" data-rank="${index + 1}"
-                                            data-template-type="history" data-keyword="${item.search}">
-                                            <a href="#" class="kwd">
-                                                <span class="fix">
-                                                    <span>${item.search}</span>
-                                                </span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <!-- 전체삭제 후에 보여지는 화면 -->
-                                    <div class="no_data">
-                                        <span>최근 검색어 내역이 없습니다.</span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="icons">
-                <a href="javascript:openModal('modal1');" class="modal-open"><i class="bi bi-messenger"></i></a>
-                <a href="javascript:openModal('modal2');" class="modal-open"><i class="bi bi-bell"></i></a>
-                <a href="javascript:openModal('modal3');" class="modal-open"><i class="bi bi-person-circle"></i></a>
-            </div>
-
+      <div class="gnb">
+        <div>
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmINsmNY_Mnuh5_McX4DyMAa2CLZmOAUZF4w&usqp=CAU"
+          />
         </div>
+        <div>
+          <div class="search_wrapper">
+            <div class="search_container">
+              <div class="search_inner">
+                <div id="search" class="search_area">
+                  <form
+                    id="sform"
+                    name="sform"
+                    action="https://facebook.com/"
+                    method="get"
+                    role="search"
+                  >
+                    <fieldset>
+                      <div class="input_window">
+                        <input
+                          id="query"
+                          name="query"
+                          type="text"
+                          maxlength="255"
+                          class="input_text"
+                          tabindex="1"
+                          placeholder="Search Facebook"
+                        />
+                      </div>
+                    </fieldset>
+                  </form>
+                  <div id="autoFrame" class="recent_wrapper">
+                    <ul class="recent_list">
+                      <!-- 기록 들어가는 자리 -->
+                      <li
+                        class="item recent_item"
+                        data-rank="${index + 1}"
+                        data-template-type="history"
+                        data-keyword="${item.search}"
+                      >
+                        <a href="#" class="kwd">
+                          <span class="fix">
+                            <span>${item.search}</span>
+                          </span>
+                        </a>
+                      </li>
+                    </ul>
+                    <!-- 전체삭제 후에 보여지는 화면 -->
+                    <div class="no_data">
+                      <span>최근 검색어 내역이 없습니다.</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="icons">
+          <a href="javascript:openModal('modal1');" class="modal-open"
+            ><i class="bi bi-messenger"></i
+          ></a>
+          <a href="javascript:openModal('modal2');" class="modal-open"
+            ><i class="bi bi-bell"></i
+          ></a>
+          <a href="javascript:openModal('modal3');" class="modal-open"
+            ><i class="bi bi-person-circle"></i
+          ></a>
+        </div>
+      </div>
     </div>
     <div class="modal-con modal1">
-        <div class="con">
-            첫번째 모달
-            <input type="text" id="todoInput" placeholder="Messenger Search">
-            <p>No messages found.</p>
-            <a href="">
-                <p>see all in Messenger</p>
-            </a>
-        </div>
+      <div class="con">
+        첫번째 모달
+        <input type="text" id="todoInput" placeholder="Messenger Search" />
+        <p>No messages found.</p>
+        <a href="">
+          <p>see all in Messenger</p>
+        </a>
+      </div>
     </div>
     <div class="modal-con modal2">
-        <div class="con">
-            <h5>Notifications</h5>
-            <div>
-                두번째 모달
-            </div>
-        </div>
+      <div class="con">
+        <h5>Notifications</h5>
+        <div>두번째 모달</div>
+      </div>
     </div>
     <div class="modal-con modal3">
-        <div class="con">
-            세번째 모달
-        </div>
-    </div>
-    <div class="modal-con modal4">
-        <div class="con">
-            input modal
-        </div>
+      <div class="con">세번째 모달</div>
     </div>
     <div class="main">
-        <!-- main-tap -->
-        <div class="wrap-tab">
-            <div class="tab_menu">
-                <ul class="list">
-                    <li class="is_on">
-                        <a class="btn">Stories</a>
-                        <div id="tab1" class="cont ">
-                            <div class="tab_cont1">
-                                <img
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU">
-                                <div>
-                                    <i class="bi bi-plus-circle-fill"></i>
-                                </div>
-                                Create story
-                            </div>
-                            <div class="story-explain">
-                                <div>
-                                    <i class="bi bi-person-heart"></i> share everyday moments with friends and
-                                    family.
-                                </div>
-                                <div>
-                                    <i class="bi bi-alarm"></i> stories disappear after 24 hours.
-                                </div>
-                                <div>
-                                    <i class="bi bi-messenger"></i> Replies and reactions are private.
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="btn">Reels</a>
-                        <div id="tab2" class="cont">
-                            <div class="reels" id="reels">
-                                <div class="reelsImg reelsImg-1"></div>
-                                <div class="reelsImg reelsImg-2"></div>
-                                <div class="reelsImg reelsImg-3"></div>
-                                <div class="reelsImg reelsImg-4"></div>
-                                <div class="reelsImg reelsImg-5"></div>
-                                <div class="reelsImg reelsImg-6"></div>
-                                <div class="reelsImg reelsImg-7"></div>
-                            </div>
-                            <div class="slide_prev_button slide_button">◀</div>
-                            <div class="slide_next_button slide_button">▶</div>
-                        </div>
-                    </li>
-                    <li>
-                        <a class="btn">Rooms</a>
-                        <div id="tab1" class="cont ">
-                            <div class="tab_cont3">
-                                <div class="room-video">
-                                    <div>
-                                        <i class="bi bi-camera-video"></i>
-                                    </div>
-                                    <h6>Ellie's Room</h6>
-                                    <p>Get started</p>
-                                    <div>
-                                        Create
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="room-explain">
-                                <div>
-                                    <i class="bi bi-people"></i> Have live audio conversations with friends.
-                                </div>
-                                <div>
-                                    <i class="bi bi-people"></i> Control who can join you in your room.
-                                </div>
-                                <div>
-                                    <i class="bi bi-link-45deg"></i> People without a Facebook account can join
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+      <!-- main-tap -->
+      <div class="wrap-tab">
+        <div class="tab_menu">
+          <ul class="list">
+            <li class="is_on">
+              <a class="btn">Stories</a>
+              <div id="tab1" class="cont">
+                <div class="tab_cont1">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU"
+                  />
+                  <div>
+                    <i class="bi bi-plus-circle-fill"></i>
+                  </div>
+                  Create story
+                </div>
+                <div class="story-explain">
+                  <div>
+                    <i class="bi bi-person-heart"></i> share everyday moments
+                    with friends and family.
+                  </div>
+                  <div>
+                    <i class="bi bi-alarm"></i> stories disappear after 24
+                    hours.
+                  </div>
+                  <div>
+                    <i class="bi bi-messenger"></i> Replies and reactions are
+                    private.
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <a class="btn">Reels</a>
+              <div id="tab2" class="cont">
+                <div class="reels" id="reels">
+                    <div class="slide_prev_button slide_button">◀</div>
+                  <div class="reels-1" id="reels-1">
+                    <div class="reelsImg reelsImg-1"></div>
+                    <div class="reelsImg reelsImg-2"></div>
+                    <div class="reelsImg reelsImg-3"></div>
+                    <div class="reelsImg reelsImg-4"></div>
+                    <div class="reelsImg reelsImg-5"></div>
+                    <div class="reelsImg reelsImg-6"></div>
+                    <div class="reelsImg reelsImg-7"></div>
+                  </div>
+                  <div class="slide_next_button slide_button">▶</div>
+              </div>
+            </li>
+            <li>
+              <a class="btn">Rooms</a>
+              <div id="tab1" class="cont">
+                <div class="tab_cont3">
+                  <div class="room-video">
+                    <div>
+                      <i class="bi bi-camera-video"></i>
+                    </div>
+                    <h6>Ellie's Room</h6>
+                    <p>Get started</p>
+                    <div>Create</div>
+                  </div>
+                </div>
+                <div class="room-explain">
+                  <div>
+                    <i class="bi bi-people"></i> Have live audio conversations
+                    with friends.
+                  </div>
+                  <div>
+                    <i class="bi bi-people"></i> Control who can join you in
+                    your room.
+                  </div>
+                  <div>
+                    <i class="bi bi-link-45deg"></i> People without a Facebook
+                    account can join
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-        <div class="post">
-            <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU">
-                <input id="post" name="" type="text" class="" placeholder="What's on your mind, Ellie?">
-                <button onclick="posting()" type="button" >입력</button>
-            <hr>
-            <div class="post-icons">
-                <div class="live-video">
-                    <i class="bi bi-camera-reels"></i> Live video
-                </div>
-                <div class="photo-video">
-                    <i class="bi bi-file-image"></i> Photo/video
-                </div>
-                <div class="feeling-activity">
-                    <i class="bi bi-emoji-smile"></i> Feeling/activity
-                </div>
-            </div>
+      </div>
+      <div class="post" id="post">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU"
+        />
+        <div class="inputPost" id="inputPost">
+            <input
+            name=""
+            type="text"
+            class=""
+            placeholder="What's on your mind, Ellie?"
+          />
         </div>
+        <button onclick="posting()" type="button">입력</button>
+        <hr />
+        <div class="post-icons">
+          <div class="live-video">
+            <i class="bi bi-camera-reels"></i> Live video
+          </div>
+          <div class="photo-video">
+            <i class="bi bi-file-image"></i> Photo/video
+          </div>
+          <div class="feeling-activity">
+            <i class="bi bi-emoji-smile"></i> Feeling/activity
+          </div>
+        </div>
+      </div>
+      <div class="postModal" id="postModal">
 
+      </div>
     </div>
-</body>
-<script src="../static/js/slide.js"></script>
-<script src="../static/js/script.js"></script>
-<script src="../static/js/modal.js"></script>
-<script src="../static/js/tap.js"></script>
-<script src="../static/js/post.js"></script>
-
+  </body>
+  <script src="../static/js/slide.js"></script>
+  <script src="../static/js/script.js"></script>
+  <script src="../static/js/modal.js"></script>
+  <script src="../static/js/tap.js"></script>
+  <script src="../static/js/post.js"></script>
 </html>

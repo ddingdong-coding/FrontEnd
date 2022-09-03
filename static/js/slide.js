@@ -17,7 +17,7 @@ function renderReels() {
 }
 
 //reels photo slides function
-const container = document.querySelector(".story-1");
+const container = document.querySelector(".reels-1");
 const prevBtn = document.querySelector(".slide_prev_button"); 
 const nextBtn = document.querySelector(".slide_next_button");
 
@@ -28,8 +28,8 @@ const nextBtn = document.querySelector(".slide_next_button");
 
 function translateContainer(direction){
   const selectedBtn = (direction === 1) ? 'slide_prev_button' : 'slide_next_button';
-  container.style.transitionDuration = '900ms';
-  container.style.transform = `translateX(${direction * (100 / 10)}%)`;
+  container.style.transitionDuration = '600ms';
+  container.style.transform = `translateX(${direction * (100 / 7)}%)`;
   container.ontransitionend = () => reorganizeEl(selectedBtn);
 }
 

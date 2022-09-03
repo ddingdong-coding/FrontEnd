@@ -1,0 +1,49 @@
+.reels {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    border:transparent;
+
+    border-radius: 12px;
+
+}
+
+.reels>div {
+    font-size: 8px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.reels-1 {
+  display: flex;
+  flex-direction: row;
+
+  border: transparent;
+  overflow: hidden;
+}
+.reels-1 div {
+  margin-top: 15px;
+}
+
+.reels-1 div img {
+  justify-content: space-between;
+
+  width: 104px;
+  height: 250px;
+
+  margin-right: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  border-radius: 10px;
+
+  /* the codes for maintaining its aspect ratio  */
+  object-fit: cover;
+}
