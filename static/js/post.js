@@ -18,12 +18,12 @@ $(document).ready(function () {
   let url = `/main/post`
   fetch(url)
     .then(res => res.json()).then((data) => {
-      let posting = data['all_posts']
+      let posting = data['listing']
 
-      console.log(data['all_posts'].length)
+      console.log("성공", data['listing'])
       for (let i = 0; i < posting.length; i++) {
-        let time = data['all_posts'][i]['today'].substring(2, 14)
-        let content = data['all_posts'][i]['content']
+        let time = data['listing'][i]['today'].substring(2, 14)
+        let content = data['listing'][i]['content']
         let temp_html = `
         <div class="postCard">
         <div class="postUser">
@@ -44,7 +44,7 @@ $(document).ready(function () {
             <i class="bi bi-hand-thumbs-up"></i> Likes
           </div>
           <div>
-            <i class="bi bi-chat-dots"></i> Commentss
+            <i class="bi bi-chat-dots"></i> Comments
           </div>
         </div>
         <div class="postComment">
