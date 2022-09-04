@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify, redirect, request
 app = Flask(__name__)
 
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sun:test@cluster0.kaeazlr.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('dburl')
 db = client.facebook
 
 from dotenv import load_dotenv
