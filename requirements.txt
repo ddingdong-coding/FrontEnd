@@ -2,7 +2,7 @@ discord.py
 # beautifulsoup4
 fuzzywuzzy
 openpyxl==2.5.12
-requests
+request
 Flask==1.1.1
 jsonify 
 request
