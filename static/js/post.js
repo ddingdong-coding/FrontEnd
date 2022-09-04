@@ -31,14 +31,14 @@ $(document).ready(function () {
   let url = `/main/post`
   fetch(url)
     .then(res => res.json()).then((data) => {
-      let posting = data['listing']
-
-      console.log("성공", data['listing'])
-      for (let i = 0; i < posting.length; i++) {
-        let time = data['listing'][i]['today'].substring(2, 14)
+      for (let i = 0; i < data['listing'].length; i++) {
+        let allinfo = data['listing'][i]['_id']
+        console.log("allinfo", allinfo)
+        let year = data['listing'][i]['today'].substring(0, 4)
+        let month = data['listing'][i]['today'].substring(5, 7)
+        let date = data['listing'][i]['today'].substring(8, 10)
+        let time = year + " " + month + " " + date
         let content = data['listing'][i]['content']
-        let postId = data['listing'][i]['_id']
-        console.log(postId)
         let temp_html = `
         <div class="postCard">
         <div class="postUser">

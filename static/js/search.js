@@ -19,10 +19,12 @@ let recentSearchData = [
   // { search: "스파르타 코딩클럽 웹 퍼블리싱"},
 ];
 
+
 // 최근 검색어 리스트(li)를 만드는 함수
 const createRecentItem = () => {
   // 초기화
   $recent_lst.empty();
+  console.log($recent_lst)
   recentSearchData.forEach((item, index) => {
     // li 만들기
     $recent_lst.append(
