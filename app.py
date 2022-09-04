@@ -1,13 +1,16 @@
 from flask import Flask, render_template, jsonify, redirect, request
 app = Flask(__name__)
 
-from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sun:test@cluster0.kaeazlr.mongodb.net/?retryWrites=true&w=majority')
-db = client.facebook
-
 from dotenv import load_dotenv
 import os
 load_dotenv()
+
+
+from pymongo import MongoClient
+client = MongoClient(os.environ['DBURL'])
+db = client.facebook
+
+
 
 import certifi
 
@@ -67,7 +70,7 @@ def objectIdDecoder(list):
     return results
 
 if __name__ == '__main__':
-    app.run('0.0.0.0',os.environ.get('PORT'), debug=True)
+    app.run('0.0.0.0',os.environ['PORT'], debug=True)
 
 # if __name__ == '__main__':
 #     app.run('0.0.0.0', port=8000, debug=True)
