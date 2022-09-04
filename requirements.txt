@@ -1,6 +1,5 @@
 discord.py
 # beautifulsoup4
-gunicorn==19.0.0
 fuzzywuzzy
 openpyxl==2.5.12
 requests
