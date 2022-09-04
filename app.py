@@ -1,6 +1,10 @@
 from flask import Flask, render_template, jsonify, redirect, request
 app = Flask(__name__)
 
+from pymongo import MongoClient
+client = MongoClient('mongodb+srv://sun:test@cluster0.kaeazlr.mongodb.net/?retryWrites=true&w=majority')
+db = client.facebook
+
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -9,9 +13,6 @@ import certifi
 
 ca = certifi.where()
 
-from pymongo import MongoClient
-client = MongoClient('dburl',tlsCAFile=ca)
-db = client.facebook
 
 from datetime import datetime
 

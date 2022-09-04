@@ -16,17 +16,17 @@ const $autoFrame = $('#autoFrame');
 const $no_data = $('.no_data');
 
 let recentSearchData = [
-    // { search: "스파르타 코딩클럽 웹 퍼블리싱"},
+  // { search: "스파르타 코딩클럽 웹 퍼블리싱"},
 ];
 
 // 최근 검색어 리스트(li)를 만드는 함수
 const createRecentItem = () => {
-    // 초기화
-    $recent_lst.empty();
-    recentSearchData.forEach((item, index) => {
-        // li 만들기
-        $recent_lst.append(
-            `
+  // 초기화
+  $recent_lst.empty();
+  recentSearchData.forEach((item, index) => {
+    // li 만들기
+    $recent_lst.append(
+      `
       <li class="item recent_item" data-rank="${index + 1}" data-template-type="history" data-keyword="${item.search}">
         <a href="#" class="kwd">
           <span class="fix">
@@ -35,14 +35,14 @@ const createRecentItem = () => {
         </a>
       </li>
       `
-        )
-    })
+    )
+  })
 }
 
 const showOlnyRecentItem = () => {
-    $no_data.hide();
+  $no_data.hide();
 }
 // 검색창 초기화 함수
 const cleanInput = () => {
-    $input.val('');
+  $input.val('');
 }
