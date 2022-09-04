@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, redirect, request
 app = Flask(__name__)
 
 from dotenv import load_dotenv
@@ -6,7 +6,7 @@ import os
 load_dotenv()
 
 from pymongo import MongoClient
-client = MongoClient('dburl')
+client = MongoClient('mongodb+srv://sun:test@cluster0.kaeazlr.mongodb.net/?retryWrites=true&w=majority')
 db = client.facebook
 
 from datetime import datetime
@@ -31,33 +31,35 @@ def posting():
     db.posting.insert_one(doc)
         
     return jsonify(result={"status": 200})
-# 댓글
-# @app.route('/main/comment/',methods=['POST'])
-# def posting():
-#     comment = request.form['comment']
-#     print(comment)
-#     today = datetime.now()
-#     doc ={
-#         'comment':comment,
-#         'today':today.strftime('%Y.%m.%d-%H-%M')
-#     }
-#     db.comment.insert_one(doc)
-        
-#     return jsonify(result={"status": 200})
 
 @app.route('/main/post', methods=['GET'])
 def listing():
-    postings = objectIdDecoder(list(db.posting.find().sort('_id', -1)))
+    postings = (list(db.posting.find().sort('_id', -1)))
     print(postings)
     print("리스팅 성공")
     return jsonify({'listing': postings})
 
-def objectIdDecoder(list):
-    results = []
-    for document in list:
-        document['_id'] = str(document['_id'])
-        results.append(document)
-    return results
+#댓글
+# @app.route('/main/<postId>/comment',methods=['POST'])
+# def comment_posting(postId):
+#     postId= ObjectId(postId)
+#     comment_content = request.form['comment_content']
+#     print(comment_content)
+#     today = datetime.now()
+#     doc ={
+#         'comment':comment_content,
+#         'today':today.strftime('%Y.%m.%d-%H-%M')
+#     }
+#     db.comments.insert_one(doc)
+        
+#     return redirect('/{}'.format(postId))
+
+# def objectIdDecoder(list):
+#     results = []
+#     for document in list:
+#         document['_id'] = str(document['_id'])
+#         results.append(document)
+#     return results
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)

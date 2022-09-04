@@ -30,8 +30,8 @@ function handleClick(event) {
 }
 
 function init() {
-  for (var i = 0; i < div2.length; i++) {
-    div2[i].addEventListener("click", handleClick);
+  for (var i = 0; i < bnts.length; i++) {
+    bnts[i].addEventListener("click", handleClick);
   }
 }
 
@@ -48,14 +48,3 @@ $(function () {
   })
 })
 
-// $(function () {
-//   $(document).on('click', ".post", function () {
-//     console.log("클릭")
-//       $(".postModal").modal('show');
-//       console.log("click open");
-//   })
-//   $(".main, .wrap, .gnb, post, body").on('click',function () {
-//       $(".postModal").modal('hide');
-//       console.log("click close");
-//   })
-// })
