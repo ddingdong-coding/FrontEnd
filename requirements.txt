@@ -4,6 +4,5 @@ fuzzywuzzy
 openpyxl==2.5.12
 requests
 Flask==1.1.1
-render_template 
 jsonify 
 request
