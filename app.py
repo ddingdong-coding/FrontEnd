@@ -5,8 +5,12 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
+import certifi
+
+ca = certifi.where()
+
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://sun:test@cluster0.kaeazlr.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('dburl',tlsCAFile=ca)
 db = client.facebook
 
 from datetime import datetime
