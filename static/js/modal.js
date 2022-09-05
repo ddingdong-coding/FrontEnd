@@ -37,14 +37,20 @@ function init() {
 
 init();
 
+function test() {
+  document.getElementById("inputModal").value = '';
+}
+
+
 $(function () {
   $(".inputPost").click(function () {
     console.log("클릭")
     $("#postModal").fadeIn();
     console.log("click open");
   })
-  $("#exit").click(function () {
+  $("#exit, #postBnt").click(function () {
     $("#postModal").fadeOut();
+
   })
 })
 
