@@ -36,7 +36,6 @@ $(document).ready(function () {
       for (let i = 0; i < data['listing'].length; i++) {
         let postId = data['listing'][i]['_id']
         postsId.push[postId]
-        console.log("allinfo", allinfo)
         let year = data['listing'][i]['today'].substring(0, 4)
         let month = data['listing'][i]['today'].substring(5, 7)
         let date = data['listing'][i]['today'].substring(8, 10)
