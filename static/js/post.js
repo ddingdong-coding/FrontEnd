@@ -1,3 +1,5 @@
+let postsId = []
+
 function isEmptyComment(content) {
   if (content === '') {
     return 1;
@@ -32,7 +34,8 @@ $(document).ready(function () {
   fetch(url)
     .then(res => res.json()).then((data) => {
       for (let i = 0; i < data['listing'].length; i++) {
-        let allinfo = data['listing'][i]['_id']
+        let postId = data['listing'][i]['_id']
+        postsId.push[postId]
         console.log("allinfo", allinfo)
         let year = data['listing'][i]['today'].substring(0, 4)
         let month = data['listing'][i]['today'].substring(5, 7)
@@ -72,7 +75,10 @@ $(document).ready(function () {
       }
 
     })
+  console.log("1", postsId)
 })
+console.log("2", postsId)
+
 // 댓글
 function commentPosting(postId) {
   let url = `/main/${postId}/comment/`
