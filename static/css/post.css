@@ -145,3 +145,9 @@
     text-indent: 10px;
     border-radius: 30px;
 }
+
+
+/* like */
+.postIcons>.bi-hand-thumbs-up {
+    color: #1876F2;
+}
