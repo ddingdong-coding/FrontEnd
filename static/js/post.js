@@ -1,16 +1,16 @@
 let postsId = []
 
-function isEmptyComment(content) {
+function isEmptyPost(content) {
   if (content === '') {
-    return 1;
+    return true;
   }
-  return 0;
+  return false;
 }
 
 function posting() {
   let url = `/main`
   let content = $("#inputModal").val()
-  if (isEmptyComment(content)) {
+  if (isEmptyPost(content)) {
     alert("please write posts")
     $("#inputModal").focus();
     return;
@@ -35,12 +35,15 @@ $(document).ready(function () {
     .then(res => res.json()).then((data) => {
       for (let i = 0; i < data['listing'].length; i++) {
         let postId = data['listing'][i]['_id']
-        postsId.push[postId]
+        console.log(postId)
+        postsId.push(postId)
         let year = data['listing'][i]['today'].substring(0, 4)
         let month = data['listing'][i]['today'].substring(5, 7)
         let date = data['listing'][i]['today'].substring(8, 10)
         let time = year + " " + month + " " + date
         let content = data['listing'][i]['content']
+        localStorage.setItem(i, postId)
+        console.log("2", localStorage.setItem(i, postId))
         let temp_html = `
         <div class="postCard">
         <div class="postUser">
@@ -74,14 +77,14 @@ $(document).ready(function () {
       }
 
     })
-  console.log("1", postsId)
 })
-console.log("2", postsId)
 
 // 댓글
 function commentPosting(postId) {
+  console.log("hello2")
+  console.log(listing['_id'])
   let url = `/main/${postId}/comment/`
-  let comment = $(`#comment${postId}`).val()
+  let comment = $(`#comment`).val()
   const formData = new FormData();
   formData.append('comment', comment)
   formData.append('postId', postId)
@@ -96,3 +99,4 @@ function commentPosting(postId) {
     }
   }).catch(err => console.error(err))
 }
+//objecid 화 할필요 있다!

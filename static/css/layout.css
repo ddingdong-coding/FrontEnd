@@ -4,14 +4,15 @@ h2,
 h3,
 p,
 div,
-a, 
-img, input{
+a,
+img,
+input {
     margin: 0px;
     padding: 0px;
     text-decoration: none;
     font-weight: normal;
-    /* background-color: rgb(244, 250, 253); */
 }
+
 .wrap {
     background-color: white;
 }
@@ -19,5 +20,5 @@ img, input{
 
 .main {
     width: 600px;
-    margin:auto;
-  }
+    margin: auto;
+}

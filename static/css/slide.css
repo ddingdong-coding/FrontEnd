@@ -1,26 +1,27 @@
 .reels {
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    position: relative;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    border:transparent;
+  position: relative;
+  overflow: hidden;
 
-    border-radius: 12px;
+  border: transparent;
+
+  border-radius: 12px;
 
 }
 
 .reels>div {
-    font-size: 8px;
+  font-size: 8px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
 .reels-1 {
   display: flex;
   flex-direction: row;
@@ -28,6 +29,7 @@
   border: transparent;
   overflow: hidden;
 }
+
 .reels-1 div {
   margin-top: 15px;
 }

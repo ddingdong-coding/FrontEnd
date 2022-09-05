@@ -48,19 +48,18 @@ def listing():
     return jsonify({'listing': postings})
 
 #댓글
-# @app.route('/main/<postId>/comment',methods=['POST'])
-# def comment_posting(postId):
-#     postId= ObjectId(postId)
-#     comment_content = request.form['comment_content']
-#     print(comment_content)
-#     today = datetime.now()
-#     doc ={
-#         'comment':comment_content,
-#         'today':today.strftime('%Y.%m.%d-%H-%M')
-#     }
-#     db.comments.insert_one(doc)
+@app.route('/main/<postId>/comment',methods=['POST'])
+def comment_posting(postId):
+    comment_content = request.form['comment_content']
+    print(comment_content)
+    today = datetime.now()
+    doc ={
+        'comment':comment_content,
+        'today':today.strftime('%Y.%m.%d-%H-%M')
+    }
+    db.comments.insert_one(doc)
         
-#     return redirect('/{}'.format(postId))
+    return redirect('/{}'.format(postId))
 
 def objectIdDecoder(list):
     results = []

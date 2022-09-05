@@ -1,3 +1,4 @@
+/* modal  */
 .modal-con {
   width: 400px;
   height: 290px;
@@ -16,12 +17,14 @@
   box-shadow: 5px 10px 10px 1px rgba(0, 0, 0, .3);
 }
 
+/* contents in modal */
 .modal-con .con {
   font-size: 15px;
   line-height: 1.3;
   padding: 20px;
 }
 
+/* the first modal */
 .modal1 .con div {
   margin-top: 20px;
   margin-bottom: 40px;
@@ -40,6 +43,22 @@
   text-align: center;
 }
 
+.modal1 .con input {
+  width: 100%;
+  height: 40px;
+  margin: auto;
+  margin-top: 10px;
+
+  border-radius: 30px;
+  border: none;
+  text-indent: 1em;
+}
+
+.modal1 input:focus {
+  outline: none;
+}
+
+/* the second modal */
 .modal2 .con {
   display: flex;
   flex-direction: row;
@@ -74,6 +93,7 @@
   color: gold;
 }
 
+/* the third modal */
 .modal3 .con {
   font-size: 20px;
 }
@@ -113,37 +133,7 @@
 }
 
 
-/* .modal-con .close {
-  display: block;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border: 1px solid rgb(222, 222, 222);
-  text-align: center;
-  line-height: 20px;
-  text-decoration: none;
-  color: rgb(222, 222, 222);
-  font-size: 20px;
-  font-weight: bold;
-  right: 10px;
-  top: 10px;
-} */
-
-.modal1 .con input {
-  width: 100%;
-  height: 40px;
-  margin: auto;
-  margin-top: 10px;
-
-  border-radius: 30px;
-  border: none;
-  text-indent: 1em;
-}
-
-.modal1 input:focus {
-  outline: none;
-}
+/* post modal */
 
 .postModal {
   display: none;
@@ -157,7 +147,7 @@
   border-radius: 10px;
   background: rgba(255, 255, 255);
 
-  /* 중앙정렬 */
+  /* center alignment */
   position: fixed;
   top: 50%;
   left: 50%;

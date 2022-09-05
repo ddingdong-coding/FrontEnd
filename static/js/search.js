@@ -1,32 +1,30 @@
-// 변수 선언
-
-// search 선언
+// search variable declaration
 const $search = $('#search');
-// form 선언
+// form variable declaration
 const $sform = $("#sform");
-// input 선언
+// input variable declaration
 const $input = $("input#query");
 
-// kwd_lst 선언 (최근 검색어 ul)
+// kwd_lst variable declaration (recent search ul)
 const $recent_lst = $('.recent_list');
-// autoFrame 선언(최근검색어 창)
+// autoFrame variable declaration (recent search input)
 const $autoFrame = $('#autoFrame');
 
-// kwd_info 선언
+// kwd_info variable declaration
 const $no_data = $('.no_data');
 
 let recentSearchData = [
-  // { search: "스파르타 코딩클럽 웹 퍼블리싱"},
+  // { search: "sparta web search"},
 ];
 
 
-// 최근 검색어 리스트(li)를 만드는 함수
+// funtion for making list of recent history 
 const createRecentItem = () => {
-  // 초기화
+  // initialization
   $recent_lst.empty();
   console.log($recent_lst)
   recentSearchData.forEach((item, index) => {
-    // li 만들기
+    // making li
     $recent_lst.append(
       `
       <li class="item recent_item" data-rank="${index + 1}" data-template-type="history" data-keyword="${item.search}">
@@ -44,7 +42,7 @@ const createRecentItem = () => {
 const showOlnyRecentItem = () => {
   $no_data.hide();
 }
-// 검색창 초기화 함수
+// function for initialization input content
 const cleanInput = () => {
   $input.val('');
 }

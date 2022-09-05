@@ -1,7 +1,7 @@
 .post {
     width: 600px;
     height: 150px;
-    /* background-color: pink; */
+
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 10px;
@@ -61,9 +61,7 @@
     color: orange;
 }
 
-.postBox {
-    /* padding: 10px; */
-}
+
 
 .postCard {
     width: 600px;
@@ -84,9 +82,8 @@
     padding: 8px;
 }
 
-/* post */
+/* userImg */
 .postCard .postUser img {
-    /* margin: 30px; */
     width: 40px;
     height: 40px;
     margin: 0 5px;
