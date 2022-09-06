@@ -148,3 +148,7 @@
 .postIcons>.bi-hand-thumbs-up {
     color: #1876F2;
 }
+
+.postId {
+    display: none;
+}

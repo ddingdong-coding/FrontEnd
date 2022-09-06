@@ -35,7 +35,6 @@ $(document).ready(function () {
     .then(res => res.json()).then((data) => {
       for (let i = 0; i < data['listing'].length; i++) {
         let postId = data['listing'][i]['_id']
-        console.log(postId)
         postsId.push(postId)
         let year = data['listing'][i]['today'].substring(0, 4)
         let month = data['listing'][i]['today'].substring(5, 7)
@@ -43,7 +42,6 @@ $(document).ready(function () {
         let time = year + " " + month + " " + date
         let content = data['listing'][i]['content']
         localStorage.setItem(i, postId)
-        console.log("2", localStorage.setItem(i, postId))
         let temp_html = `
         <div class="postCard">
         <div class="postUser">
@@ -56,6 +54,9 @@ $(document).ready(function () {
             ${time}
           </div>
         </div>
+        <span class="postId" id="postId">
+          ${postId}
+        </span>
         <div class="postContent">
           <h2>${content}</h2>
         </div>
@@ -70,7 +71,7 @@ $(document).ready(function () {
         <div class="postComment">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
-          <input placeholder="Wrtie a comment...">
+          <input placeholder="Wrtie a comment..." id="comment" onKeyPress="if( event.keyCode==13 )commentPosting();">
         </div>
       </div>`
         $('#postBox').append(temp_html);
@@ -80,11 +81,13 @@ $(document).ready(function () {
 })
 
 // 댓글
-function commentPosting(postId) {
-  console.log("hello2")
-  console.log(listing['_id'])
-  let url = `/main/${postId}/comment/`
-  let comment = $(`#comment`).val()
+function commentPosting() {
+  let url = `/main/comment/`
+  let comment = $("#comment").val()
+  console.log("com", comment)
+  let postId = $("#postId").text();
+  // let postId = document.getElementById('postId').innerContent;
+  console.log("postId", postId)
   const formData = new FormData();
   formData.append('comment', comment)
   formData.append('postId', postId)
@@ -92,6 +95,7 @@ function commentPosting(postId) {
     method: 'POST',
     body: formData,
   }).then((res) => {
+    console.log("res", res)
     if (res.status === 200 || res.status === 201) {
       res.json().then(json => console.log(json));
     } else {

@@ -5,8 +5,8 @@ function openModal(modalname) {
 }
 
 $(".main, .wrap, post").on('click', function () {
-  $("#modal").fadeOut(300);
-  // $(".modal-con").fadeOut(300);
+  // $("#modal").fadeOut(300);
+  $(".modal-con").fadeOut(300);
 });
 
 
