@@ -12,6 +12,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- <link rel="stylesheet" href="../CSS/main.css"> -->
   <link rel="stylesheet" href="../static/css/layout.css" />
   <link rel="stylesheet" href="../static/css/search.css" />
@@ -39,7 +41,7 @@
           <div class="search_container">
             <div class="search_inner">
               <div id="search" class="search_area">
-                <form id="sform" name="sform" action="" method="" role="">
+                <form id="sform" class="sform" name="sform" action="" method="get" role="search">
                   <fieldset>
                     <div class="input_window">
                       <input id="query" name="query" type="text" maxlength="255" class="input_text" tabindex="1"
@@ -70,18 +72,14 @@
                 <div id="autoFrame" class="recent_wrapper">
                   <ul class="recent_list">
                     <!--  recent search history -->
-                    <!--<li
-                        class="item recent_item"
-                        data-rank="${index + 1}"
-                        data-template-type="history"
-                        data-keyword="${item.search}"
-                      >
-                        <a href="#" class="kwd">
-                          <span class="fix">
-                            <span>${item.search}</span>
-                          </span>
-                        </a>
-                      </li>-->
+                    <!-- <li class="item recent_item" data-rank="${index + 1}" data-template-type="history"
+                      data-keyword="${item.search}">
+                      <a href="#" class="kwd">
+                        <span class="fix">
+                          <span>${item.search}</span>
+                        </span>
+                      </a>
+                    </li> -->
                   </ul>
                   <!-- the section after deleting all history-->
                   <div class="no_data">
@@ -286,6 +284,7 @@
   </div>
 </body>
 <script src="../static/js/slide.js"></script>
+<script src="../static/js/search.js"></script>
 <script src="../static/js/script.js"></script>
 <script src="../static/js/modal.js"></script>
 <script src="../static/js/tap.js"></script>

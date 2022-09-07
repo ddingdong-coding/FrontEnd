@@ -1,5 +1,6 @@
 $(document).ready(function () {
   renderReels()
+
 });
 //retrieve images from api
 function renderReels() {
