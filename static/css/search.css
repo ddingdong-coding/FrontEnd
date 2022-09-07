@@ -159,7 +159,6 @@ fieldset button {
 
     z-index: 1;
     top: 0;
-    /* width: 90%; */
     width: calc(100% - 70px);
     left: 0;
     right: 0;
@@ -167,7 +166,6 @@ fieldset button {
     margin-top: 12px;
 
     background-color: rgb(244, 250, 253);
-    /* box-shadow: 0 1px 4px 0 rgb(0 0 0 / 26%); */
     border-radius: 2px;
     border-top: none;
 }
@@ -181,15 +179,19 @@ fieldset button {
 }
 
 .recent_list {
-    width: 100%;
+    width: calc(100% - 70px);
 }
 
 .recent_list .recent_item {
+    display: block;
+    width: calc(100%);
     padding: 1.2rem 0.5rem;
     font-size: 1 rem;
     cursor: pointer;
     list-style: none;
+    margin-top: 12px;
 
+    background-color: rgb(244, 250, 253);
 }
 
 .recent_list .recent_item:hover {
