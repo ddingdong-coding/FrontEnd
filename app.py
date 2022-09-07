@@ -4,7 +4,7 @@ app = Flask(__name__)
 from dotenv import load_dotenv
 import os
 load_dotenv()
-
+from bson import ObjectId
 
 from pymongo import MongoClient
 client = MongoClient(os.environ['DBURL'])
@@ -34,32 +34,34 @@ def posting():
     today = datetime.now()
     doc ={
         'content':content,
-        'today':today.strftime('%Y.%m.%d-%H-%M')
+        'today':today.strftime('%Y.%m.%d-%H-%M'),
     }
     db.posting.insert_one(doc)
         
     return jsonify(result={"status": 200})
-
+######글 조회
 @app.route('/main/post', methods=['GET'])
 def listing():
     postings = objectIdDecoder(list(db.posting.find().sort('_id', -1)))
     print(postings)
-    print("리스팅 성공")
     return jsonify({'listing': postings})
 
-#댓글
-@app.route('/main/<postId>/comment',methods=['POST'])
-def comment_posting(postId):
-    comment_content = request.form['comment_content']
-    print(comment_content)
+#######댓글 입력
+@app.route('/main/comment/',methods=['POST'])
+def comment_posting():
+    comment = request.form['comment']
+    postId = request.form['postId']
+    print(comment,postId)
     today = datetime.now()
     doc ={
-        'comment':comment_content,
+        'comment':comment,
+        'postId':postId,
         'today':today.strftime('%Y.%m.%d-%H-%M')
     }
-    db.comments.insert_one(doc)
+    db.posting.update_one({'_id': ObjectId(postId)}, {'$push': {'comment': doc}})
         
-    return redirect('/{}'.format(postId))
+    return jsonify(result={"status": 200})
+
 
 def objectIdDecoder(list):
     results = []
@@ -68,8 +70,6 @@ def objectIdDecoder(list):
         results.append(document)
     return results
 
-# if __name__ == '__main__':
-#     app.run('0.0.0.0',os.environ['PORT'], debug=True)
 
 if __name__ == '__main__':
     app.run('0.0.0.0',os.environ['PORT'], debug=True)

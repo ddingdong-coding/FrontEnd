@@ -54,7 +54,7 @@ $(document).ready(function () {
             ${time}
           </div>
         </div>
-        <span class="postId" id="postId">
+        <span class="postId" id="postId${i}">
           ${postId}
         </span>
         <div class="postContent">
@@ -68,10 +68,18 @@ $(document).ready(function () {
             <i class="bi bi-chat-dots"></i> Comments
           </div>
         </div>
+        <div class="commentWrapper" id="commentWrapper">
+          <ul class="commentlist">
+            <li>
+                <div>
+                </div>
+            </li> 
+          </ul>
+        </div>
         <div class="postComment">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
-          <input placeholder="Wrtie a comment..." id="comment" onKeyPress="if( event.keyCode==13 )commentPosting();">
+          <input placeholder="Wrtie a comment..." id="comment${i}" class="comment" onclick="reply_click(this.id)" onKeyPress="if( event.keyCode==13 )commentPosting();">
         </div>
       </div>`
         $('#postBox').append(temp_html);
@@ -79,15 +87,17 @@ $(document).ready(function () {
 
     })
 })
-
+let num;
+function reply_click(clicked_id) {
+  num = clicked_id.charAt(clicked_id.length - 1)
+  return num, clicked_id
+}
 // 댓글
 function commentPosting() {
   let url = `/main/comment/`
-  let comment = $("#comment").val()
-  console.log("com", comment)
-  let postId = $("#postId").text();
-  // let postId = document.getElementById('postId').innerContent;
-  console.log("postId", postId)
+  let comment = $(`#comment${num}`).val()
+  let postId = $(`#postId${num}`).text().trim(); //공백제거
+  console.log("코멘트", comment, postId)
   const formData = new FormData();
   formData.append('comment', comment)
   formData.append('postId', postId)
@@ -95,7 +105,6 @@ function commentPosting() {
     method: 'POST',
     body: formData,
   }).then((res) => {
-    console.log("res", res)
     if (res.status === 200 || res.status === 201) {
       res.json().then(json => console.log(json));
     } else {
@@ -103,4 +112,37 @@ function commentPosting() {
     }
   }).catch(err => console.error(err))
 }
-//objecid 화 할필요 있다!
+
+//댓글 조회
+$(document).ready(function () {
+  let url = `/main/post`
+  fetch(url)
+    .then(res => res.json()).then((data) => {
+      console.log(data)
+      for (let i = 0; i < data['listing'].length; i++) {
+        console.log(data['listing'][i]['comment'])
+        if (data['listing'][i]['comment']) {
+          let post = data['listing'][i]['comment']
+          for (let j = 0; j < post.length; j++) {
+            let year = post[j]['today'].substring(0, 4)
+            let month = post[j]['today'].substring(5, 7)
+            let date = post[j]['today'].substring(8, 10)
+            let time = year + " " + month + " " + date
+            let comment = post[j]['comment']
+            let temp_html = `
+          <ul class="commentlist">
+            <li>
+                ellie ${comment}        ${time}
+            </li> 
+          </ul>
+  `
+            $('#commentWrapper').append(temp_html);
+          }
+        }
+
+
+
+      }
+
+    })
+})
