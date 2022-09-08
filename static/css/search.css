@@ -183,7 +183,7 @@ fieldset button {
 .recent_list .recent_item {
     display: block;
     width: calc(100%);
-    padding: 3px 0;
+    padding: 8px 0;
     font-size: 1 rem;
     cursor: pointer;
     list-style: none;
