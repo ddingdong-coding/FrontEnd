@@ -183,15 +183,29 @@ fieldset button {
 .recent_list .recent_item {
     display: block;
     width: calc(100%);
-    padding: 1.2rem 0.5rem;
+    padding: 3px 0;
     font-size: 1 rem;
     cursor: pointer;
     list-style: none;
-    margin-top: 12px;
+    text-indent: 1em;
 
     background-color: rgb(244, 250, 253);
 }
 
 .recent_list .recent_item:hover {
     background: #fafafa;
+}
+
+.recent_wrapper ul {
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    overflow: auto;
+
+}
+
+.recent_wrapper li {
+    display: block;
+    width: 500px;
 }

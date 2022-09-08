@@ -28,7 +28,7 @@ function posting() {
     }
   }).catch(err => console.error(err))
 }
-//게시글
+// 게시글
 $(document).ready(function () {
   let url = `/main/post`
   fetch(url)
@@ -41,47 +41,41 @@ $(document).ready(function () {
         let date = data['listing'][i]['today'].substring(8, 10)
         let time = year + " " + month + " " + date
         let content = data['listing'][i]['content']
-        localStorage.setItem(i, postId)
         let temp_html = `
-        <div class="postCard">
-        <div class="postUser">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
-          <div>
-            Ellie
+          <div class="postCard">
+          <div class="postUser">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
+            <div>
+              Ellie
+            </div>
+            <div class="postTime">
+              ${time}
+            </div>
           </div>
-          <div class="postTime">
-            ${time}
+          <span class="postId" id="postId${i}">
+            ${postId}
+          </span>
+          <div class="postContent">
+            <h2>${content}</h2>
           </div>
-        </div>
-        <span class="postId" id="postId${i}">
-          ${postId}
-        </span>
-        <div class="postContent">
-          <h2>${content}</h2>
-        </div>
-        <div class="postIcons">
-          <div>
-            <i class="bi bi-hand-thumbs-up"></i> Likes
+          <div class="postIcons">
+            <div>
+              <i class="bi bi-hand-thumbs-up"></i> Likes
+            </div>
+            <div>
+              <i class="bi bi-chat-dots"></i> Comments
+            </div>
           </div>
-          <div>
-            <i class="bi bi-chat-dots"></i> Comments
+          <div class="commentWrapper" id="commentWrapper">
+          <ul class="commentlist${i}"></ul>
           </div>
-        </div>
-        <div class="commentWrapper" id="commentWrapper">
-          <ul class="commentlist">
-            <li>
-                <div>
-                </div>
-            </li> 
-          </ul>
-        </div>
-        <div class="postComment">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
-          <input placeholder="Wrtie a comment..." id="comment${i}" class="comment" onclick="reply_click(this.id)" onKeyPress="if( event.keyCode==13 )commentPosting();">
-        </div>
-      </div>`
+          <div class="postComment">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
+            <input placeholder="Wrtie a comment..." id="comment${i}" class="comment" onclick="reply_click(this.id)" onKeyPress="if( event.keyCode==13 )commentPosting();">
+          </div>
+        </div>`
         $('#postBox').append(temp_html);
       }
 
@@ -113,35 +107,29 @@ function commentPosting() {
   }).catch(err => console.error(err))
 }
 
-//댓글 조회
+
+// 댓글 조회
 $(document).ready(function () {
   let url = `/main/post`
   fetch(url)
     .then(res => res.json()).then((data) => {
-      console.log(data)
       for (let i = 0; i < data['listing'].length; i++) {
-        console.log(data['listing'][i]['comment'])
         if (data['listing'][i]['comment']) {
           let post = data['listing'][i]['comment']
+          console.log(i, post)
           for (let j = 0; j < post.length; j++) {
-            let year = post[j]['today'].substring(0, 4)
-            let month = post[j]['today'].substring(5, 7)
-            let date = post[j]['today'].substring(8, 10)
-            let time = year + " " + month + " " + date
+            let commentMonth = post[j]['today'].substring(5, 7)
+            let commentDate = post[j]['today'].substring(8, 10)
+            let commentTime = commentMonth + " " + commentDate
             let comment = post[j]['comment']
+            console.log(commentTime, comment, i)
             let temp_html = `
-          <ul class="commentlist">
             <li>
-                ellie ${comment}        ${time}
-            </li> 
-          </ul>
-  `
-            $('#commentWrapper').append(temp_html);
+                ellie ${comment}        ${commentTime}
+            </li> `
+            $(`.commentlist${i}`).append(temp_html);
           }
         }
-
-
-
       }
 
     })
