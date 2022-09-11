@@ -19,6 +19,10 @@ ul {
   justify-content: space-between;
 }
 
+.cont:hover {
+  background-color: rgb(232, 232, 232);
+}
+
 a {
   text-decoration: none;
   color: #333;
@@ -92,6 +96,8 @@ a {
   border: 1px solid rgb(238, 237, 237);
   border-radius: 10px;
 
+
+
 }
 
 .tab_cont1>img {
@@ -116,6 +122,10 @@ a {
   font-size: 34px;
   position: static;
   color: #1876F2;
+}
+
+.tab_cont1:hover {
+  background-color: rgb(232, 232, 232);
 }
 
 .story-explain {

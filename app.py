@@ -11,22 +11,22 @@ client = MongoClient(os.environ['DBURL'])
 db = client.facebook
 
 
+# import certifi
 
-import certifi
-
-ca = certifi.where()
+# ca = certifi.where()
 
 
 from datetime import datetime
-
+######rendering index.html 
 @app.route('/')
 def home():
     return render_template('index.html')
-
+######rendering main.html 
 @app.route('/main',methods=['GET'])
 def main():
     return render_template('main.html')
 
+#######uploading posts
 @app.route('/main',methods=['POST'])
 def posting():
     content = request.form['content']
@@ -39,14 +39,16 @@ def posting():
     db.posting.insert_one(doc)
         
     return jsonify(result={"status": 200})
-######글 조회
+
+
+######getting post and comment data
 @app.route('/main/post', methods=['GET'])
 def listing():
     postings = objectIdDecoder(list(db.posting.find().sort('_id', -1)))
     print(postings)
     return jsonify({'listing': postings})
 
-#######댓글 입력
+#######uploading comments
 @app.route('/main/comment/',methods=['POST'])
 def comment_posting():
     comment = request.form['comment']

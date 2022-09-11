@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="../static/css/search.css" />
   <link rel="stylesheet" href="../static/css/modal.css" />
   <link rel="stylesheet" href="../static/css/tap.css" />
-  <link rel="stylesheet" href="../static/css//post.css" />
-  <link rel="stylesheet" href="../static/css//slide.css" />
+  <link rel="stylesheet" href="../static/css/post.css" />
+  <link rel="stylesheet" href="../static/css/slide.css" />
   <title>sparat coding club | facebook clone coding</title>
 </head>
 <style>
@@ -274,10 +274,24 @@
             <i class="bi bi-chat-dots"></i> Comments
           </div>
         </div>
+        <div class="commentWrapper" id="commentWrapper">
+          <ul class="commentlist${i}">
+            <li>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
+              John <div> cool </div>
+            </li>
+            <li>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
+              Jess <div>oh that's nice</div>
+            </li>
+          </ul>
+        </div>
         <div class="postComment">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
-          <input type="text" placeholder="Wrtie a comment...">
+          <input type="text" onKeyPress="if(event.keyCode==13 )comment();" placeholder="Wrtie a comment...">
         </div>
       </div>
     </div>
@@ -289,6 +303,8 @@
 <script src="../static/js/modal.js"></script>
 <script src="../static/js/tap.js"></script>
 <script src="../static/js/post.js"></script>
+<script src="../static/js/comment.js"></script>
 <script src="../static/js/likes.js"></script>
+
 
 </html>

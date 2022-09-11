@@ -1,12 +1,14 @@
-let postsId = []
-
 function isEmptyPost(content) {
   if (content === '') {
     return true;
   }
   return false;
 }
+function refresh() {
+  location.reload();
 
+}
+//uploading post 
 function posting() {
   let url = `/main`
   let content = $("#inputModal").val()
@@ -28,14 +30,14 @@ function posting() {
     }
   }).catch(err => console.error(err))
 }
-// 게시글
+
+//getting post and comment 
 $(document).ready(function () {
   let url = `/main/post`
   fetch(url)
     .then(res => res.json()).then((data) => {
       for (let i = 0; i < data['listing'].length; i++) {
         let postId = data['listing'][i]['_id']
-        postsId.push(postId)
         let year = data['listing'][i]['today'].substring(0, 4)
         let month = data['listing'][i]['today'].substring(5, 7)
         let date = data['listing'][i]['today'].substring(8, 10)
@@ -73,7 +75,7 @@ $(document).ready(function () {
           <div class="postComment">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
-            <input placeholder="Wrtie a comment..." id="comment${i}" class="comment" onclick="reply_click(this.id)" onKeyPress="if( event.keyCode==13 )commentPosting();">
+            <input placeholder="Wrtie a comment..." id="comment${i}" class="comment" onclick="reply_click(this.id)" onKeyPress="if( event.keyCode==13 )commentPosting(); refresh()">
           </div>
         </div>`
         $('#postBox').append(temp_html);
@@ -86,12 +88,12 @@ function reply_click(clicked_id) {
   num = clicked_id.charAt(clicked_id.length - 1)
   return num, clicked_id
 }
-// 댓글
+
+//uploding comment
 function commentPosting() {
   let url = `/main/comment/`
   let comment = $(`#comment${num}`).val()
   let postId = $(`#postId${num}`).text().trim(); //공백제거
-  console.log("코멘트", comment, postId)
   const formData = new FormData();
   formData.append('comment', comment)
   formData.append('postId', postId)
@@ -108,7 +110,7 @@ function commentPosting() {
 }
 
 
-// 댓글 조회
+//getting comments
 $(document).ready(function () {
   let url = `/main/post`
   fetch(url)
@@ -116,16 +118,16 @@ $(document).ready(function () {
       for (let i = 0; i < data['listing'].length; i++) {
         if (data['listing'][i]['comment']) {
           let post = data['listing'][i]['comment']
-          console.log(i, post)
           for (let j = 0; j < post.length; j++) {
             let commentMonth = post[j]['today'].substring(5, 7)
             let commentDate = post[j]['today'].substring(8, 10)
             let commentTime = commentMonth + " " + commentDate
             let comment = post[j]['comment']
-            console.log(commentTime, comment, i)
             let temp_html = `
             <li>
-                ellie ${comment}        ${commentTime}
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1OtxRlwMFosn4vODbl1kLg6fsrbTXqo3Fig&usqp=CAU" />
+            ellie <div> ${comment}</div>
             </li> `
             $(`.commentlist${i}`).append(temp_html);
           }
